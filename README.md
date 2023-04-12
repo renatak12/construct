@@ -8,7 +8,7 @@ O construct é um sistema de gestão para lojas de materiais de construção que
 
 | Nome                                  | Link                                                 |
 | ------------------------------------- | ---------------------------------------------------- |
-| Plano de Iteração                     | [Clique aqui](docs/doc-plano-Iteracao.md)            |
+| Plano de Iteração                     | [Clique aqui](docs/doc-plano-iteracao.md)            |
 | Documento de Visão                    | [Clique aqui](docs/doc-visao.md)                     |
 | Documento de Modelos                  | [Clique aqui](docs/doc-modelos.md)                   |
 | Lista de User Stories                 | [Clique aqui](docs/doc-user-stories.md)              |
