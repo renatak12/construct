@@ -56,6 +56,11 @@ O sistema poderá ser utilizado por usuários. Temos os seguintes perfis/atores:
 | RF13 - Abir caixa                                 | Abre  o caixa                                                               | Caixa    |
 | RF14 - Fechar caixa                               | Fecha o caixa                                                               | Caixa    |
 | RF15 - Finalizar compra                           | Finaliza uma compra                                                         | Caixa    |
+| RF16 - Incluir Usuário                            | Um usuário contém nome, email, username e data de nascimento               | Gerente  |
+| RF17 - Alterar Usuário                            | Altera dados cadastrais do usuário          | Gerente  |
+| RF18 - Listar Usuário                            | Exibe as informações básicas do usuário cosultado                                         | Gerente  | 
+| RF19 - Visualizar Usuário                        | Exibe as informações detalhadas do usuário                 | Gerente  |
+| RF20 - Excluir Usuário                            | Remove a conta do usuário do sistema                                        | Gerente  |
 
 ## Lista de Requisitos Não-Funcionais
 
