@@ -12,7 +12,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | Data       | Versão |                           Descrição                            | Autor                    |
 | :--------- | :----: | :------------------------------------------------------------: | :----------------------- |
 | 10/06/2023 | 0.0.1  |               Template e descrição do documento                | Renata Karla Araújo dos Santos |
-| 10/06/2023 | 0.0.2  |                Detalhamento do User Story US01                 | Renata Karla Araújo dos Santos    |
+| 11/06/2023 | 0.0.2  |                Detalhamento do User Story US01                 | Renata Karla Araújo dos Santos    |
 
 ### User Story US01 - Manter Usuário
 
@@ -22,11 +22,11 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                |
 | ------------------------- | :----------------------------- |
-| RF15                      | Cadastrar Usuário              |
-| RF16                      | Alterar Usuário                |
-| RF17                      | Consultar Usuário              |
-| RF18                      | Vizualizar detalhes do Usuário |
-| RF19                      | Excluir Usuário                |
+| RF16                      | Cadastrar Usuário              |
+| RF17                      | Alterar Usuário                |
+| RF18                      | Consultar Usuário              |
+| RF19                      | Vizualizar detalhes do Usuário |
+| RF20                      | Excluir Usuário                |
 
 |                         |           |
 | ----------------------- | :-------- |
