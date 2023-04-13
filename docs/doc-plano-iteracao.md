@@ -106,7 +106,7 @@ Nesta iteração temos atividades diferentes para dois perfis **Gerentes** e **A
 - Enviar commits da parte do Documento de Modelos que preparou;
 - Enviar commits do User Story que detalhou;
   - Deve detalhar pelo menos um;
-  - Detalhar ou Especificar um US é criar a descrição (estória do usuário) e os testes de aceitação);
+  - Detalhar ou Especificar um US é criar a descrição (estória do usuário) e os testes de aceitação;
 - Avisar ao gerente quando concluir uma tarefa;
 
 
@@ -116,7 +116,7 @@ O gerente deve enviar nesta tarefa o link do repositório e o link dos dois docu
 ### T02 - Iteração 2 - Inicialização
 
 
-A Iteração 2 começou dia 30/06/2021 e vai até 14/07/2021. As atividades dessa tarefa são:
+A Iteração 2 começou dia 11/04/2023 e vai até 30/05/2023. As atividades dessa tarefa são:
 
 
 - Atualização do **Documento de Visão**, pode adicionar requisitos funcionais, se necessário;
@@ -142,7 +142,7 @@ A Iteração 2 começou dia 30/06/2021 e vai até 14/07/2021. As atividades dess
 - Definir e descrever as tarefas (issues) da Iteração 2 (milestones) e
   alocar as issues para cada membro da equipe;
 - Definir qual User Story cada membro da equipe vai especificar/detalhar;
-  - Detalhar ou Especificar um US é criar a descrição (estória do usuário) e os testes de aceitação);
+  - Detalhar ou Especificar um US é criar a descrição (estória do usuário) e os testes de aceitação;
 - Definir quem vai construir a Arquitetura Geral do Sistema que faz parte do **Documento Projeto Arquitetural** e o que cada membro da equipe vai preparar;
 - O gerente deve fazer a contagem indicativa do tamanho funcional de Projeto;
 - Definir quem vai fazer a contagem detalhada do tamanho funcional de cada User Story;
@@ -206,7 +206,7 @@ A Iteração 3 começou dia 15/07/2021 e vai até 03/08/2021. As atividades dess
   alocar as issues para cada membro da equipe;
 - Atualizar Plano de Release e Plano de Iteração;
 - Definir qual User Story cada membro da equipe vai descrever/detalhar;
-  - Detalhar ou Descrever um US é criar a descrição (estória do usuário) e os testes de aceitação);
+  - Detalhar ou Descrever um US é criar a descrição (estória do usuário) e os testes de aceitação;
 - Definir quem vai detalhar a Arquitetura do Sistema que faz parte do **Documento Projeto Arquitetural** e o que cada membro da equipe vai preparar;
 - O gerente deve fazer a contagem indicativa do tamanho funcional de Projeto;
 - Verificar a Contagem Detalhada do tamanho funcional do Sistema;
