@@ -241,3 +241,12 @@ A Iteração 3 começou dia 15/07/2021 e vai até 03/08/2021. As atividades dess
 - Avisar ao gerente quando concluir uma tarefa;
 
 
+#### Testador It03
+
+
+- Trabalhar nas tarefas e realizar pequenos commits marcando com a hashtag da issue;
+- Executar cada teste de aceitação do User Story, anotando o resultado em um Markdown dos Resultados dos Testes de Aceitação;
+  - O relatório de Testes deve serguir esse [Modelo](https://docs.google.com/document/d/11hLKf0FcspQrDRfo3gRMXzuY1028cUeniv_Aob8DX_0/edit?usp=sharing)
+- Cadastrar issues de bugs caso os Testes de Aceitação não passem;
+- Avisar ao gerente os bugs e correções necessárias descritas relatório de testes;
+- Avisar ao gerente quando concluir uma tarefa;
