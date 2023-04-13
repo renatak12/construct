@@ -13,7 +13,7 @@ Este plano de iteração será usando como exemplo da disciplina Engenharia de S
 | It2      | 11/04/2023  | 30/05/2023 | 30/05/2023   | Raquel | Implementar US00, Testar US00, Detalhar US01, Detalhar US02                                                                                                                                                                            |
 | It3      | 01/06/2023  | 15/06/2023 | 15/06/2023   | Annielly | Implementar US01, Testar US01, Implementar US02, Testar US02, Detalhar US03, Deploy do Release (Implantação)                                                                                                                           |
 | It4      | 16/06/2023  | 30/06/2023 | 01/07/2023   | Maicon | Criar Documento de Contagem por Pontos de Função,  Arquitetura Geral do Sistema, Implementar US03,                                                                                                                                     |
-| It5      | 02/07/2023  | 15/07/2023 | 16/07/2023   | José Claudio | Criar Relatório de Testes, Atualizar Documento de Visão, Modelos, Plano de Iteração, Plano de Release, Documento de Contagem por Pontos de Função e Arquitetura Geral do Sistema, Detalhar US04, Implementar US04 e Implementar Testes |
+| It5      | 02/07/2023  | 15/07/2023 | 16/07/2023   | José Cláudio | Criar Relatório de Testes, Atualizar Documento de Visão, Modelos, Plano de Iteração, Plano de Release, Documento de Contagem por Pontos de Função e Arquitetura Geral do Sistema, Detalhar US04, Implementar US04 e Implementar Testes |
 
 
 - Observação 1: Cada Iteração de ser cadastrada como Milestones no GitHub.
@@ -29,7 +29,7 @@ Este plano de iteração será usando como exemplo da disciplina Engenharia de S
 | R02     | 11/04/2023  | 30/05/2023 | Raquel | Lista de funcionalidades da Release 02 (It2) |
 | R03     | 01/06/2023  | 15/06/2023 | Annielly | Lista de funcionalidades da Release 03 (It3) |
 | R04     | 16/06/2023  | 30/06/2023 | Maicon  | Lista de funcionalidades da Release 04 (It4) |
-| R05     | 02/07/2023  | 15/07/2023 | José Claudio | Lista de funcionalidades da Release 05 (It5) |
+| R05     | 02/07/2023  | 15/07/2023 | José Cláudio | Lista de funcionalidades da Release 05 (It5) |
 
 
 - Observação 3: Os releases são ajustados para fornecer um MVP. As release podem ter número de iterações diferentes, de acordo com as funcionalidades necessárias por release.
