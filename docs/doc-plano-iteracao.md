@@ -229,3 +229,15 @@ A Iteração 3 começou dia 15/07/2021 e vai até 03/08/2021. As atividades dess
 - Avisar ao gerente quando concluir uma tarefa;
 
 
+#### Desenvolvedor It03
+
+
+- Trabalhar nas tarefas e realizar pequenos commits marcando com a hashtag da issue;
+- Enviar commits da implementação do User Story da Iteração;
+- Enviar commits da implementação de **Testes de Unidade** do User Story que implementou;
+- Verificar se o SonarCloud.io detectou problemas no seu código;
+- Resolver os problemas detectados pelo SonarCloud que o gerente alocou para você;
+- Deixar a Cobertura dos Testes de Unidade para pelo menos 30%;
+- Avisar ao gerente quando concluir uma tarefa;
+
+
