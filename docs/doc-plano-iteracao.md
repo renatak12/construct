@@ -175,3 +175,26 @@ A Iteração 2 começou dia 30/06/2021 e vai até 14/07/2021. As atividades dess
 - Executar cada teste de aceitação do User Story, anotando o resultado em um Markdown dos Resultados dos Testes de Aceitação;
 - Cadastrar issues de bugs caso os Testes de Aceitação não passem;
 - Avisar ao gerente quando concluir uma tarefa;
+
+
+### T03 - Iteração 3 - Desenvolvimento
+
+
+A Iteração 3 começou dia 15/07/2021 e vai até 03/08/2021. As atividades dessa tarefa são:
+
+
+- Atualização do **Documento de Visão**, pode adicionar requisitos funcionais, se necessário;
+- Atualização do **Documento Lista de User Stories** com a lista de User Stories, pode adicionar _User Stories_ se necessário. coloque no diretório "docs" do repositório;
+  - Deve ser detalhado pelo menos **mais dois User Stories**;
+  - Um User Store pode ser formado de um ou mais requisitos funcionais;
+  - Implementar os dois User Stories descritos/detalhados na Iteração 02;
+- Completar Documento do Projeto Arquitetural do Sistema e descreva cada parte da arquitetura;
+  - [Modelo aqui!](https://docs.google.com/document/d/1i80vPaInPi5lSpI7rk4QExnO86iEmrsHBfmYRy6RDSM/edit?usp=sharing);
+- Atualizar o Documento com a Contagem de Ponto de Função, coloque no diretório "docs" do repositório
+  - [Modelo aqui!](https://docs.google.com/document/d/1s4bMbrpQt9RF6tymXvI0HHfQO14hMyL08UxmX1eH82s/edit?usp=sharing);
+  - Faça a contagem detalhada do tamanho funcional do Projeto;
+- Criar documento com o Resultados dos Testes de Sistema para o caso de uso **base**.
+  - O relatório de Testes deve serguir esse [Modelo aqui!](https://docs.google.com/document/d/11hLKf0FcspQrDRfo3gRMXzuY1028cUeniv_Aob8DX_0/edit?usp=sharing)
+- Cadastrar issues de bugs caso os Testes de Aceitação não passem;
+
+
