@@ -198,3 +198,23 @@ A Iteração 3 começou dia 15/07/2021 e vai até 03/08/2021. As atividades dess
 - Cadastrar issues de bugs caso os Testes de Aceitação não passem;
 
 
+#### Gerentes It03
+
+
+- Criar Milestones da Iteração 3;
+- Definir e descrever as tarefas (issues) da Iteração 3 (milestones) e
+  alocar as issues para cada membro da equipe;
+- Atualizar Plano de Release e Plano de Iteração;
+- Definir qual User Story cada membro da equipe vai descrever/detalhar;
+  - Detalhar ou Descrever um US é criar a descrição (estória do usuário) e os testes de aceitação);
+- Definir quem vai detalhar a Arquitetura do Sistema que faz parte do **Documento Projeto Arquitetural** e o que cada membro da equipe vai preparar;
+- O gerente deve fazer a contagem indicativa do tamanho funcional de Projeto;
+- Verificar a Contagem Detalhada do tamanho funcional do Sistema;
+- Executar análise do SonarCloud.io;
+- Verificar os problemas detectados pelo SonarCloud e criar tarefas no github;
+- Verificar Cobertura dos Testes de Unidade para pelo menos 30%;
+- Cadastrar issues de bugs caso detectados pelo Testador no relatório de testes;
+- Cadastrar issues de correção de implementação caso detectados pelo Testador no relatório de testes;
+- Fechar tarefas se concluída;
+
+
