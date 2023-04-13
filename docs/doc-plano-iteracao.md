@@ -218,3 +218,14 @@ A Iteração 3 começou dia 15/07/2021 e vai até 03/08/2021. As atividades dess
 - Fechar tarefas se concluída;
 
 
+#### Analistas It03
+
+
+- Trabalhar nas tarefas e realizar pequenos commits marcando com a hashtag da issue;
+- Enviar commits do User Story que detalhou;
+- Enviar commits da contagem do User Story que detalhou;
+  - Checar a contagem detalhada do Sistema para contemplar esse User Story;
+- Enviar commits das outras tarefas;
+- Avisar ao gerente quando concluir uma tarefa;
+
+
