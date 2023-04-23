@@ -11,8 +11,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | Data       | Versão |                           Descrição                            | Autor                    |
 | :--------- | :----: | :------------------------------------------------------------: | :----------------------- |
-| 10/06/2023 | 0.0.1  |               Template e descrição do documento                | Renata Karla Araújo dos Santos |
-| 11/06/2023 | 0.0.2  |                Detalhamento do User Story US01                 | Renata Karla Araújo dos Santos    |
+| 10/03/2023 | 0.0.1  |               Template e descrição do documento                | Renata Karla Araújo dos Santos |
+| 11/03/2023 | 0.0.2  |                Detalhamento do User Story US01                 | Renata Karla Araújo dos Santos    |
+| 23/04/2023 | 0.0.3  |                Testes do User Story US01                 | Renata Karla Araújo dos Santos    |
 
 ### User Story US01 - Manter Usuário
 
@@ -35,3 +36,13 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Tempo Gasto (real):** |           |
 | **Tamanho Funcional**   | 7 PF      |
 
+| Testes de Aceitação (TA) |                                                                                                                                                                                                                                                                                                                                              |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Código**               | **Descrição**                                                                                                                                                                                                                                                                                                                                |
+| **TA01.01**              | O usuário é redirecionado para a página de login social e tudo ocorre corretamente. Ele é redirecionado para a tela de boas-vindas da plataforma.                                                                                                                                                                                            |
+| **TA01.02**              | O usuário é redirecionado para a página de login social e autenticação social falha. É exibida a mensagem: "Não foi possível realizar o login, Tente novamente". O usuário é redirecionado para a tela de login.                                                                                                                             |
+| **TA01.03**              | O usuário solicita a exclusão de seu perfil na página de visualização de detalhes, uma notificação de confirmação é exibida em modal ou toast, a exclusão é realizada e a mensagem "Perfil excluído com sucesso" é exibida. O usuário é redirecionado para a tela principal.                                                                 |
+| **TA01.04**              | O usuário solicita a exclusão de seu perfil na página de visualização de detalhes, a exclusão não ocorre e a mensagem "Tente novamente" é exibida. O usuário é redirecionado para a página de visualização de detalhes de usuário.                                                                                                           |
+| **TA01.05**              | O usuário, na tela de detalhes, realiza alterações nas informações e seleciona para salvar,tudo ocorre corretamente e a mensagem "Tudo Certo!" é exibida. O usuário é redirecionado para a tela de detalhes com as novas informações.                                                                                                         |
+| **TA01.06**              | O usuário, na tela de detalhes, realiza alterações nas informações e seleciona para salvar,ocorre uma falha na atualização e a mensagem "Problemas técnicos, Tente novamente..." é exbida. O usuário continua na mesma tela até solicitar para salvar novamente ou cancelar as alterações.                                                   |
+| **TA01.07**              | O usuário, na tela de detalhes, realiza alterações nas informações e seleciona para salvar, o usuário preenche incorretamente alguma informação e a mensagem "Ops! Tem alguma coisa errada, verifique os dados e tente novamente". O usuário continua na mesma tela até alterar e solicitar para salvar novamente ou cancelar as alterações. |
