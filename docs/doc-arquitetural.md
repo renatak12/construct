@@ -31,8 +31,21 @@ Neste documento é abordado a arquitetura e características de uma plataforma, 
 | ---------- | ------ | ----------------------------------------------- | --------------- |
 | 27/04/2023 | 1.0    | Documento Inicial                               | Renata Araújo       |
 | 27/04/2023 | 1.1    | Organização da estrutura e adição de index      | Renata Araújo       |
+| 28/04/2023 | 2.0    | Adição da imagem e descrição da arquitetura     | Renata Araújo       |
 
 ## 2. Visão Geral
+
+A arquitetura utilizada nesse projeto está ilustada na Figura 1, logo abaixo. Django é um framework web Python de alto nível que encoraja o desenvolvimento rápido, com design limpo e pragmático, e utiliza o padrão *model-template-view*, conforme a ilustração sobre sua arquitetura.
+
+- **Model**: é responsável pelo mapeamento do banco de dados, sendo formado por modelos, onde cada modelo representa uma tabela e seus atributos representam os campos da tabela.
+
+- **Template**: é responsável pela interface do usuário, contém o HTML, CSS e JavaScript da aplicação.
+
+- **View**: é responsável por recepcionar, processar e responder requisições, tratando do acesso ao banco de dados.
+
+![Modelo arq](images/modelo_arq.jpg)
+
+Figure 1. Imagem que representa a visão geral no documento.
 
 ## 3. Requisitos Não Funcionais
 
