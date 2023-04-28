@@ -32,6 +32,7 @@ Neste documento é abordado a arquitetura e características de uma plataforma, 
 | 27/04/2023 | 1.0    | Documento Inicial                               | Renata Araújo       |
 | 27/04/2023 | 1.1    | Organização da estrutura e adição de index      | Renata Araújo       |
 | 28/04/2023 | 2.0    | Adição da imagem e descrição da arquitetura     | Renata Araújo       |
+| 28/04/2023 | 2.1    | Adição de lista de requisitos não-funcionais    | Renata Araújo       |
 
 ## 2. Visão Geral
 
@@ -48,6 +49,41 @@ A arquitetura utilizada nesse projeto está ilustada na Figura 1, logo abaixo. D
 Figure 1. Imagem que representa a visão geral no documento.
 
 ## 3. Requisitos Não Funcionais
+
+**Requisitos não-funcionais:** foi elaborada uma lista de requisitos não funcionais que fazem parte do sistema, descrevendo cada requisito, mostrando sua finalidade e funcionamento para uma boa experiência do usuário final.
+
+<table>
+  <td>Requitos</td><td>Descrição</td>
+  <tr>
+   <td>RNF001
+    <br>Design</br>
+    </td>
+   <td>
+      <p> <strong> 1.</strong> O desing do sistema deve ser intuivo e organizado.
+    </td>
+  </tr>
+  <tr>
+   <td>RNF002 Desempenho</td>
+   <td>
+    <p> <strong> 1. </strong> O sistema deve executar as consultas em milessegundos.
+    <p> <strong> 2. </strong>Deve manter um log de todos os acessos.
+    </td>
+  </tr>
+  <tr>
+    <td>RNF003 Interoperabilidade</td>
+    <td>
+      <p> <strong> 1. </strong> O software deve ser desenvolvido com os frameworks Django com banco de dados PostgreSql server e firebase para autenticação.
+    </td>
+  </tr>
+  <tr>
+    <td>RNF004
+      <br>Segurança</br>
+     </td>
+    <td>
+      <p> <strong> 1. </strong> O software deve possuir autenticação social para garantir a integridade dos dados de usuário.
+    </td>
+  </tr>
+</table>
 
 ## 4. Mecanismos arquiteturais
 
