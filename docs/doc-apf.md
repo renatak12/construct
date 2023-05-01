@@ -37,17 +37,19 @@ US0
 ## **Tipos de contagem**  
 ### Contagem Indicativa (Ci)  
 Em Administração de Projetos de Software, "Contagem Indicativa" (CI) é uma técnica utilizada na Análise de Pontos de Função (APF) para obter uma estimativa aproximada do tamanho e complexidade do software a ser desenvolvido.  
+
+A Contagem Indicativa é feita com base em informações de alto nível sobre o projeto, como descrições de requisitos, casos de uso ou protótipos. Com base nessas informações, o analista de pontos de função faz uma avaliação rápida e aproximada do número de funcionalidades do sistema e de sua complexidade, para obter uma estimativa preliminar da quantidade de pontos de função que serão contados.
+
+Essa estimativa preliminar pode ser usada para avaliar a viabilidade do projeto, estimar o custo e o prazo de desenvolvimento e ajudar na definição do escopo do projeto. No entanto, é importante ressaltar que a Contagem Indicativa não substitui a Contagem Detalhada de Pontos de Função, que é realizada posteriormente, com base em informações mais precisas e detalhadas sobre o software a ser desenvolvido.  
+
 | ******  | ****** | ++++ |
 | --------------- | ---------------------- | :-----------: |
 |  -  |  -  |  -  |
 |  -  |  -  |  -  |
 |  - |  -  |  -  |
 |  -  | - | - |
-|  **-**  |  **-**  |  **-**  |
+|  **-**  |  **-**  |  **-**  |  
 
-A Contagem Indicativa é feita com base em informações de alto nível sobre o projeto, como descrições de requisitos, casos de uso ou protótipos. Com base nessas informações, o analista de pontos de função faz uma avaliação rápida e aproximada do número de funcionalidades do sistema e de sua complexidade, para obter uma estimativa preliminar da quantidade de pontos de função que serão contados.
-
-Essa estimativa preliminar pode ser usada para avaliar a viabilidade do projeto, estimar o custo e o prazo de desenvolvimento e ajudar na definição do escopo do projeto. No entanto, é importante ressaltar que a Contagem Indicativa não substitui a Contagem Detalhada de Pontos de Função, que é realizada posteriormente, com base em informações mais precisas e detalhadas sobre o software a ser desenvolvido.  
 ### Contagem Estimativa (Ce)  
 "Contagem Estimativa" (CE) é outra técnica utilizada na Análise de Pontos de Função (APF) para obter uma estimativa aproximada do tamanho e complexidade do software a ser desenvolvido.
 
