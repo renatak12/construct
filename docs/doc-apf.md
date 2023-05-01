@@ -26,6 +26,7 @@ O construct é um sistema de gestão para lojas de materiais de construção que
     PF - Pontos de Função  
     APF - Análise de Pontos de Função  
     ALI - Arquivos Lógicos Internos
+    AIE - Arquivos de Interface Externa
 
 
 ## **Lista de User Stores**  
@@ -49,13 +50,13 @@ Essa estimativa preliminar pode ser usada para avaliar a viabilidade do projeto,
 
 Na contagem indicativa (Ci) só é necessário conhecer e analisar as Funções de Dados. Desta forma, os ALIs (Arquivos Lógicos Internos) com o valor de 35 PF cada e os AIEs (Arquivos de Interface Externa) com o valor de 15 PF cada.
 
-| ******  | ****** | ++++ |
-| --------------- | ---------------------- | :-----------: |
-|  -  |  -  |  -  |
+| Função de Dados | Entidades Relacionadas | Tamanho em PF  |  
+|  ------  |  -------  |  ------  |  
+|  ALI Usuário  |  Produto  |  35 PF  |
 |  -  |  -  |  -  |
 |  - |  -  |  -  |
 |  -  | - | - |
-|  **-**  |  **-**  |  **-**  |  
+|  *Total*  |  *CI*  |  *35 PF* |  
 
 ### Contagem Estimativa (Ce)  
 "Contagem Estimativa" (CE) é outra técnica utilizada na Análise de Pontos de Função (APF) para obter uma estimativa aproximada do tamanho e complexidade do software a ser desenvolvido.
