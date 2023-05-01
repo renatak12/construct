@@ -31,8 +31,13 @@ O construct é um sistema de gestão para lojas de materiais de construção que
 ## **Lista de User Stores**  
 Lista de User Stores e requisitos a ela associados.  
 
-US01 - ************  
-US0
+US01 - Manter Usuario  
+* RF16 - Cadastrar Usuário
+* RF17 - Alterar Usuário
+* RF18 - Consultar Usuário
+* RF19 - Vizualizar detalhes do Usuário
+* RF20 - Excluir Usuário
+
 
 ## **Tipos de contagem**  
 ### Contagem Indicativa (Ci)  
