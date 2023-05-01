@@ -27,9 +27,10 @@ O construct é um sistema de gestão para lojas de materiais de construção que
     APF - Análise de Pontos de Função  
     ALI - Arquivos Lógicos Internos
     AIE - Arquivos de Interface Externa
+    RF - Requisito Funcional
 
 
-## **Lista de User Stores**  
+## **Lista de User Stores (US)**  
 Lista de User Stores e requisitos a ela associados.  
 
 US01 - Manter Usuario  
