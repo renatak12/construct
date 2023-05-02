@@ -54,13 +54,6 @@ Representa uma venda realizada na loja. Cada venda tem uma data, um tipo, um pre
 
 A entidade pagamento é geralmente usada para registrar as informações de pagamento feitas pelos clientes. Um pagamento pode ter id, data, valor total, tipo de pagamento, status de pagamento, etc. E está associada a um cliente e a uma venda.
 
-
-### Entidade: Relatórios
-
-
-Uma entidade relatório geralmente é usada para armazenar informações sobre relatórios que devem ser gerados pelo sistema. Um relatório tem um id, uma descrição e está associado a uma ou mais vendas.
-
-
 ## Dicionário de Dados
 
 
@@ -142,17 +135,7 @@ Dicionário de dados centraliza informações sobre o conjunto de dados (dataset
 | valor_total  |  NN   |   FLOAT   |    7    | Valor total do pagamento.    |
 | venda_id  |  FK   |   NUMERIC   |    4    | Chave para uma venda.  |
 | cliente_id  |  FK   |   NUMERIC   |    6    | Chave para um cliente.  |
-
-
-## Tabela: Relatório
-
-
-| Atributo    | Chave | Tipo de dado | Tamanho | Descrição                                                           |
-| ----------- | :---: | :----------: | :-----: | ------------------------------------------------------------------- |
-| id          |  PK   |   NUMERIC    |    4    | Identificador incremental de venda.                              |
-| descricao_relatorio   |  NN   |   VARCHAR[256]   |    256    | Descrição do relatório e seu propósito. |
-| venda_id      |  FK   | NUMERIC  |   4   | Chave para uma venda.          |                                    
-
+                                 
 
 ### Referências
 
