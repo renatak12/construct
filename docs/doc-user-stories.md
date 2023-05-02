@@ -11,8 +11,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | Data       | Versão |                           Descrição                            | Autor                    |
 | :--------- | :----: | :------------------------------------------------------------: | :----------------------- |
-| 10/06/2023 | 0.0.1  |               Template e descrição do documento                | Renata Karla Araújo dos Santos |
-| 11/06/2023 | 0.0.2  |                Detalhamento do User Story US01                 | Renata Karla Araújo dos Santos    |
+| 10/04/2023 | 1.0  |               Template e descrição do documento                | Renata Karla Araújo dos Santos |
+| 02/05/2023 | 2.0  |                Detalhamento do User Story US01                 | Renata Karla Araújo dos Santos    |
 
 ### User Story US01 - Manter Usuário
 
@@ -34,4 +34,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Estimativa**          | 8 h       |
 | **Tempo Gasto (real):** |           |
 | **Tamanho Funcional**   | 7 PF      |
+| **Analista**   | Renata      |
+| **Desenvolvedor**   | Renata      |
+| **Revisor**   | Raquel      |
+|**Testador**   | Annielly      |
 
