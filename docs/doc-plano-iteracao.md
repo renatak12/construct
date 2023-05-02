@@ -9,11 +9,11 @@ Este plano de iteração será usando como exemplo da disciplina Engenharia de S
 
 | Iteração | Data início | Data Final | Apresentação | Gerente | Detalhes                                                                                                                                                                                                                               |
 | -------- | ----------- | ---------- | ------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| It1      | 07/03/2023  | 30/03/2023 | 11/04/2023   | Renata | Criar Documento de Visão, Modelos e Plano de Iteração e Plano de Release, Detalhar User Story Base - US00, Estrutura do Projeto (Implementar US00)                                                                                     |
-| It2      | 11/04/2023  | 30/05/2023 | 30/05/2023   | Raquel | Implementar US00, Testar US00, Detalhar US01, Detalhar US02                                                                                                                                                                            |
-| It3      | 01/06/2023  | 15/06/2023 | 15/06/2023   | Annielly | Implementar US01, Testar US01, Implementar US02, Testar US02, Detalhar US03, Deploy do Release (Implantação)                                                                                                                           |
-| It4      | 16/06/2023  | 30/06/2023 | 01/07/2023   | Maicon | Criar Documento de Contagem por Pontos de Função,  Arquitetura Geral do Sistema, Implementar US03,                                                                                                                                     |
-| It5      | 02/07/2023  | 15/07/2023 | 16/07/2023   | José Cláudio | Criar Relatório de Testes, Atualizar Documento de Visão, Modelos, Plano de Iteração, Plano de Release, Documento de Contagem por Pontos de Função e Arquitetura Geral do Sistema, Detalhar US04, Implementar US04 e Implementar Testes |
+| It1      | 27/03/2023  | 13/04/2023 | 02/05/2023   | Renata | Criar Documento de Visão, Modelos e Plano de Iteração e Release, Detalhar User Story Base - US01, Estrutura do Projeto (código base)                 |
+| It2      | 14/04/2023  | 04/05/2023 | 09/05/2023  | Raquel | Implementar US01, Testar US01, Detalhar US02 e US03, Criar Documento de Contagem por Pontos de Função,  Arquitetura Geral do Sistema                                                                                                                                                                            |
+| It3      | 10/05/2023  | 25/05/2023 | 25/05/2023   | Annielly | Implementar US02, Testar US02, Implementar US03, Testar US03, Detalhar US04 e US05, Deploy do Release (Implantação)                                                                                                                           |
+| It4      | 26/05/2023  | 22/06/2023 | 22/06/2023   | Maicon | Implementar US04, Testar US04, Implementar US05, Testar US05, Criar Relatório de Testes, Deploy do Release (Implantação)                                                                                                                                     |
+| It5      | 23/06/2023  | 20/07/2023 | 20/07/2023   | José Cláudio | Atualizar Documento de Visão, Modelos, Plano de Iteração, Plano de Release, Documento de Contagem por Pontos de Função e Arquitetura Geral do Sistema, Implementar Testes |
 
 
 - Observação 1: Cada Iteração de ser cadastrada como Milestones no GitHub.
@@ -25,11 +25,11 @@ Este plano de iteração será usando como exemplo da disciplina Engenharia de S
 
 | Release | Data início | Data Final | Gerente | Detalhes                                     |
 | ------- | ----------- | ---------- | ------- | -------------------------------------------- |
-| R01     | 07/03/2023  | 30/03/2023 | Renata | Lista de funcionalidades da Release 01 (It1) |
-| R02     | 11/04/2023  | 30/05/2023 | Raquel | Lista de funcionalidades da Release 02 (It2) |
-| R03     | 01/06/2023  | 15/06/2023 | Annielly | Lista de funcionalidades da Release 03 (It3) |
-| R04     | 16/06/2023  | 30/06/2023 | Maicon  | Lista de funcionalidades da Release 04 (It4) |
-| R05     | 02/07/2023  | 15/07/2023 | José Cláudio | Lista de funcionalidades da Release 05 (It5) |
+| R01     | 27/03/2023  | 13/04/2023 | Renata | Lista de funcionalidades da Release 01 (It1) |
+| R02     | 14/04/2023  | 04/05/2023 | Raquel | Lista de funcionalidades da Release 02 (It2) |
+| R03     | 10/05/2023  | 25/05/2023 | Annielly | Lista de funcionalidades da Release 03 (It3) |
+| R04     | 26/05/2023  | 22/06/2023 | Maicon  | Lista de funcionalidades da Release 04 (It4) |
+| R05     | 23/06/2023  | 20/07/2023 | José Cláudio | Lista de funcionalidades da Release 05 (It5) |
 
 
 - Observação 3: Os releases são ajustados para fornecer um MVP. As release podem ter número de iterações diferentes, de acordo com as funcionalidades necessárias por release.
