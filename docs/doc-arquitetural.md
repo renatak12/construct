@@ -33,6 +33,7 @@ Neste documento é abordado a arquitetura e características de uma plataforma, 
 | 27/04/2023 | 1.1    | Organização da estrutura e adição de index      | Renata Araújo       |
 | 28/04/2023 | 2.0    | Adição da imagem e descrição da arquitetura     | Renata Araújo       |
 | 28/04/2023 | 2.1    | Adição de lista de requisitos não-funcionais    | Renata Araújo       |
+| 05/05/2023 | 3.0    | Adição dos Mecanismos arquiteturais    | Renata Araújo       |
 
 ## 2. Visão Geral
 
@@ -87,6 +88,17 @@ Figure 1. Imagem que representa a visão geral no documento.
 
 ## 4. Mecanismos arquiteturais
 
+A seguir está listado os principais mecanismos arquiteturais presentes no sistema, os mecanismos de análise, design e implementação. O intuito desta etapa é verificar e garantir que todas as preocupações técnicas relativas à arquitetura do sistema tenham sido capturadas.
+
+| Mecanismo de Análise                       | Mecanismo de Design                                  | Mecanismo de Implementação      |
+| ------------------------------------------ | ---------------------------------------------------- | ------------------------------- |
+| Persistência                               | Banco de dados relacional                            | PostgreSQL                   |
+| Integração com sistemas legados (Cobrança)       | Interface utilizando XML em serviço e arquivo texto.          | Web Service         |
+| Front-End                                  | Interface gráfica de usuário.                        | Next.js.                  |
+| Back-End                                   | Interface de controle de dados.                      | Django/Django-REST-framework.   |
+| Host                                       | Disponibilização da plataforma.                      | Vercel |
+| Build                                       | Programação da IDE para validação do código fonte.                      | Visual Studio Team System Foundation Server. |
+| Deploy                                       | Programação da IDE para validação do código fonte.                      | Visual Studio Team System Foundation Server. |
 ### 4.1. Tecnologias
 
 ## 5. Decisões de Design
