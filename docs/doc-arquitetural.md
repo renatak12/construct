@@ -33,7 +33,8 @@ Neste documento é abordado a arquitetura e características de uma plataforma, 
 | 27/04/2023 | 1.1    | Organização da estrutura e adição de index      | Renata Araújo       |
 | 28/04/2023 | 2.0    | Adição da imagem e descrição da arquitetura     | Renata Araújo       |
 | 28/04/2023 | 2.1    | Adição de lista de requisitos não-funcionais    | Renata Araújo       |
-| 05/05/2023 | 3.0    | Adição dos Mecanismos arquiteturais    | Renata Araújo       |
+| 02/05/2023 | 3.0    | Adição dos Mecanismos arquiteturais    | Renata Araújo       |
+| 02/05/2023 | 3.1    | Adição das tecnologias    | Renata Araújo       |
 
 ## 2. Visão Geral
 
@@ -100,6 +101,17 @@ A seguir está listado os principais mecanismos arquiteturais presentes no siste
 | Build                                       | Programação da IDE para validação do código fonte.                      | Visual Studio Team System Foundation Server. |
 | Deploy                                       | Programação da IDE para validação do código fonte.                      | Visual Studio Team System Foundation Server. |
 ### 4.1. Tecnologias
+
+A seguir descrevemos brevemente as principais tecnologias empregadas no desenvolvimento desta aplicação, suas funcionalidades e o papel que desempenham.
+
+| Tecnologias                  | Descrição                                                                                                                                                                                                                                                                                                                                                                               |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Javascript**               | JavaScript é uma linguagem de programação de alto nível e interpretada, usada principalmente para programação web, desenvolvimento de jogos e aplicativos móveis. Ela é executada no lado do cliente (no navegador) e é responsável por adicionar interatividade e dinamismo às páginas web, permitindo que os usuários interajam com os elementos da página, além de possibilitar o desenvolvimento de aplicações web complexas. O JavaScript é uma linguagem flexível e bastante popular entre desenvolvedores, e pode ser usado em conjunto com outras tecnologias, como HTML e CSS, para criar sites modernos e dinâmicos.                                                                  |
+| **Next.js**                  | O Next.js é um _framework_ construído pela Vercel que envolve o React e agrega diversos recursos como SSR, SSG, otimização de imagens, roteamento, entre vários outros. Com o Next podemos reduzir a quantidade de código JS/TS empregado diretamente na página, expondo assim, cada vez menos a aplicação.                                                                             |
+| **PostgreSQL**                  | PostgreSQL é um sistema gerenciador de banco de dados relacional (SGBD) de código aberto, amplamente utilizado em aplicações web e empresariais. Ele é conhecido por sua confiabilidade, escalabilidade e suporte a recursos avançados, como transações, chaves estrangeiras, índices e funções armazenadas. O PostgreSQL suporta uma grande variedade de plataformas e linguagens de programação, incluindo Python, Java, PHP e Ruby.                                                                                                      |
+| **Django**                   | Django é um _framework_ construído em Python de alto nível de desenvolvimento rápido, design limpo e pragmático. O Django possui alta escalabilidade e vários recursos de segurança, como suporte embutido a autenticação e proteção contra _sql injection_.                                                                                                                            |
+| **Django** REST Framework    | O padrão REST empregado nesse _meta-framework_ possui os preceitos empregados no desenvolvimento desta aplicação, além de contar com a alta escalabilidade oferecida pelo Django, também emprega ORM e integrações de autenticação, como python-social-auth.                                                                                                                            |
+|                              |                                                                                                                                                                                                                                                                                                                                                                                         |
 
 ## 5. Decisões de Design
 
