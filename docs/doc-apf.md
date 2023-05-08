@@ -75,3 +75,39 @@ A Contagem Detalhada envolve a análise detalhada dos requisitos e funcionalidad
 Durante a Contagem Detalhada, o analista de pontos de função utiliza um conjunto de regras e diretrizes estabelecidas pelo International Function Point Users Group (IFPUG) ou outras organizações reconhecidas para determinar a quantidade de pontos de função em cada funcionalidade. Essas regras levam em consideração fatores como o número de inputs, outputs, consultas, arquivos e interfaces do sistema, bem como sua complexidade.
 
 A Contagem Detalhada é considerada a técnica mais precisa para medir o tamanho e complexidade do software a ser desenvolvido e é amplamente utilizada em projetos de software para estimar o esforço de desenvolvimento, planejar o cronograma do projeto, alocar recursos e monitorar o desempenho do projeto.
+
+A contagem Detalhada (Cd) analisa todas as funções da dados (ALI’s e AIE’s) classificando com complexidades baixa, média e alta. Também analisa todas as transações classificando sua complexidade em baixa, média e alta conforme tabela de contribuições.
+
+| Funções | Baixa | Média | Alta |
+|------------|-----------|-----------|---------|
+| ALI     | 7     | 10    | 15   |
+| AIE     | 5     | 7     | 10   |
+| EE      | 3     | 4     | 6    |
+| CE      | 3     | 4     | 6    |
+| SE      | 4     | 5     | 7    |
+
+A seguir temos as tabelas de complexidade para ALI e AIE.
+
+|      | < 20 | 20 – 50 | > 50 |
+|------|------|---------|------|
+| 1    | Baixa| Baixa   | Média|
+| 2 - 5| Baixa| Média   | Alta |
+| > 5  | Média| Alta    | Alta |
+
+A seguir temos as tabelas de complexidade para EE.  
+
+|     | < 5 | 5 – 15 | > 15 |
+|------|-----|--------|------|
+| < 2  | Baixa| Baixa | Média|
+| 2    | Baixa| Média | Alta |
+| > 2  | Média| Alta  | Alta |  
+
+A seguir temos as tabelas de complexidade para CE e SE.  
+
+|      | < 6 | 6 – 19 | > 19 |
+|------|-----|--------|------|
+| < 2  | Baixa| Baixa | Média|
+| 2 - 3| Baixa| Média | Alta |
+| > 3  | Média| Alta  | Alta |  
+
+Análise Detalhada
