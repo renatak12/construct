@@ -23,20 +23,51 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-
+            <li class="nav-item active">
+              <a class="nav-link" href="http://127.0.0.1:8000/auth/index">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="http://127.0.0.1:8000/auth/cadastrar_vendedor/">Usuários<span class="sr-only">(current)</span></a>
+            </li>
+              <a class="nav-link" href="#">Estoque<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Produtos<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Estoque<span class="sr-only">(current)</span></a>
+            </li>
+              <a class="nav-link" href="#">Clientes<span class="sr-only">(current)</span></a>
+            </li>
           </ul>
         </div>
         <nav class="navbar navbar-dark bg-dark">
           <form>
-            <a class="nav-link" href="http://127.0.0.1:8000/auth/login/"><button class="btn btn-info" type="button">Login</button></a>
+            <a class="nav-link" href="http://127.0.0.1:8000/auth/login"><button class="btn btn-info" type="button">Logout</button></a>
           </form>
         </nav>
         
       </nav>
-
+      
     {% block 'body' %}
+    
 
     {% endblock %}
+
+
+      <body>
+        <form>
+            <div class="card bg-dark text-dark">
+                <img class="card-img" src="https://blog.telhanorte.com.br/wp-content/uploads/2021/09/Design-sem-nome-1-1.png" alt="Card image">
+                <div class="card-img-overlay">
+                <h3 class="card-title">Bem vindo</h3>
+                <p class="card-text"></p>
+                </div>
+            </div>
+            </div>
+        </form>
+      </body>
+
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>

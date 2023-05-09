@@ -10,6 +10,9 @@ from django.contrib import auth
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 
+def index(request):
+    return render(request, 'index.html')
+
 @has_permission_decorator('cadastrar_vendedor')
 def cadastrar_vendedor(request):
     if request.method == "GET":
@@ -34,8 +37,9 @@ def cadastrar_vendedor(request):
                                             last_name=sobrenome,
                                             cargo="V")
 
-        # TO DO: Redirecionar com uma mensagem
-        return HttpResponse('Conta criada')
+        # Redirecionar com uma mensagem
+        #return HttpResponse('Conta criada')
+        return redirect(reverse('cadastrar_vendedor'))
 
 def login(request):
     if request.method == "GET":
@@ -53,7 +57,8 @@ def login(request):
             return HttpResponse('Usuário invalido')
         
         auth.login(request, user)
-        return HttpResponse('Usuário logado com sucesso')
+        #return HttpResponse('Usuário logado com sucesso')
+        return redirect(reverse('index'))
     
 def logout(request):
     request.session.flush()
