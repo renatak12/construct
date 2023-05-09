@@ -104,12 +104,13 @@ A seguir temos as tabelas de complexidade para CE e SE.
 
 Análise Detalhada
 
-| Função | Tipo | Complexidade | PF | DER | RLR | Contribuição |
-|--------|------|--------------|----|-----|-----|--------------|
-| Usuário | ALI  | Média        | 10 | 6   | 1   | 6 x 1 = 6    |
-| Cadastrar Usuário | EE   | Baixa        | 3  | 4   | 0   | 0    |
-| Alterar Usuário   | EE   | Baixa        | 3  | 4   | 0   | 0    |
-| Consultar Usuário | CE   | Baixa        | 3  | 5   | 1   | 5    |
-| Visualizar detalhes do Usuário | CE   | Baixa        | 3  | 5   | 1   | 5    |
-| Excluir Usuário   | EE   | Baixa        | 3  | 4   | 0   |     |
-| **Total**         |      |              | **25** |||| **16** |
+|  Descrição  |  Tipo  |  DER  |  RLR  |  Complexidade  |  Contribuição  |
+|--------|------|--------------|----|-----|-----|
+| Usuário |  -  |  -  |  -  |  -  |  -  |  
+|  Descrição  |  Tipo  |  DER  |  RLR  |  Complexidade  |  Contribuição  |  
+|  Cadastrar Usuário  |  -  |  -  |  -  |  -  |  -  |  
+|  Alterar Usuário  |  -  |  -  |  -  |  -  |  -  |  
+|  Consultar Usuário  |  -  |  -  |  -  |  -  |  -  |  
+|  Visualizar detalhes do Usuário  |  -  |  -  |  -  |  -  |  -  |  
+|  Excluir Usuário  |  -  |  -  |  -  |  -  |  -  |  
+|  **Total**  |  -  |  -  |  -  |  -  | **-** |
