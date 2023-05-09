@@ -111,3 +111,13 @@ A seguir temos as tabelas de complexidade para CE e SE.
 | > 3  | Média| Alta  | Alta |  
 
 Análise Detalhada
+
+| Função | Tipo | Complexidade | PF |
+|--------|------|--------------|----|
+| Usuário | ALI  | Média        | 10 |
+| Cadastrar Usuário | EE   | Baixa        | 3  |
+| Alterar Usuário   | EE   | Baixa        | 3  |
+| Consultar Usuário | CE   | Baixa        | 3  |
+| Visualizar detalhes do Usuário | CE   | Baixa        | 3  |
+| Excluir Usuário   | EE   | Baixa        | 3  |
+| **Total**         |      |              | **25** |
