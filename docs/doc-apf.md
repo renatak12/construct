@@ -84,7 +84,7 @@ A contagem Detalhada (Cd) analisa todas as funções da dados (ALI’s e AIE’s
 | AIE     | 5     | 7     | 10   |
 | EE      | 3     | 4     | 6    |
 | CE      | 3     | 4     | 6    |
-| SE      | 4     | 5     | 7    |
+| SE      | 4     | 5     | 7    |  
 
 A seguir temos as tabelas de complexidade para ALI e AIE.
 
