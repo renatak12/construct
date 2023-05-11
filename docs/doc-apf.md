@@ -80,7 +80,7 @@ A contagem Detalhada (Cd) analisa todas as funções da dados (ALI’s e AIE’s
 
 A seguir temos as tabelas de complexidade para ALI e AIE.
 
-|      | < 20 | 20 – 50 | > 50 |
+|    | < 20 | 20 – 50 | > 50 |
 |------|------|---------|------|
 | 1    | Baixa| Baixa   | Média|
 | 2 - 5| Baixa| Média   | Alta |
@@ -88,7 +88,7 @@ A seguir temos as tabelas de complexidade para ALI e AIE.
 
 A seguir temos as tabelas de complexidade para EE.  
 
-|     | < 5 | 5 – 15 | > 15 |
+|    | < 5 | 5 – 15 | > 15 |
 |------|-----|--------|------|
 | < 2  | Baixa| Baixa | Média|
 | 2    | Baixa| Média | Alta |
@@ -96,7 +96,7 @@ A seguir temos as tabelas de complexidade para EE.
 
 A seguir temos as tabelas de complexidade para CE e SE.  
 
-|      | < 6 | 6 – 19 | > 19 |
+|    | < 6 | 6 – 19 | > 19 |
 |------|-----|--------|------|
 | < 2  | Baixa| Baixa | Média|
 | 2 - 3| Baixa| Média | Alta |
@@ -106,11 +106,11 @@ Análise Detalhada
 
 |  Descrição  |  Tipo  |  DER  |  RLR  |  Complexidade  |  Contribuição  |
 |--------|------|--------------|----|-----|-----|
-| Usuário |  -  |  -  |  -  |  -  |  -  |  
+| ALI Usuário |  ALI  |  4  |  1  |  Baixa  |  7  |  
 |  Descrição  |  Tipo  |  DER  |  RLR  |  Complexidade  |  Contribuição  |  
-|  Cadastrar Usuário  |  -  |  -  |  -  |  -  |  -  |  
-|  Alterar Usuário  |  -  |  -  |  -  |  -  |  -  |  
-|  Consultar Usuário  |  -  |  -  |  -  |  -  |  -  |  
-|  Visualizar detalhes do Usuário  |  -  |  -  |  -  |  -  |  -  |  
-|  Excluir Usuário  |  -  |  -  |  -  |  -  |  -  |  
-|  **Total**  |  -  |  -  |  -  |  -  | **-** |
+|  Cadastrar Usuário  |  EE  |  4  |  1  |  Baixa  |  3  |  
+|  Alterar Usuário  |  EE  |  4  |  1  |  Baixa  |  3  |  
+|  Consultar Usuário  |  CE  |  4  |  1  |  Baixa  |  3  |  
+|  Visualizar detalhes do Usuário  |  CE  |  3  |  1  |  Baixa  |  3  |  
+|  Excluir Usuário  |  EE  |  2  |  1  |  Baixa  |  3  |  
+|  **Total**  |    |    |    |    | **22** |
