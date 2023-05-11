@@ -13,7 +13,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | :--------- | :----: | :------------------------------------------------------------: | :----------------------- |
 | 10/04/2023 | 1.0  |               Template e descrição do documento                | Renata Karla Araújo dos Santos |
 | 02/05/2023 | 2.0  |                Detalhamento do User Story US01                 | Renata Karla Araújo dos Santos    |
-| 11/05/2023 | 3.0  |                Detalhamento dos User Stories US02 e US03                 | Renata Karla Araújo dos Santos    |
+| 08/05/2023 | 3.0  |                Detalhamento do User Story US02                 | Raquel Lima Fernandes    |
+| 11/05/2023 | 4.0  |                Detalhamento do User Story US03                 | Renata Karla Araújo dos Santos    |
 
 ### User Story US01 - Manter Usuário
 
