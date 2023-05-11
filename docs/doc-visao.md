@@ -1,5 +1,8 @@
 # Documento de Visão
 
+## Descrição do Projeto
+CONSTRUCT é um sistema de gestão para lojas de materiais de construção que visa oferecer um bom atendimento ao cliente, gestão de fornecedores, estoque e controle de pedidos e finanças, além da emissão de relatórios.
+
 ## Histórico de Revisões 
 
 | Data       | Versão | Descrição                                   | Autor(es)                |
