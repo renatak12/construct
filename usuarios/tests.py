@@ -11,4 +11,3 @@ class UserViewTests(TestCase):
         print('\nUserViewTests')
 
     
-    

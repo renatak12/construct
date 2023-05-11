@@ -67,7 +67,7 @@ def logout(request):
     request.session.flush()
     return redirect(reverse('login'))
 
-@has_permission_decorator('cadastrar_vendedor')
+#@has_permission_decorator('cadastrar_vendedor')
 def excluir_usuario(request, id):
     vendedor = get_object_or_404(Users, id=id)
     vendedor.delete()
