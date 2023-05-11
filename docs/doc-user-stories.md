@@ -60,10 +60,10 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Estimativa**          | 8 h       |
 | **Tempo Gasto (real):** |           |
 | **Tamanho Funcional**   | 7 PF      |
-| **Analista**   | Renata      |
-| **Desenvolvedor**   | Raquel      |
-| **Revisor**   | Annielly      |
-|**Testador**   | Maicon      |
+| **Analista**   | Raquel      |
+| **Desenvolvedor**   | Annielly      |
+| **Revisor**   | José Cláudio      |
+|**Testador**   | Renata      |
 
 ### User Story US03 - Manter Estoque
 
