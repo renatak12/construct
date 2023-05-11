@@ -14,7 +14,7 @@ O construct é um sistema de gestão para lojas de materiais de construção que
 | Lista de User Stories                 | [Clique aqui](docs/doc-user-stories.md)              |
 | Projeto Arquitetural do Software      | [Clique aqui](docs/doc-arquitetural.md)              |
 | Análise de Pontos de Função - APF     | [Clique aqui](docs/doc-apf.md)                                                          |
-| Termo de Abertura de Projeto          | [Clique aqui](docs/doc-project-charter.md)                                              |
+| Termo de Abertura de Projeto          | [Clique aqui](docs/doc-termo-abertura.md)                                              |
 | Relatório de Testes de Módulo/Sistema | [Clique aqui](docs/doc-us-tests.md)                                                     |
 
 ## Tecnologias utilizadas
