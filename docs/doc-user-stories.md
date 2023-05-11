@@ -39,3 +39,28 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**   | Raquel      |
 |**Testador**   | Annielly      |
 
+### User Story US02 - Manter Produto
+
+|               |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| ------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Descrição** | O sistema deve manter um cadastro de produtos que serão gerenciados pelo sistema. Um produto tem os atributos id, nome, descrição, preço, tipo, e estoque. O usuário administrador do sistema pode realizar as operações de adicionar, alterar, remover e listar os produtos comuns do sistema. |
+
+| **Requisitos envolvidos** |                                |
+| ------------------------- | :----------------------------- |
+| RF01                      | Cadastrar Produto              |
+| RF02                      | Alterar Produto                |
+| RF03                      | Consultar Produto              |
+| RF04                      | Vizualizar detalhes do Produto |
+| RF05                      | Excluir Produto                |
+
+|                         |           |
+| ----------------------- | :-------- |
+| **Prioridade**          | Essencial |
+| **Estimativa**          | 8 h       |
+| **Tempo Gasto (real):** |           |
+| **Tamanho Funcional**   | 7 PF      |
+| **Analista**   | Renata      |
+| **Desenvolvedor**   | Raquel      |
+| **Revisor**   | Annielly      |
+|**Testador**   | Maicon      |
+
