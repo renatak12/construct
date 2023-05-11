@@ -12,6 +12,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | 02/05/2023 | 2.0.0  |                Detalhamento do User Story US01                 | Renata Karla Araújo dos Santos |
 | 08/05/2023 | 3.0.0  |                Detalhamento do User Story US02                 | Raquel Lima Fernandes          |
 | 10/05/2023 | 4.0.0  |               Inserção dos testes de aceitação                 | Raquel Lima Fernandes          |
+| 11/05/2023 | 5.0.0  |                Detalhamento do User Story US03                 | Renata Karla Araújo dos Santos |
 
 ### User Story US01 - Manter Usuário
 
@@ -38,9 +39,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**   | Raquel      |
 |**Testador**   | Annielly      |
 
-| Data       | Versão |                           Descrição                       | Autor                          |
-| :--------- | :----: | :-------------------------------------------------------: | :----------------------------- |
-| 8/05/2023 | 1.0.0  |                Detalhamento do User Story US02            | Raquel Lima Fernandes          |
+
 
 
 <table>
@@ -117,3 +116,28 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
     </tr>
   </tbody>
 </table>
+
+### User Story US03 - Manter Estoque
+
+|               |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| ------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Descrição** | O sistema deve manter um estoque de produtos. Um estoque tem os atributos id, produto_id, descricao_produto, quantidade. O estoque deverá atualizar de acordo com as entradas e saídas de produtos. O usuário administrador do sistema pode realizar as operações de adicionar, alterar, remover e listar os produtos em estoque do sistema. |
+
+| **Requisitos envolvidos** |                                |
+| ------------------------- | :----------------------------- |
+| RF21                      | Cadastrar Estoque              |
+| RF22                      | Alterar Estoque                |
+| RF23                      | Consultar Estoque              |
+| RF24                      | Vizualizar detalhes do Estoque |
+| RF25                      | Excluir Estoque                |
+
+|                         |           |
+| ----------------------- | :-------- |
+| **Prioridade**          | Essencial |
+| **Estimativa**          | 8 h       |
+| **Tempo Gasto (real):** |           |
+| **Tamanho Funcional**   | 7 PF      |
+| **Analista**   | Renata      |
+| **Desenvolvedor**   | Raquel      |
+| **Revisor**   | Maicon      |
+|**Testador**   | José Claudio      |
