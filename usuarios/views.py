@@ -4,16 +4,18 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from rolepermissions.decorators import has_permission_decorator
 from .models import Users
+from django.core.exceptions import ValidationError
 from django.shortcuts import redirect
 from django.urls import reverse
 from django.contrib import auth
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 
+
 def index(request):
     return render(request, 'index.html')
 
-@has_permission_decorator('cadastrar_vendedor')
+#@has_permission_decorator('cadastrar_vendedor')
 def cadastrar_vendedor(request):
     if request.method == "GET":
         vendedores = Users.objects.filter(cargo="V")
@@ -44,7 +46,7 @@ def cadastrar_vendedor(request):
 def login(request):
     if request.method == "GET":
         if request.user.is_authenticated:
-            #return redirect(reverse('plataforma'))
+            #return redirect(reverse('index'))
             return render(request, 'login.html')
     elif request.method == "POST":
         login = request.POST.get('email')
@@ -59,6 +61,7 @@ def login(request):
         auth.login(request, user)
         #return HttpResponse('Usuário logado com sucesso')
         return redirect(reverse('index'))
+        #return render(request, 'login.html')
     
 def logout(request):
     request.session.flush()
