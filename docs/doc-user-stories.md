@@ -39,6 +39,15 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Revisor**   | Raquel      |
 |**Testador**   | Annielly      |
 
+| Testes de Aceitação (TA) |                                                                                                                                                                                                                                                                                                                                              |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Código**               | **Descrição**                                                                                                                                                                                                                                                                                                                                |
+| **TA01.01**              | O usuário é redirecionado para a página de login social e tudo ocorreu corretamente. Ele é redirecionado para a tela de boas-vindas da plataforma.                                                                                                                                                                                            |
+| **TA01.02**              | O usuário é redirecionado para a página de login social e autenticação social falha. É exibida a mensagem: "Não foi possível realizar o login, Tente novamente". O usuário é redirecionado para a tela de login.                                                                                                                             |
+| **TA01.03**              | O usuário solicita a exclusão de seu perfil na página de visualização de detalhes, uma notificação de confirmação é exibida, a exclusão é realizada e a mensagem "Perfil excluído com sucesso" é exibida.                                                                |                                                                                                                                                                                                                 
+| **TA01.04**              | O usuário, na tela de detalhes, realiza alterações nas informações e seleciona para salvar, o usuário preenche incorretamente alguma informação e a mensagem "Ops! Tem alguma coisa errada, verifique os dados e tente novamente". O usuário continua na mesma tela até alterar e solicitar para salvar novamente ou cancelar as alterações. |
+
+
 
 
 
