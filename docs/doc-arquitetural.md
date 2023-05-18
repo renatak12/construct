@@ -30,11 +30,13 @@ Neste documento é abordado a arquitetura e características de uma plataforma, 
 | Data       | Versão | Descrição                                       | Autor           |
 | ---------- | ------ | ----------------------------------------------- | --------------- |
 | 27/04/2023 | 1.0    | Documento Inicial                               | Renata Araújo       |
-| 27/04/2023 | 1.1    | Organização da estrutura e adição de index      | Renata Araújo       |
-| 28/04/2023 | 2.0    | Adição da imagem e descrição da arquitetura     | Renata Araújo       |
-| 28/04/2023 | 2.1    | Adição de lista de requisitos não-funcionais    | Renata Araújo       |
-| 02/05/2023 | 3.0    | Adição dos Mecanismos arquiteturais    | Renata Araújo       |
-| 02/05/2023 | 3.1    | Adição das tecnologias    | Renata Araújo       |
+| 27/04/2023 | 2.0    | Organização da estrutura e adição de index      | Renata Araújo       |
+| 28/04/2023 | 3.0    | Adição da imagem e descrição da arquitetura     | Renata Araújo       |
+| 28/04/2023 | 4.0    | Adição de lista de requisitos não-funcionais    | Renata Araújo       |
+| 02/05/2023 | 5.0    | Adição dos Mecanismos arquiteturais    | Renata Araújo       |
+| 02/05/2023 | 6.0    | Adição das tecnologias    | Renata Araújo       |
+| 18/05/2023 | 7.0    | Adição de decisões de design da arquitetura    | Renata Araújo       |
+| 18/05/2023 | 8.0    | Adição de validação com casos de testes    | Renata Araújo       |
 
 ## 2. Visão Geral
 
@@ -114,9 +116,40 @@ A seguir descrevemos brevemente as principais tecnologias empregadas no desenvol
 
 ## 5. Decisões de Design
 
+A arquitetura foi escolhida de acordo com a experiência da equipe com as tecnologias, metodologias e designs.
 ### 5.1. Da arquitetura
 
+A arquitetura monolítica foi descartada devido a necessidade da utilização de serviços externos e do tempo necessário para implementação. A arquitetura de Microkernel foi considerada de integração complexa e devido a falta de experiência da equipe, foi descartada. A arquitetura de microserviços é especialmente adequada para sistemas complexos, distribuídos e escaláveis.
+
+A arquitetura selecionada, ponderando sobre o ambiente proposto para a plataforma, foi a de camadas. É um estilo de arquitetura em que um sistema é dividido em camadas distintas, cada uma com uma responsabilidade específica. As camadas são organizadas hierarquicamente, onde cada camada depende da camada abaixo dela. Geralmente, as camadas incluem a camada de apresentação (interface do usuário), camada de lógica de negócios e camada de acesso a dados. A arquitetura em camadas permite uma separação clara de responsabilidades e promove a reutilização de componentes.
+
+Sendo assim a arquitetura do sistema foi dividida em três camadas, interface do usuário (Front-end), camada de lógica de negócios (Back-end) e camada de acesso a dados (Banco de dados).
+
 ## 6. Validação com Casos de Teste
+
+Nesta fase selecionar User Stories com cenários escolhidos para a validação da arquitetura apresentada. Casos de uso, backlog, requisitos de usuários ou qualquer outro nome que represente os itens relevantes para o funcionamento do sistema final, o intuito é exercitar e testar os principais aspectos de risco da arquitetura.
+
+Exemplo:
+
+<table>
+  <td>User Story</td><td>Motivos da escolha e descrição</td>
+  <tr>
+   <td>US-01
+     <br/>Manter usuario
+    </td>
+   <td>
+      <p> Este conjunto de funcionalidades devem ser testados, pois implicam na experiência que o usuário virá a ter com a criação e administração de seus projetos.<br/>
+      <br/><strong>1. Realizar login</strong>
+        <br/> Deve ser verificado se o login é valido.
+        <br/><strong>2. Cadastrar usuário</strong>
+        <br/> Deve ser verificado se os usuarios estão sendo cadastrados corretamente no sistema.
+        <br/><strong>3. Excluir usuário</strong>
+        <br/> Deve se verificar se o usuario a ser excluido está ou não ativo no sistema
+        <br/><strong>4. Listar usuário</strong>
+        <br/> Dever ser testado o campo de entrada para saber se o está retornando os dados solicitados.
+    </td>
+  </tr>
+</table>
 
 ## 7. Componentes
 
