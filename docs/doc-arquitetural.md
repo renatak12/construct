@@ -30,11 +30,12 @@ Neste documento é abordado a arquitetura e características de uma plataforma, 
 | Data       | Versão | Descrição                                       | Autor           |
 | ---------- | ------ | ----------------------------------------------- | --------------- |
 | 27/04/2023 | 1.0    | Documento Inicial                               | Renata Araújo       |
-| 27/04/2023 | 1.1    | Organização da estrutura e adição de index      | Renata Araújo       |
-| 28/04/2023 | 2.0    | Adição da imagem e descrição da arquitetura     | Renata Araújo       |
-| 28/04/2023 | 2.1    | Adição de lista de requisitos não-funcionais    | Renata Araújo       |
-| 02/05/2023 | 3.0    | Adição dos Mecanismos arquiteturais    | Renata Araújo       |
-| 02/05/2023 | 3.1    | Adição das tecnologias    | Renata Araújo       |
+| 27/04/2023 | 2.0    | Organização da estrutura e adição de index      | Renata Araújo       |
+| 28/04/2023 | 3.0    | Adição da imagem e descrição da arquitetura     | Renata Araújo       |
+| 28/04/2023 | 4.0    | Adição de lista de requisitos não-funcionais    | Renata Araújo       |
+| 02/05/2023 | 5.0    | Adição dos Mecanismos arquiteturais    | Renata Araújo       |
+| 02/05/2023 | 6.0    | Adição das tecnologias    | Renata Araújo       |
+| 18/05/2023 | 7.0    | Adição de decisões de design da arquitetura    | Renata Araújo       |
 
 ## 2. Visão Geral
 
@@ -114,7 +115,14 @@ A seguir descrevemos brevemente as principais tecnologias empregadas no desenvol
 
 ## 5. Decisões de Design
 
+A arquitetura foi escolhida de acordo com a experiência da equipe com as tecnologias, metodologias e designs.
 ### 5.1. Da arquitetura
+
+A arquitetura monolítica foi descartada devido a necessidade da utilização de serviços externos e do tempo necessário para implementação. A arquitetura de Microkernel foi considerada de integração complexa e devido a falta de experiência da equipe, foi descartada. A arquitetura de microserviços é especialmente adequada para sistemas complexos, distribuídos e escaláveis.
+
+A arquitetura selecionada, ponderando sobre o ambiente proposto para a plataforma, foi a de camadas. É um estilo de arquitetura em que um sistema é dividido em camadas distintas, cada uma com uma responsabilidade específica. As camadas são organizadas hierarquicamente, onde cada camada depende da camada abaixo dela. Geralmente, as camadas incluem a camada de apresentação (interface do usuário), camada de lógica de negócios e camada de acesso a dados. A arquitetura em camadas permite uma separação clara de responsabilidades e promove a reutilização de componentes.
+
+Sendo assim a arquitetura do sistema foi dividida em três camadas, interface do usuário (Front-end), camada de lógica de negócios (Back-end) e camada de acesso a dados (Banco de dados).
 
 ## 6. Validação com Casos de Teste
 
