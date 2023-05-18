@@ -1,3 +1,15 @@
+## Histórico de revisões
+
+| Data       | Versão |                           Descrição                            | Autor                          |
+| :--------- | :----: | :------------------------------------------------------------: | :----------------------------- |
+| 10/04/2023 | 1.0.0  |               Template e descrição do documento                | Renata Karla Araújo dos Santos |
+| 02/05/2023 | 2.0.0  |                Detalhamento do User Story US01                 | Renata Karla Araújo dos Santos |
+| 08/05/2023 | 3.0.0  |                Detalhamento do User Story US02                 | Raquel Lima Fernandes          |
+| 10/05/2023 | 4.0.0  |               Inserção dos testes de aceitação                 | Raquel Lima Fernandes          |
+| 11/05/2023 | 5.0.0  |                Detalhamento do User Story US03                 | Renata Karla Araújo dos Santos |
+| 12/05/2023 | 6.0.0  |      Atualizar documento com Termo de Abertura do Projeto      | Annielly Ferreira de Sou       |
+
+
 ## TERMO DE ABERTURA DE PROJETO
 
 ## 1. Equipe e Definição de Papéis
