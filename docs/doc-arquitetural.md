@@ -36,6 +36,7 @@ Neste documento é abordado a arquitetura e características de uma plataforma, 
 | 02/05/2023 | 5.0    | Adição dos Mecanismos arquiteturais    | Renata Araújo       |
 | 02/05/2023 | 6.0    | Adição das tecnologias    | Renata Araújo       |
 | 18/05/2023 | 7.0    | Adição de decisões de design da arquitetura    | Renata Araújo       |
+| 18/05/2023 | 8.0    | Adição de validação com casos de testes    | Renata Araújo       |
 
 ## 2. Visão Geral
 
@@ -125,6 +126,30 @@ A arquitetura selecionada, ponderando sobre o ambiente proposto para a plataform
 Sendo assim a arquitetura do sistema foi dividida em três camadas, interface do usuário (Front-end), camada de lógica de negócios (Back-end) e camada de acesso a dados (Banco de dados).
 
 ## 6. Validação com Casos de Teste
+
+Nesta fase selecionar User Stories com cenários escolhidos para a validação da arquitetura apresentada. Casos de uso, backlog, requisitos de usuários ou qualquer outro nome que represente os itens relevantes para o funcionamento do sistema final, o intuito é exercitar e testar os principais aspectos de risco da arquitetura.
+
+Exemplo:
+
+<table>
+  <td>User Story</td><td>Motivos da escolha e descrição</td>
+  <tr>
+   <td>US-01
+     <br/>Manter usuario
+    </td>
+   <td>
+      <p> Este conjunto de funcionalidades devem ser testados, pois implicam na experiência que o usuário virá a ter com a criação e administração de seus projetos.<br/>
+      <br/><strong>1. Realizar login</strong>
+        <br/> Deve ser verificado se o login é valido.
+        <br/><strong>2. Cadastrar usuário</strong>
+        <br/> Deve ser verificado se os usuarios estão sendo cadastrados corretamente no sistema.
+        <br/><strong>3. Excluir usuário</strong>
+        <br/> Deve se verificar se o usuario a ser excluido está ou não ativo no sistema
+        <br/><strong>4. Listar usuário</strong>
+        <br/> Dever ser testado o campo de entrada para saber se o está retornando os dados solicitados.
+    </td>
+  </tr>
+</table>
 
 ## 7. Componentes
 
