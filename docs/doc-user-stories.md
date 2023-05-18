@@ -13,6 +13,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | 08/05/2023 | 3.0.0  |                Detalhamento do User Story US02                 | Raquel Lima Fernandes          |
 | 10/05/2023 | 4.0.0  |               Inserção dos testes de aceitação                 | Raquel Lima Fernandes          |
 | 11/05/2023 | 5.0.0  |                Detalhamento do User Story US03                 | Renata Karla Araújo dos Santos |
+| 12/05/2023 | 6.0.0  |      Atualizar documento com Termo de Abertura do Projeto      | Annielly Ferreira de Sousa     |
 
 ### User Story US01 - Manter Usuário
 
