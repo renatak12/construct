@@ -37,6 +37,7 @@ Neste documento é abordado a arquitetura e características de uma plataforma, 
 | 02/05/2023 | 6.0    | Adição das tecnologias    | Renata Araújo       |
 | 18/05/2023 | 7.0    | Adição de decisões de design da arquitetura    | Renata Araújo       |
 | 18/05/2023 | 8.0    | Adição de validação com casos de testes    | Renata Araújo       |
+| 22/05/2023 | 9.0    | Adição de Componentes e Implantação    | Annielly F. Sousa      |
 
 ## 2. Visão Geral
 
@@ -152,7 +153,31 @@ Exemplo:
 </table>
 
 ## 7. Componentes
+Ilustração do diagrama de componentes do Construct na figura 2 e o detalhamento das responsabilidades de cada componente na tabela a seguir.
+
+
+![Modelo Compenentes](images/componentD-construct.png)
+
+Figure 2. Representação gráfica com diagrama UML para representar os componentes.
+
+
+|            |                                                                                                                                                                                                                                                                                  |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Componente | Descrição                                                                                                                                                                                                                                                                        |
+| Usuários       | O Usuário é responsável pela autenticação, gerenciamento de usuários e permissões.          |
+| Vendas       | O Vendas é responsável por realizar vendas, gerar relatórios de vendas e consultar histórico de vendas.                |
+| Produto    | O Produto é responsável por cadastrar, consultar, atualizar e remover produtos, além de gerenciar o estoque.                                                     |
+| Estoque       | O Estoque é responsável por consulta, atualização e geração de relatórios relacionados ao estoque. |
+| Cliente   | O Cliente é responsável por cadastrar, consultar, atualizar e remover informações dos clientes.     |
+| Pagamento       | O Pagamento é responsável por registrar e consultar pagamentos. |
+| Relatórios       | O Relatórios é responsável por gerar diferentes tipos de relatórios, como vendas, estoque, lucratividade, entre outros. |
 
 ## 8. Implantação
+
+![Diagrama de Implantação](images/diagrama_implantacao.png)
+
+
+Figure 3. Representação gráfica da fase de implantação.
+
 
 ## 9. Referências
