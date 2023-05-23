@@ -1,16 +1,10 @@
+## TERMO DE ABERTURA DE PROJETO
+
 ## Histórico de revisões
 
 | Data       | Versão |                           Descrição                            | Autor                          |
 | :--------- | :----: | :------------------------------------------------------------: | :----------------------------- |
-| 10/04/2023 | 1.0.0  |               Template e descrição do documento                | Renata Karla Araújo dos Santos |
-| 02/05/2023 | 2.0.0  |                Detalhamento do User Story US01                 | Renata Karla Araújo dos Santos |
-| 08/05/2023 | 3.0.0  |                Detalhamento do User Story US02                 | Raquel Lima Fernandes          |
-| 10/05/2023 | 4.0.0  |               Inserção dos testes de aceitação                 | Raquel Lima Fernandes          |
-| 11/05/2023 | 5.0.0  |                Detalhamento do User Story US03                 | Renata Karla Araújo dos Santos |
-| 12/05/2023 | 6.0.0  |      Atualizar documento com Termo de Abertura do Projeto      | Annielly Ferreira de Sou       |
-
-
-## TERMO DE ABERTURA DE PROJETO
+| 12/05/2023 | 1.0  |      Documento Inicial      | Annielly Ferreira de Souza       |
 
 ## 1. Equipe e Definição de Papéis
 
@@ -61,18 +55,8 @@ O Sistema construct facilita e agiliza as tarefas administrativas e operacionais
 
 ## 5.	Restrições para o projeto
 
-### Manter Usuário
-
-|               |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| ------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Descrição** | O sistema deve manter um cadastro de usuário que tem acesso ao sistema via login e senha. Um usuário tem os atributos name, id, email, username, data de nascimento, status, password. O email será o login e ele pode registrar-se diretamente no sistema. Além disso o usuário poderá alterar alguns dados, como o e-mail ou a senha. O usuário administrador do sistema pode realizar as operações de adicionar, alterar, remover e listar os usuários comuns do sistema. |
-
-### Manter Estoque
-
-|               |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| ------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Descrição** | O sistema deve manter um estoque de produtos. Um estoque tem os atributos id, produto_id, descricao_produto, quantidade. O estoque deverá atualizar de acordo com as entradas e saídas de produtos. O usuário administrador do sistema pode realizar as operações de adicionar, alterar, remover e listar os produtos em estoque do sistema. |
-
+- Acesso: App Mobile
+- Acesso: Perfil social Autenticado (Ex.: Google, Facebook, Twitter, Discord)
 
 ## 6.	Cronograma de macros
 
