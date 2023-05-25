@@ -33,7 +33,7 @@ O construct é um sistema de gestão para lojas de materiais de construção que
 ## **Lista de User Stores (US)**  
 Lista de User Stores e requisitos a ela associados.  
 
-US01 - Manter Usuario  
+US01 - Manter Usuário  
 * RF16 - Cadastrar Usuário
 * RF17 - Alterar Usuário
 * RF18 - Consultar Usuário
@@ -51,7 +51,7 @@ US02 - Manter Produto
 US03 - Manter Estoque  
 * RF21 - Cadastrar Estoque
 * RF22 - Alterar Estoque
-* RF23 - Consultar Estoque
+* RF23 - Consultar Estoques
 * RF24 - Vizualizar detalhes do Estoque
 * RF25 - Excluir Estoque  
 
@@ -65,7 +65,7 @@ US04 - Manter Cliente
 US05 - Manter Venda  
 * RF26 - Incluir Venda
 * RF27 - Alterar Venda
-* RF28 - Listar Venda
+* RF28 - Listar Vendas
 * RF29 - Vizualizar detalhes do Venda
 * RF30 - Excluir Venda
 
@@ -138,6 +138,8 @@ Análise Detalhada
 | ALI Usuário |  ALI  |  4  |  1  |  Baixa  |  7  |  
 | ALI Produto |  ALI  |  4  |  1  |  Baixa  |  7  | 
 | ALI Estoque |  ALI  |  4  |  1  |  Baixa  |  7  | 
+| ALI Cliente |  ALI  |  4  |  1  |  Baixa  |  7  | 
+| ALI Venda |  ALI  |  4  |  1  |  Baixa  |  7  | 
 |  **Descrição**  |  **Tipo**  |  **DER**  |  **RLR**  |  **Complexidade**  |  **Contribuição**  |  
 |  Cadastrar Usuário  |  EE  |  4  |  1  |  Baixa  |  3  |  
 |  Alterar Usuário  |  EE  |  4  |  1  |  Baixa  |  3  |  
@@ -146,12 +148,22 @@ Análise Detalhada
 |  Excluir Usuário  |  EE  |  2  |  1  |  Baixa  |  3  | 
 |  Cadastrar Produto  |  EE  |  4  |  1  |  Baixa  |  3  |  
 |  Alterar Produto  |  EE  |  4  |  1  |  Baixa  |  3  |  
-|  Consultar Produto  |  CE  |  4  |  1  |  Baixa  |  3  |  
+|  Consultar Produtos  |  CE  |  4  |  1  |  Baixa  |  3  |  
 |  Visualizar detalhes do Produto  |  CE  |  3  |  1  |  Baixa  |  3  |  
 |  Excluir Produto  |  EE  |  2  |  1  |  Baixa  |  3  | 
 |  Cadastrar Estoque  |  EE  |  4  |  1  |  Baixa  |  3  |  
 |  Alterar Estoque  |  EE  |  4  |  1  |  Baixa  |  3  |  
-|  Consultar Estoque  |  CE  |  4  |  1  |  Baixa  |  3  |  
+|  Consultar Estoques  |  CE  |  4  |  1  |  Baixa  |  3  |  
 |  Visualizar detalhes do Estoque  |  CE  |  3  |  1  |  Baixa  |  3  |  
 |  Excluir Estoque  |  EE  |  2  |  1  |  Baixa  |  3  | 
+|  Cadastrar Cliente  |  EE  |  4  |  1  |  Baixa  |  3  |  
+|  Alterar Cliente  |  EE  |  4  |  1  |  Baixa  |  3  |  
+|  Listar Clientes  |  CE  |  4  |  1  |  Baixa  |  3  |  
+|  Visualizar detalhes do Cliente  |  CE  |  3  |  1  |  Baixa  |  3  |  
+|  Excluir Cliente  |  EE  |  2  |  1  |  Baixa  |  3  | 
+|  Incluir Venda  |  EE  |  4  |  1  |  Baixa  |  3  |  
+|  Alterar Venda  |  EE  |  4  |  1  |  Baixa  |  3  |  
+|  Listar Vendas  |  CE  |  4  |  1  |  Baixa  |  3  |  
+|  Visualizar detalhes do Venda  |  CE  |  3  |  1  |  Baixa  |  3  |  
+|  Excluir Venda  |  EE  |  2  |  1  |  Baixa  |  3  | 
 |  **Total**  |    |    |    |    | **66** |
