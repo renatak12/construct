@@ -15,6 +15,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | 11/05/2023 | 5.0.0  |                Detalhamento do User Story US03                 | Renata Karla Araújo dos Santos |
 | 12/05/2023 | 6.0.0  |      Atualizar documento com Termo de Abertura do Projeto      | Annielly Ferreira de Sousa     |  
 | 23/05/2023 | 7.0.0  |  Detalhamento do User Story US04  |  José Cláudio de Araújo Júnior  |
+| 24/05/2023 | 8.0.0  |  Detalhamento do User Story US05  |  Maicon Douglas da Silva  |
 
 ### User Story US01 - Manter Usuário
 
