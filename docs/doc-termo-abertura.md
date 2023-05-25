@@ -44,12 +44,16 @@ O sistema de gestão **CONSTRUCT** foi criado com o intuíto de proporcionar uma
 
 # 5. Descrição dos produtos/entregáveis do projeto
 
-| Nome                            | Link                       |
-| ------------------------------- | -------------------------- |
-| Documento de Visão              | [Clique aqui](doc-visao.md)|
-| Lista de User Stories           | [Clique aqui](doc-user-stories.md)|
-| Documento de Modelos            | [Clique aqui](doc-modelos.md)
-
+| Nome                                  | Link                                                 |
+| ------------------------------------- | ---------------------------------------------------- |
+| Plano de Iteração                     | [Clique aqui](docs/doc-plano-iteracao.md)            |
+| Documento de Visão                    | [Clique aqui](docs/doc-visao.md)                     |
+| Documento de Modelos                  | [Clique aqui](docs/doc-modelos.md)                   |
+| Lista de User Stories                 | [Clique aqui](docs/doc-user-stories.md)              |
+| Projeto Arquitetural do Software      | [Clique aqui](docs/doc-arquitetural.md)              |
+| Análise de Pontos de Função - APF     | [Clique aqui](docs/doc-apf.md)                                                          |
+| Termo de Abertura de Projeto          | [Clique aqui](docs/doc-termo-abertura.md)                                              |
+| Relatório de Testes de Módulo/Sistema | [Clique aqui](docs/doc-tests-us.md)                                                     |
 
 # 6. Restrições para o projeto
 
