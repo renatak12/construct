@@ -33,12 +33,41 @@ O construct é um sistema de gestão para lojas de materiais de construção que
 ## **Lista de User Stores (US)**  
 Lista de User Stores e requisitos a ela associados.  
 
-US01 - Manter Usuario  
-* RF16 - Cadastrar Usuário
-* RF17 - Alterar Usuário
-* RF18 - Consultar Usuário
-* RF19 - Vizualizar detalhes do Usuário
-* RF20 - Excluir Usuário
+US01 - Manter Usuário  
+* RF0016 - Cadastrar Usuário
+* RF0017 - Alterar Usuário
+* RF0018 - Consultar Usuários
+* RF0019 - Vizualizar detalhes do Usuário
+* RF0020 - Excluir Usuário  
+
+US02 - Manter Produto  
+* RF0001 - Incluir Produto
+* RF0002 - Alterar Produto
+* RF0003 - Listar Produtos
+* RF0004 - Vizualizar detalhes do Produto
+* RF0005 - Excluir Produto
+* RF0006 - Emitir Relatórios  
+
+US03 - Manter Estoque  
+* RF0021 - Cadastrar Estoque
+* RF0022 - Alterar Estoque
+* RF0023 - Consultar Estoques
+* RF0024 - Vizualizar detalhes do Estoque
+* RF0025 - Excluir Estoque  
+
+US04 - Manter Cliente  
+* RF0007 - Incluir Cliente
+* RF0008 - Alterar Cliente
+* RF0009 - Listar Clientes
+* RF0010 - Vizualizar detalhes do Cliente
+* RF0011 - Excluir Cliente  
+
+US05 - Manter Venda  
+* RF0026 - Incluir Venda
+* RF0027 - Alterar Venda
+* RF0028 - Listar Vendas
+* RF0029 - Vizualizar detalhes do Venda
+* RF0030 - Excluir Venda
 
 
 ## **Tipos de contagem**  
@@ -88,10 +117,10 @@ A seguir temos as tabelas de complexidade para ALI e AIE.
 
 A seguir temos as tabelas de complexidade para EE.  
 
-|    | < 5 | 5 – 15 | > 15 |
+|  | < 5 | 5 – 15 | > 15 |
 |------|-----|--------|------|
-| < 2  | Baixa| Baixa | Média|
-| 2    | Baixa| Média | Alta |
+|  < 2  | Baixa| Baixa | Média|
+|  2  | Baixa| Média | Alta |
 | > 2  | Média| Alta  | Alta |  
 
 A seguir temos as tabelas de complexidade para CE e SE.  
@@ -107,10 +136,34 @@ Análise Detalhada
 |  Descrição  |  Tipo  |  DER  |  RLR  |  Complexidade  |  Contribuição  |
 |--------|------|--------------|----|-----|-----|
 | ALI Usuário |  ALI  |  4  |  1  |  Baixa  |  7  |  
-|  Descrição  |  Tipo  |  DER  |  RLR  |  Complexidade  |  Contribuição  |  
+| ALI Produto |  ALI  |  4  |  1  |  Baixa  |  7  | 
+| ALI Estoque |  ALI  |  4  |  1  |  Baixa  |  7  | 
+| ALI Cliente |  ALI  |  4  |  1  |  Baixa  |  7  | 
+| ALI Venda |  ALI  |  4  |  1  |  Baixa  |  7  | 
+|  **Descrição**  |  **Tipo**  |  **DER**  |  **RLR**  |  **Complexidade**  |  **Contribuição**  |  
 |  Cadastrar Usuário  |  EE  |  4  |  1  |  Baixa  |  3  |  
 |  Alterar Usuário  |  EE  |  4  |  1  |  Baixa  |  3  |  
 |  Consultar Usuário  |  CE  |  4  |  1  |  Baixa  |  3  |  
 |  Visualizar detalhes do Usuário  |  CE  |  3  |  1  |  Baixa  |  3  |  
-|  Excluir Usuário  |  EE  |  2  |  1  |  Baixa  |  3  |  
-|  **Total**  |    |    |    |    | **22** |
+|  Excluir Usuário  |  EE  |  2  |  1  |  Baixa  |  3  | 
+|  Cadastrar Produto  |  EE  |  4  |  1  |  Baixa  |  3  |  
+|  Alterar Produto  |  EE  |  4  |  1  |  Baixa  |  3  |  
+|  Consultar Produtos  |  CE  |  4  |  1  |  Baixa  |  3  |  
+|  Visualizar detalhes do Produto  |  CE  |  3  |  1  |  Baixa  |  3  |  
+|  Excluir Produto  |  EE  |  2  |  1  |  Baixa  |  3  | 
+|  Cadastrar Estoque  |  EE  |  4  |  1  |  Baixa  |  3  |  
+|  Alterar Estoque  |  EE  |  4  |  1  |  Baixa  |  3  |  
+|  Consultar Estoques  |  CE  |  4  |  1  |  Baixa  |  3  |  
+|  Visualizar detalhes do Estoque  |  CE  |  3  |  1  |  Baixa  |  3  |  
+|  Excluir Estoque  |  EE  |  2  |  1  |  Baixa  |  3  | 
+|  Cadastrar Cliente  |  EE  |  4  |  1  |  Baixa  |  3  |  
+|  Alterar Cliente  |  EE  |  4  |  1  |  Baixa  |  3  |  
+|  Listar Clientes  |  CE  |  4  |  1  |  Baixa  |  3  |  
+|  Visualizar detalhes do Cliente  |  CE  |  3  |  1  |  Baixa  |  3  |  
+|  Excluir Cliente  |  EE  |  2  |  1  |  Baixa  |  3  | 
+|  Incluir Venda  |  EE  |  4  |  1  |  Baixa  |  3  |  
+|  Alterar Venda  |  EE  |  4  |  1  |  Baixa  |  3  |  
+|  Listar Vendas  |  CE  |  4  |  1  |  Baixa  |  3  |  
+|  Visualizar detalhes do Venda  |  CE  |  3  |  1  |  Baixa  |  3  |  
+|  Excluir Venda  |  EE  |  2  |  1  |  Baixa  |  3  | 
+|  **Total**  |    |    |    |    | **110** |
