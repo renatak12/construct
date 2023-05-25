@@ -167,7 +167,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------------------- | :----------------------------- |
 | RF07                      | Incluir Cliente              |
 | RF08                      | Alterar Cliente                |
-| RF09                      | Listar Cliente              |
+| RF09                      | Listar Clientes              |
 | RF10                      | Visualizar detalhes do Cliente |
 | RF11                      | Excluir Cliente                |
 
@@ -195,7 +195,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF26                      | Incluir  Venda             |
 | RF27                      | Alterar Venda                |
 | RF28                      | Listar Venda              |
-| RF29                      | Visualizar Venda |
+| RF29                      | Visualizar detalhes da Venda |
 | RF30                      | Excluir Venda                |
 
 |                         |           |
