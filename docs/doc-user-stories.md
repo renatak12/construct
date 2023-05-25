@@ -13,7 +13,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | 08/05/2023 | 3.0.0  |                Detalhamento do User Story US02                 | Raquel Lima Fernandes          |
 | 10/05/2023 | 4.0.0  |               Inserção dos testes de aceitação                 | Raquel Lima Fernandes          |
 | 11/05/2023 | 5.0.0  |                Detalhamento do User Story US03                 | Renata Karla Araújo dos Santos |
-| 12/05/2023 | 6.0.0  |      Atualizar documento com Termo de Abertura do Projeto      | Annielly Ferreira de Sousa     |
+| 12/05/2023 | 6.0.0  |      Atualizar documento com Termo de Abertura do Projeto      | Annielly Ferreira de Sousa     |  
+| 23/05/2023 | 7.0.0  |  Detalhamento do User Story US04  |  José Cláudio de Araújo Júnior  |
+| 24/05/2023 | 8.0.0  |  Detalhamento do User Story US05  |  Maicon Douglas da Silva  |
 
 ### User Story US01 - Manter Usuário
 
@@ -23,11 +25,12 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                |
 | ------------------------- | :----------------------------- |
-| RF16                      | Cadastrar Usuário              |
-| RF17                      | Alterar Usuário                |
-| RF18                      | Consultar Usuário              |
-| RF19                      | Vizualizar detalhes do Usuário |
-| RF20                      | Excluir Usuário                |
+| RF0016                      | Cadastrar Usuário              |
+| RF0017                      | Alterar Usuário                |
+| RF0018                      | Consultar Usuário              |
+| RF0019                      | Vizualizar detalhes do Usuário |
+| RF0020                      | Excluir Usuário                |  
+
 
 |                         |           |
 | ----------------------- | :-------- |
@@ -135,11 +138,11 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                |
 | ------------------------- | :----------------------------- |
-| RF21                      | Cadastrar Estoque              |
-| RF22                      | Alterar Estoque                |
-| RF23                      | Consultar Estoque              |
-| RF24                      | Vizualizar detalhes do Estoque |
-| RF25                      | Excluir Estoque                |
+| RF0021                      | Cadastrar Estoque              |
+| RF0022                      | Alterar Estoque                |
+| RF0023                      | Consultar Estoques              |
+| RF0024                      | Vizualizar detalhes do Estoque |
+| RF0025                      | Excluir Estoque                |
 
 |                         |           |
 | ----------------------- | :-------- |
@@ -150,4 +153,59 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Analista**   | Renata      |
 | **Desenvolvedor**   | Raquel      |
 | **Revisor**   | Maicon      |
-|**Testador**   | José Claudio      |
+|**Testador**   | José Cláudio      |
+
+
+### User Story US04 - Manter Cliente
+
+|    |    |  
+| ------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Descrição** | O sistema deve manter as informações dos clientes, possibilitando o cadastro, visualização, edição e exclusão dos registros de forma organizada e segura. Os atributos do cliente são: id, nome, telefone, endereço, email. Todas as informações dos clientes devem ser armazenadas de forma segura e em conformidade com as leis de privacidade e proteção de dados vigentes. A interface do usuário deve ser intuitiva e fácil de usar, com validações apropriadas para garantir a integridade dos dados. A funcionalidade de manter cliente deve estar disponível apenas para usuários autorizados, com permissões adequadas definidas no sistema.  |  
+
+
+
+| **Requisitos envolvidos** |                                |
+| ------------------------- | :----------------------------- |
+| RF0007                      | Incluir Cliente              |
+| RF0008                      | Alterar Cliente                |
+| RF0009                      | Listar Clientes              |
+| RF0010                      | Visualizar detalhes do Cliente |
+| RF0011                      | Excluir Cliente                |
+
+|                         |           |
+| ----------------------- | :-------- |
+| **Prioridade**          | Essencial |
+| **Estimativa**          | 8 h       |
+| **Tempo Gasto (real):** |           |
+| **Tamanho Funcional**   | 7 PF      |
+| **Analista**   | José Cláudio  |
+| **Desenvolvedor**   | Maicon  |
+| **Revisor**   | Raquel  |
+|**Testador**   | Annielly  |
+
+### User Story US05 - Manter Venda
+
+|    |    |  
+| ------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Descrição** | O sistema deve permitir o cadastro, a alteração, a listagem, a visualização e a exclusão de vendas, para que se possa gerenciar as operações comerciais de forma eficiente. Para isso, o sistema deve validar os dados da venda antes de salvar no banco de dados, e mostrar as vendas cadastradas em uma lista paginada e ordenada por data que permite a edição ou exclusão de uma venda selecionada. Além disso, o sistema deve permitir que se veja os detalhes de uma venda selecionada, incluindo os produtos, as quantidades, os preços e o valor total. O sistema deve também atualizar o estoque e o faturamento após cada operação de venda.  |  
+
+
+
+| **Requisitos envolvidos** |                                |
+| ------------------------- | :----------------------------- |
+| RF0026                      | Incluir  Venda             |
+| RF0027                      | Alterar Venda                |
+| RF0028                      | Listar Vendas              |
+| RF0029                      | Visualizar detalhes da Venda |
+| RF0030                      | Excluir Venda                |
+
+|                         |           |
+| ----------------------- | :-------- |
+| **Prioridade**          | Essencial |
+| **Estimativa**          | 8 h       |
+| **Tempo Gasto (real):** |           |
+| **Tamanho Funcional**   | 7 PF      |
+| **Analista**   | José Cláudio  |
+| **Desenvolvedor**   | Maicon  |
+| **Revisor**   | Raquel  |
+|**Testador**   | Annielly  |
