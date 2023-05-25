@@ -38,7 +38,36 @@ US01 - Manter Usuario
 * RF17 - Alterar Usuário
 * RF18 - Consultar Usuário
 * RF19 - Vizualizar detalhes do Usuário
-* RF20 - Excluir Usuário
+* RF20 - Excluir Usuário  
+
+US02 - Manter Produto  
+* RF01 - Incluir Produto
+* RF02 - Alterar Produto
+* RF03 - Listar Produtos
+* RF04 - Vizualizar detalhes do Produto
+* RF05 - Excluir Produto
+* RF06 - Emitir Relatórios  
+
+US03 - Manter Estoque  
+* RF21 - Cadastrar Estoque
+* RF22 - Alterar Estoque
+* RF23 - Consultar Estoque
+* RF24 - Vizualizar detalhes do Estoque
+* RF25 - Excluir Estoque  
+
+US04 - Manter Cliente  
+* RF07 - Incluir Cliente
+* RF08 - Alterar Cliente
+* RF09 - Listar Clientes
+* RF10 - Vizualizar detalhes do Cliente
+* RF11 - Excluir Cliente  
+
+US05 - Manter Venda  
+* RF26 - Incluir Venda
+* RF27 - Alterar Venda
+* RF28 - Listar Venda
+* RF29 - Vizualizar detalhes do Venda
+* RF30 - Excluir Venda
 
 
 ## **Tipos de contagem**  
