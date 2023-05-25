@@ -125,4 +125,4 @@ Análise Detalhada
 |  Consultar Estoque  |  CE  |  4  |  1  |  Baixa  |  3  |  
 |  Visualizar detalhes do Estoque  |  CE  |  3  |  1  |  Baixa  |  3  |  
 |  Excluir Estoque  |  EE  |  2  |  1  |  Baixa  |  3  | 
-|  **Total**  |    |    |    |    | **44** |
+|  **Total**  |    |    |    |    | **66** |
