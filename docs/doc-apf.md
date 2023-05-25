@@ -34,40 +34,40 @@ O construct é um sistema de gestão para lojas de materiais de construção que
 Lista de User Stores e requisitos a ela associados.  
 
 US01 - Manter Usuário  
-* RF16 - Cadastrar Usuário
-* RF17 - Alterar Usuário
-* RF18 - Consultar Usuário
-* RF19 - Vizualizar detalhes do Usuário
-* RF20 - Excluir Usuário  
+* RF0016 - Cadastrar Usuário
+* RF0017 - Alterar Usuário
+* RF0018 - Consultar Usuários
+* RF0019 - Vizualizar detalhes do Usuário
+* RF0020 - Excluir Usuário  
 
 US02 - Manter Produto  
-* RF01 - Incluir Produto
-* RF02 - Alterar Produto
-* RF03 - Listar Produtos
-* RF04 - Vizualizar detalhes do Produto
-* RF05 - Excluir Produto
-* RF06 - Emitir Relatórios  
+* RF0001 - Incluir Produto
+* RF0002 - Alterar Produto
+* RF0003 - Listar Produtos
+* RF0004 - Vizualizar detalhes do Produto
+* RF0005 - Excluir Produto
+* RF0006 - Emitir Relatórios  
 
 US03 - Manter Estoque  
-* RF21 - Cadastrar Estoque
-* RF22 - Alterar Estoque
-* RF23 - Consultar Estoques
-* RF24 - Vizualizar detalhes do Estoque
-* RF25 - Excluir Estoque  
+* RF0021 - Cadastrar Estoque
+* RF0022 - Alterar Estoque
+* RF0023 - Consultar Estoques
+* RF0024 - Vizualizar detalhes do Estoque
+* RF0025 - Excluir Estoque  
 
 US04 - Manter Cliente  
-* RF07 - Incluir Cliente
-* RF08 - Alterar Cliente
-* RF09 - Listar Clientes
-* RF10 - Vizualizar detalhes do Cliente
-* RF11 - Excluir Cliente  
+* RF0007 - Incluir Cliente
+* RF0008 - Alterar Cliente
+* RF0009 - Listar Clientes
+* RF0010 - Vizualizar detalhes do Cliente
+* RF0011 - Excluir Cliente  
 
 US05 - Manter Venda  
-* RF26 - Incluir Venda
-* RF27 - Alterar Venda
-* RF28 - Listar Vendas
-* RF29 - Vizualizar detalhes do Venda
-* RF30 - Excluir Venda
+* RF0026 - Incluir Venda
+* RF0027 - Alterar Venda
+* RF0028 - Listar Vendas
+* RF0029 - Vizualizar detalhes do Venda
+* RF0030 - Excluir Venda
 
 
 ## **Tipos de contagem**  
