@@ -117,10 +117,10 @@ A seguir temos as tabelas de complexidade para ALI e AIE.
 
 A seguir temos as tabelas de complexidade para EE.  
 
-|    | < 5 | 5 – 15 | > 15 |
+|  | < 5 | 5 – 15 | > 15 |
 |------|-----|--------|------|
-| < 2  | Baixa| Baixa | Média|
-| 2    | Baixa| Média | Alta |
+|  < 2  | Baixa| Baixa | Média|
+|  2  | Baixa| Média | Alta |
 | > 2  | Média| Alta  | Alta |  
 
 A seguir temos as tabelas de complexidade para CE e SE.  
@@ -166,4 +166,4 @@ Análise Detalhada
 |  Listar Vendas  |  CE  |  4  |  1  |  Baixa  |  3  |  
 |  Visualizar detalhes do Venda  |  CE  |  3  |  1  |  Baixa  |  3  |  
 |  Excluir Venda  |  EE  |  2  |  1  |  Baixa  |  3  | 
-|  **Total**  |    |    |    |    | **66** |
+|  **Total**  |    |    |    |    | **110** |
