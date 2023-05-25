@@ -107,10 +107,22 @@ Análise Detalhada
 |  Descrição  |  Tipo  |  DER  |  RLR  |  Complexidade  |  Contribuição  |
 |--------|------|--------------|----|-----|-----|
 | ALI Usuário |  ALI  |  4  |  1  |  Baixa  |  7  |  
-|  Descrição  |  Tipo  |  DER  |  RLR  |  Complexidade  |  Contribuição  |  
+| ALI Produto |  ALI  |  4  |  1  |  Baixa  |  7  | 
+| ALI Estoque |  ALI  |  4  |  1  |  Baixa  |  7  | 
+|  **Descrição**  |  **Tipo**  |  **DER**  |  **RLR**  |  **Complexidade**  |  **Contribuição**  |  
 |  Cadastrar Usuário  |  EE  |  4  |  1  |  Baixa  |  3  |  
 |  Alterar Usuário  |  EE  |  4  |  1  |  Baixa  |  3  |  
 |  Consultar Usuário  |  CE  |  4  |  1  |  Baixa  |  3  |  
 |  Visualizar detalhes do Usuário  |  CE  |  3  |  1  |  Baixa  |  3  |  
-|  Excluir Usuário  |  EE  |  2  |  1  |  Baixa  |  3  |  
-|  **Total**  |    |    |    |    | **22** |
+|  Excluir Usuário  |  EE  |  2  |  1  |  Baixa  |  3  | 
+|  Cadastrar Produto  |  EE  |  4  |  1  |  Baixa  |  3  |  
+|  Alterar Produto  |  EE  |  4  |  1  |  Baixa  |  3  |  
+|  Consultar Produto  |  CE  |  4  |  1  |  Baixa  |  3  |  
+|  Visualizar detalhes do Produto  |  CE  |  3  |  1  |  Baixa  |  3  |  
+|  Excluir Produto  |  EE  |  2  |  1  |  Baixa  |  3  | 
+|  Cadastrar Estoque  |  EE  |  4  |  1  |  Baixa  |  3  |  
+|  Alterar Estoque  |  EE  |  4  |  1  |  Baixa  |  3  |  
+|  Consultar Estoque  |  CE  |  4  |  1  |  Baixa  |  3  |  
+|  Visualizar detalhes do Estoque  |  CE  |  3  |  1  |  Baixa  |  3  |  
+|  Excluir Estoque  |  EE  |  2  |  1  |  Baixa  |  3  | 
+|  **Total**  |    |    |    |    | **44** |
