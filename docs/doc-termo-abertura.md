@@ -1,12 +1,31 @@
-## TERMO DE ABERTURA DE PROJETO
+<h1>Construct: Termo de Abertura de Projeto</h1>
 
-## Histórico de revisões
+<h2>Sumário</h2>
+
+- [1. Descrição](#1-descrição)
+  - [1.1. Histórico de revisões](#11-histórico-de-revisões)
+- [2. Equipe e definição de papéis](#2-equipe-e-definição-de-papéis)
+- [3. Objetivos do projeto](#3-objetivos-do-projeto)
+- [4. Justificativa do projeto](#4-justificativa-do-projeto)
+- [5. Descrição dos produtos/entregáveis do projeto](#5-descrição-dos-produtosentregáveis-do-projeto)
+- [6. Restrições para o projeto](#6-restrições-para-o-projeto)
+- [7. Cronograma de macros](#7-cronograma-de-macros)
+- [8. Partes interessadas](#8-partes-interessadas)
+- [9. Riscos identificados](#9-riscos-identificados)
+
+# 1. Descrição
+
+Este é o documento que autoriza formalmente o início do projeto. Ele concede ao gerente de projetos a autoridade para aplicar os recursos organizacionais nas atividades do projeto.
+
+## 1.1. Histórico de revisões
 
 | Data       | Versão |                           Descrição                            | Autor                          |
 | :--------- | :----: | :------------------------------------------------------------: | :----------------------------- |
-| 12/05/2023 | 1.0  |      Documento Inicial      | Annielly Ferreira de Souza       |
+| 12/05/2023 | 1.0.0  |      Documento Inicial      | Annielly Ferreira de Souza       |
+| 15/05/2023 | 2.0.0  | Atualização e correção do documento |Raquel Lima Fernandes    |
 
-## 1. Equipe e Definição de Papéis
+
+# 2. Equipe e definição de papéis
 
 | Membro       | Papel                                      | E-mail                       | GitHub                                           |
 | ------------ | ------------------------------------------ | ---------------------------- | ------------------------------------------------ |
@@ -14,84 +33,73 @@
 | José Cláudio | Gerente, Analista, Testador, Desenvolvedor | zeclaudio_jr@yahoo.com.br    |[Clique aqui](https://github.com/ZeClaudio-Jr)    |
 | Maicon       | Gerente, Analista, Testador, Desenvolvedor | marc.douglas630@gmail.com    |[Clique aqui](https://github.com/wanessabezerra)  |
 | Raquel       | Gerente, Analista, Testador, Desenvolvedor | fernandeslimaraquel@gmail.com|[Clique aqui](https://github.com/fernandesraquel) |
-| Renata       | Gerente, Analista, Testador, Desenvolvedor | renata.k.a@hotmail.co        |[Clique aqui](https://github.com/renatak12)       |
+| Renata       | Gerente, Analista, Testador, Desenvolvedor | renata.k.a@hotmail.com       |[Clique aqui](https://github.com/renatak12)       |
 
-## 2.	Objetivos do projeto
+# 3. Objetivos do projeto
 
-O construct é um sistema de gestão para lojas de materiais de construção que visa o bom atendimento ao cliente, a gestão do estoque e o controle dos pedidos e finanças, além da emissão de relatórios.
-O sistema permitirá o cadastro de informações da base de dados e das telas das funcionalidades para gerar relatórios.
+O objetivo deste projeto é desenvolver um sistema de gestão para lojas de materiais de construção utilizando o framework Django e a linguagem Python. O sistema fornecerá recursos de cadastro, listagem, busca, excluxão, edição, controle de estoque, vendas, emissão de nota fiscal e relatórios para monitorar o desempenho da loja, identificar tendências, tomar decisões estratégicas e garantir a eficiência das operações.
 
-## 3.	Justificativa do projeto
+# 4. Justificativa do projeto
 
-O Sistema construct facilita e agiliza as tarefas administrativas e operacionais de uma loja de materiais de construção, proporcionando uma visão abrangente das atividades e permitindo tomadas de decisão mais informadas. Com esse software, é possível reduzir erros, evitar perdas de estoque, melhorar a produtividade dos funcionários e, consequentemente, aumentar a satisfação dos clientes.
+O sistema de gestão **CONSTRUCT** foi criado com o intuíto de proporcionar uma solução eficiente e abrangente para a administração de lojas do setor de materiais de construção. Ao permitir o cadastro de produtos, controlar o estoque, registrar vendas, gerar relatórios e emitir notas fiscais, o sistema oferecerá suporte às operações diárias das lojas. Utilizando o framework Django e Python, espera-se alcançar uma implementação robusta e escalável.
 
-## 4.	Descrição dos produtos/entregáveis do projeto
+# 5. Descrição dos produtos/entregáveis do projeto
 
-| Documentos   
-| Nome                                  | Link                                                 |
-| ------------------------------------- | ---------------------------------------------------- |
-| Plano de Iteração                     | [Clique aqui](docs/doc-plano-iteracao.md)            |
-| Documento de Visão                    | [Clique aqui](docs/doc-visao.md)                     |
-| Documento de Modelos                  | [Clique aqui](docs/doc-modelos.md)                   |
-| Lista de User Stories                 | [Clique aqui](docs/doc-user-stories.md)              |
-| Projeto Arquitetural do Software      | [Clique aqui](docs/doc-arquitetural.md)              |
-| Análise de Pontos de Função - APF     | [Clique aqui](docs/doc-apf.md)                                                          |
-| Termo de Abertura de Projeto          | [Clique aqui](docs/doc-termo-abertura.md)                                              |
-| Relatório de Testes de Módulo/Sistema | [Clique aqui](docs/doc-us-tests.md)                                                     |
-
-### Os módulos incluídos no sistema são:
-
-1.	 Usuário: O usuário armazena somente informações cruciais para a descrição do agente no sistema. Dentre as informações estão id do usuário. O username e senha para realizar o login no sistema. O cargo que especifica o tipo de usuário, como "administrador", "gerente", "vendedor". E o tipo de permissão de acesso do usuário no sistema, que determinam quais recursos e funcionalidades o usuário pode acessar.
-
-2.	Produto: Representa um produto disponível na loja. Cada produto tem um nome, uma descrição, um preço, um tipo, e uma quantidade em estoque.
-
-3.	Estoque: Geralmente armazena informações sobre a quantidade disponível de produtos, a localização do estoque, as datas de chegada e saída dos produtos, entre outras informações importantes.
-
-4.	Cliente: Representa um cliente da loja. Cada cliente tem um nome, um telefone, um e-mail e um endereço. Um cliente pode ter várias vendas associadas a ele.
-
-5.	Venda: Representa uma venda realizada na loja. Cada venda tem uma data, um tipo, um preço, uma quantidade de produto escolhido, um valor total e um cliente associado. Uma venda pode ter vários itens de produtos associados a ela e gera um pagamento.
-
-6.	Pagamento: É geralmente usada para registrar as informações de pagamento feitas pelos clientes. Um pagamento pode ter id, data, valor total, tipo de pagamento, status de pagamento, etc. E está associada a um cliente e a uma venda.
-
-## 5.	Restrições para o projeto
-
-- Acesso: App Mobile
-- Acesso: Perfil social Autenticado (Ex.: Google, Facebook, Twitter, Discord)
-
-## 6.	Cronograma de macros
-
-### Plano de Iterações
+| Nome                            | Link                       |
+| ------------------------------- | -------------------------- |
+| Documento de Visão              | [Clique aqui](doc-visao.md)|
+| Lista de User Stories           | [Clique aqui](doc-user-stories.md)|
+| Documento de Modelos            | [Clique aqui](doc-modelos.md)
 
 
-| Iteração | Data início | Data Final | Apresentação | Gerente | Detalhes                                                                                                                                                                                                                               |
-| -------- | ----------- | ---------- | ------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| It1      | 27/03/2023  | 13/04/2023 | 02/05/2023   | Renata | Criar Documento de Visão, Modelos e Plano de Iteração e Release, Detalhar User Story Base - US01, Estrutura do Projeto (código base)                 |
-| It2      | 14/04/2023  | 04/05/2023 | 09/05/2023  | Raquel | Implementar US01, Testar US01, Detalhar US02 e US03, Criar Documento de Contagem por Pontos de Função, Criar documento Arquitetura Geral do Sistema e Termo de Abertura do Projeto                                                                                                                                                                           |
-| It3      | 10/05/2023  | 25/05/2023 | 25/05/2023   | Annielly | Implementar US02, Testar US02, Implementar US03, Testar US03, Detalhar US04 e US05, Deploy do Release (Implantação), Atualizar documentos                                                                                                                           |
-| It4      | 26/05/2023  | 22/06/2023 | 22/06/2023   | Maicon | Implementar US04, Testar US04, Implementar US05, Testar US05, Criar Relatório de Testes, Deploy do Release (Implantação), Atualizar documentos                                                                                                                                      |
-| It5      | 23/06/2023  | 20/07/2023 | 20/07/2023   | José Cláudio | Atualizar Documento de Visão, Modelos, Plano de Iteração, Plano de Release, Documento de Contagem por Pontos de Função e Arquitetura Geral do Sistema, Implementar Testes |
+# 6. Restrições para o projeto
 
-### Plano de Release
+O projeto possui as seguintes restrições:
 
+1. Tecnologia: O sistema será desenvolvido utilizando o framework Django e a linguagem de programação Python.  
+2. Ambiente de Implantação: O sistema será implantado em um servidor web com suporte a Django e Python.  
+3. Escopo: O sistema será focado nas funcionalidades relacionadas à gestão de lojas de materiais de construção.
 
-| Release | Data início | Data Final | Gerente | Detalhes                                     |
-| ------- | ----------- | ---------- | ------- | -------------------------------------------- |
-| R01     | 27/03/2023  | 13/04/2023 | Renata | Lista de funcionalidades da Release 01 (It1) |
-| R02     | 14/04/2023  | 04/05/2023 | Raquel | Lista de funcionalidades da Release 02 (It2) |
-| R03     | 10/05/2023  | 25/05/2023 | Annielly | Lista de funcionalidades da Release 03 (It3) |
-| R04     | 26/05/2023  | 22/06/2023 | Maicon  | Lista de funcionalidades da Release 04 (It4) |
-| R05     | 23/06/2023  | 20/07/2023 | José Cláudio | Lista de funcionalidades da Release 05 (It5) |
+# 7. Cronograma de macros
 
-## 7.	Partes interessadas
+| Milestones                                 | Data de Início | Data de Conclusão | Link                                                              |
+| ------------------------------------------ | -------------- | ----------------- | ----------------------------------------------------------------- |
+| T01 - Iteração 1 - Planejamento            | 16/05/2023     | 23/05/2023        | [Clique aqui](https://github.com/renatak12/construct/milestone/1) |
+| T02 - Iteração 2 - Inicialização           | 02/05/2023     | 11/05/2023        | [Clique aqui](https://github.com/renatak12/construct/milestone/2) |
+| T03 - Iteração 3 - Desenvolvimento         | 10/05/2023     | 25/05/2023        | [Clique aqui](https://github.com/renatak12/construct/milestone/3) |
+| T04 - Iteração 4 - Implementação           | 26/05/2023     | 22/06/2023        | [Clique aqui](https://github.com/renatak12/construct/milestone/4) |
+| T05 - Iteração 5 - Conclusão               | 23/06/2023     | 20/07/2023        | [Clique aqui](https://github.com/renatak12/construct/milestone/5) |
 
-As partes interessadas do projeto são: os Gerente, Analista, Testador, Desenvolvedor, usuário e cliente.
+# 8. Partes interessadas
 
-## 8.	Riscos identificados
+| Interessados             | Descrição       | Contato                                                         |
+| ------------------------ | --------------- | --------------------------------------------------------------- |
+| Taciano de Moraes Silva  | **Cliente**     | [taciano.silva@ufrn.br](link)                                   |
+| Annielly Ferreira de Souza                 | _EQUIPE_    |[annyfs2015@gmail.com](link)                       |
+| José Cláudio de Araújo Júnior              | _EQUIPE_    |[jose.claudio.junior.043@ufrn.edu.br](link)        |
+| Maicon Douglas da Silva                    | _EQUIPE_    |[maicon.douglas.017@ufrn.edu.br](link)             |
+| Raquel Lima Fernandes                      | _EQUIPE_    |[raquel.lima.072@ufrn.edu.br](link)                |
+| Renata Karla Araújo dos Santos             | _EQUIPE_    |[renata.araujo.094@ufrn.edu.br](link)              |
 
-Tabela com o mapeamento dos riscos do projeto, consequência e providências a serem tomadas.
+# 9. Riscos identificados
 
-| Risco                                       | Consequências                                         |  Providência/Solução                  |
-| ------------------------------------------- | ----------------------------------------------------- | ------------------------------------- | 
-| Não aprendizado das ferramentas utilizadas  | Se os membros da equipe não aprenderem adequadamente as ferramentas necessárias para o projeto, eles podem enfrentar dificuldades na execução de suas tarefas. | Reforçar estudos sobre as ferramentas |
-| Ausência por qualquer membro da equipe      | Quando um membro da equipe está ausente, seja por um curto período ou de forma permanente, pode haver lacunas na comunicação e colaboração. Isso pode resultar em informações perdidas, decisões tomadas sem a participação necessária e falta de alinhamento entre os membros da equipe. | Planejar o cronograma tendo em base a agenda dos membros. |
-| Divisão de tarefas mal sucedida             | Se a divisão de tarefas não for feita de forma adequada, algumas áreas do projeto podem ser negligenciadas ou mal atendidas. Isso pode levar a erros, omissões e retrabalho, já que as responsabilidades não estão claramente definidas ou não são executadas corretamente. | Acompanhar de perto o desenvolvimento de cada membro da equipe. |
+|Data|	Risco	Prioridade|	Responsável|	Status|	Solução|
+|---|---|---|---|---|
+|01/05/23|	Atraso na entrega dos equipamentos de hardware|	Alta|	Gerente|	Aberto|	Entrar em contato com o fornecedor para obter um posicionamento e considerar alternativas de fornecimento ou ajuste de prazos.|
+|10/05/23|	Falta de recursos técnicos qualificados|	Média|	Gerente|	Em andamento|	Iniciar processo de contratação ou treinamento da equipe para preencher a lacuna de habilidades necessárias.|
+|20/05/23|	Vulnerabilidade de segurança identificada|	Alta|	TI|	Resolvido|	Aplicar patches e atualizações de segurança para corrigir a vulnerabilidade identificada e monitorar regularmente a segurança do sistema.|
+|30/05/23|	Mudança nos requisitos do cliente|	Alta|	Gerente|	Aberto|	Realizar reunião com o cliente para entender as mudanças necessárias e avaliar o impacto nos prazos e custos do projeto.|
+|05/06/23|	Interrupção no fornecimento de energia elétrica|	Média|	Gerente|	Aberto|	Estabelecer um plano de contingência com um gerador de energia ou fonte alternativa para minimizar o impacto de possíveis interrupções.|
+|10/06/23|	Instabilidade no provedor de hospedagem|	Alta|	TI|	Aberto|	Avaliar alternativas de provedores de hospedagem, realizar testes de desempenho e confiabilidade e implementar medidas de backup para evitar perda de dados.|
+|20/06/23|	Falha no processo de backup dos dados|	Alta|	TI|	Em andamento|	Revisar e aprimorar o processo de backup, realizar testes regulares de restauração e implementar mecanismos de monitoramento para garantir a eficácia do backup.|
+|30/06/23|	Conflitos de agenda entre os membros da equipe|	Baixa|	Gerente|	Resolvido|	Implementar um sistema de gerenciamento de calendário compartilhado e estabelecer políticas de comunicação e coordenação entre a equipe.|
+
+Autorizo a abertura do projeto conforme as informações acima descritas.
+___
+
+<p align="center">Caicó/RN, <i>10</i> de <i>Maio</i> de <i>2023</i>.</p>
+<br/>
+<br/>
+<p align="center"><i>Annielly Ferreira de Souza</i></p>
+<p align="center">_____________________________________________</p>
+<p align="center"><strong> Gerente da Iteração vigente</strong></p>
