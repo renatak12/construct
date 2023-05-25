@@ -24,11 +24,11 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                |
 | ------------------------- | :----------------------------- |
-| RF16                      | Cadastrar Usuário              |
-| RF17                      | Alterar Usuário                |
-| RF18                      | Consultar Usuário              |
-| RF19                      | Vizualizar detalhes do Usuário |
-| RF20                      | Excluir Usuário                |  
+| RF0016                      | Cadastrar Usuário              |
+| RF0017                      | Alterar Usuário                |
+| RF0018                      | Consultar Usuário              |
+| RF0019                      | Vizualizar detalhes do Usuário |
+| RF0020                      | Excluir Usuário                |  
 
 
 |                         |           |
@@ -137,11 +137,11 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                |
 | ------------------------- | :----------------------------- |
-| RF21                      | Cadastrar Estoque              |
-| RF22                      | Alterar Estoque                |
-| RF23                      | Consultar Estoque              |
-| RF24                      | Vizualizar detalhes do Estoque |
-| RF25                      | Excluir Estoque                |
+| RF0021                      | Cadastrar Estoque              |
+| RF0022                      | Alterar Estoque                |
+| RF0023                      | Consultar Estoques              |
+| RF0024                      | Vizualizar detalhes do Estoque |
+| RF0025                      | Excluir Estoque                |
 
 |                         |           |
 | ----------------------- | :-------- |
@@ -152,7 +152,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Analista**   | Renata      |
 | **Desenvolvedor**   | Raquel      |
 | **Revisor**   | Maicon      |
-|**Testador**   | José Claudio      |
+|**Testador**   | José Cláudio      |
 
 
 ### User Story US04 - Manter Cliente
@@ -165,11 +165,11 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                |
 | ------------------------- | :----------------------------- |
-| RF07                      | Incluir Cliente              |
-| RF08                      | Alterar Cliente                |
-| RF09                      | Listar Clientes              |
-| RF10                      | Visualizar detalhes do Cliente |
-| RF11                      | Excluir Cliente                |
+| RF0007                      | Incluir Cliente              |
+| RF0008                      | Alterar Cliente                |
+| RF0009                      | Listar Clientes              |
+| RF0010                      | Visualizar detalhes do Cliente |
+| RF0011                      | Excluir Cliente                |
 
 |                         |           |
 | ----------------------- | :-------- |
@@ -192,11 +192,11 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 | **Requisitos envolvidos** |                                |
 | ------------------------- | :----------------------------- |
-| RF26                      | Incluir  Venda             |
-| RF27                      | Alterar Venda                |
-| RF28                      | Listar Venda              |
-| RF29                      | Visualizar detalhes da Venda |
-| RF30                      | Excluir Venda                |
+| RF0026                      | Incluir  Venda             |
+| RF0027                      | Alterar Venda                |
+| RF0028                      | Listar Vendas              |
+| RF0029                      | Visualizar detalhes da Venda |
+| RF0030                      | Excluir Venda                |
 
 |                         |           |
 | ----------------------- | :-------- |
