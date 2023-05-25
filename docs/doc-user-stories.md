@@ -168,7 +168,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF07                      | Incluir Cliente              |
 | RF08                      | Alterar Cliente                |
 | RF09                      | Listar Cliente              |
-| RF10                      | Visualizar Cliente |
+| RF10                      | Visualizar detalhes do Cliente |
 | RF11                      | Excluir Cliente                |
 
 |                         |           |
