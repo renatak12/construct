@@ -30,7 +30,8 @@ def cadastrar_vendedor(request):
 
         if user.exists():
             # TO DO: Utilizar messages do django
-            return HttpResponse('Email já existe')
+            #return HttpResponse('Email já existe')
+            messages.add_message(request, messages.INFO, 'Email já Existe')
         
         user = Users.objects.create_user(username=email,
                                             email=email,
@@ -41,6 +42,7 @@ def cadastrar_vendedor(request):
 
         # Redirecionar com uma mensagem
         #return HttpResponse('Conta criada')
+        messages.add_message(request, messages.SUCCESS, 'Cadastrado realizado com sucesso')
         return redirect(reverse('cadastrar_vendedor'))
 
 def login(request):
@@ -56,15 +58,18 @@ def login(request):
 
         if not user:
             # TO DO: Redirecionar com mensagem de erro
-            return HttpResponse('Usuário invalido')
+            messages.add_message(request, messages.ERROR, 'Usuário invalido')
+            #return HttpResponse('Usuário invalido')
         
         auth.login(request, user)
-        #return HttpResponse('Usuário logado com sucesso')
+        messages.add_message(request, messages.SUCCESS, 'Usuário logado com sucesso')
         return redirect(reverse('index'))
+        #return HttpResponse('Usuário logado com sucesso')
         #return render(request, 'login.html')
     
 def logout(request):
     request.session.flush()
+    messages.add_message(request, messages.SUCCESS, 'Usuário deslogado com sucesso')
     return redirect(reverse('login'))
 
 #@has_permission_decorator('cadastrar_vendedor')
