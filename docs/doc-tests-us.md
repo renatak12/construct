@@ -36,12 +36,25 @@ Resultado: Resultado do teste, modificações sugeridas ou resultados do teste. 
 | Data       | Versão | Descrição                | Autor                    |
 | ---------- | ------ | ------------------------ | ------------------------ |
 | 19/05/2023 | 1.0    | Documento Inicial        | Renata Karla Araújo dos Santos  |
+| 25/05/2023 | 2.0    | Atualização do Documento | Renata Karla Araújo dos Santos |
 
 
 ## 2. US01 – Manter Usuario
+## 2.1. Teste 01: Login do Usuario
 
-### 2.1. Teste 01: Login do Usuario
+| Código | Descrição                                              |
+| ------ | ------------------------------------------------------ |
+| A1.0.  | Realizar login                                         |
+| A1.1.  | O ator preenche os dados;                              |
+| A1.2.  | O ator seleciona a opção login;                       |
+| A1.3.  | O sistema redireciona para página principal;                              |
+| A1.4.  | Fim do fluxo.                                          |
 
+| Especificação     | Resultado |
+| ----------------- | --------- |
+| Especificação OK. | OK.       |
+
+---
 
 ### 2.2. Teste 02: Incluir Usuario
 
