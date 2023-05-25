@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load filters %}
+
+{% block 'main' %}
+    <div class="container">
+        <h1>Adicionar Produto</h1>
+        <br>
+        {% if messages %}
+            <br>
+            {% for message in messages%}
+                <div class="alert {{message.tags}}">{{message}}</div>
+            {% endfor%}
+        {% endif %}
+        <form action="{% url 'add_produto' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="nome">Nome</label>
+                    <input type="nome" id='nome' name='nome' class="form-control">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="categoria">Categoria</label>
+                    <select class="form-control" name="categoria">
+                        {% for categoria in categorias %}
+                            <option value="{{categoria.id}}">{{categoria.titulo}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="quantidade">Estoque Inicial</label>
+                    <input class="form-control" type="number" name="quantidade">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="preco_compra">Preço de Compra</label>
+                    <input class="form-control" type="number" name="preco_compra">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="preco_venda">Preço de Venda</label>
+                    <input class="form-control" type="number" name="preco_venda">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="imagens">Imagem</label>
+                    <input class="form-control" type="file" name="imagens" multiple>
+                </div>
+            </div>
+            <input class="btn btn-success" type="submit" value="Enviar" style="padding: 10px 20px;">
+        </form>
+        <hr>
+        
+        <form action="{% url 'add_produto' %}" method="GET">
+            <h1 style="margin-bottom: 30px;">Buscar Produtos</h1>
+            <div class="row">
+
+                <div class="col-md" >
+                    <input type="nome" id='nome' name='nome' class="form-control" placeholder="Nome">
+                </div>
+                <div class="col-md">
+                    <select class="form-control" name="categoria">
+                        <option value="">Todas as categorias</option>
+                        {% for categoria in categorias %}
+                            <option value="{{categoria.id}}">{{categoria.titulo}}</option>
+                        {% endfor %}
+                        
+                    </select>
+                </div>
+    
+                <div class="col-md">
+                    <input class="form-control" type="number" name="preco_min" placeholder="Preço mínimo">
+                </div>
+    
+                <div class="col-md">
+                    <input class="form-control" type="number" name="preco_max" placeholder="Preço máximo">
+                </div>
+    
+                <div class="col-md">
+                    <input class="btn btn-success" type="submit" value="Filtrar" style="padding: 10px 20px">
+                    
+                </div>
+                
+            </div>
+            
+        </form>
+
+        <div class="listar_produtos">
+            <div class="row"> 
+                <h1 style="margin-bottom: 30px;">Listar Produtos</h1>
+            {% for produto in produtos %}
+                <div class="col-md" style="display:flex; flex-direction: wrap;">
+                    <div style="width: 16rem;" class="card">
+                    {% if produto|get_first_image %}
+                        <img width="100%" class="card-img-top" src="{{produto|get_first_image}}">
+                    {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{produto.nome}}</h5>
+                            <p>{{produto.categoria}}</p>
+                            <a href="{% url 'produto' produto.slug %}" class="btn btn-primary">Acessar</a>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            {% endfor %}
+            </div> 
+    
+        </div>
+    </div>
+{% endblock %}
