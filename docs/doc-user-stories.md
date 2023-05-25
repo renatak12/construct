@@ -181,3 +181,30 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Desenvolvedor**   | Maicon  |
 | **Revisor**   | Raquel  |
 |**Testador**   | Annielly  |
+
+### User Story US05 - Manter Venda
+
+|    |    |  
+| ------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Descrição** | O sistema deve permitir o cadastro, a alteração, a listagem, a visualização e a exclusão de vendas, para que se possa gerenciar as operações comerciais de forma eficiente. Para isso, o sistema deve validar os dados da venda antes de salvar no banco de dados, e mostrar as vendas cadastradas em uma lista paginada e ordenada por data que permite a edição ou exclusão de uma venda selecionada. Além disso, o sistema deve permitir que se veja os detalhes de uma venda selecionada, incluindo os produtos, as quantidades, os preços e o valor total. O sistema deve também atualizar o estoque e o faturamento após cada operação de venda.  |  
+
+
+
+| **Requisitos envolvidos** |                                |
+| ------------------------- | :----------------------------- |
+| RF26                      | Incluir  Venda             |
+| RF27                      | Alterar Venda                |
+| RF28                      | Listar Venda              |
+| RF29                      | Visualizar Venda |
+| RF30                      | Excluir Venda                |
+
+|                         |           |
+| ----------------------- | :-------- |
+| **Prioridade**          | Essencial |
+| **Estimativa**          | 8 h       |
+| **Tempo Gasto (real):** |           |
+| **Tamanho Funcional**   | 7 PF      |
+| **Analista**   | José Cláudio  |
+| **Desenvolvedor**   | Maicon  |
+| **Revisor**   | Raquel  |
+|**Testador**   | Annielly  |
