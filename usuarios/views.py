@@ -29,8 +29,10 @@ def cadastrar_vendedor(request):
         user = Users.objects.filter(email=email)
 
         if user.exists():
-            # TO DO: Utilizar messages do django
-            return HttpResponse('Email já existe')
+            
+            messages.add_message(request, messages.ERROR, 'Email já existe')
+            return redirect(reverse('cadastrar_vendedor'))
+            
         
         user = Users.objects.create_user(username=email,
                                             email=email,
@@ -39,15 +41,14 @@ def cadastrar_vendedor(request):
                                             last_name=sobrenome,
                                             cargo="V")
 
-        # Redirecionar com uma mensagem
-        #return HttpResponse('Conta criada')
+        
+        messages.add_message(request, messages.SUCCESS, 'Conta criada')
         return redirect(reverse('cadastrar_vendedor'))
 
 def login(request):
     if request.method == "GET":
         if request.user.is_authenticated:
-            #return redirect(reverse('index'))
-            return render(request, 'login.html')
+            return render(request, 'login')
     elif request.method == "POST":
         login = request.POST.get('email')
         senha = request.POST.get('senha')
@@ -55,13 +56,13 @@ def login(request):
         user = auth.authenticate(username=login, password=senha)
 
         if not user:
-            # TO DO: Redirecionar com mensagem de erro
-            return HttpResponse('Usuário invalido')
+            messages.add_message(request, messages.ERROR, 'Usuário inválido')
+            return redirect(reverse('login'))
+            
         
         auth.login(request, user)
-        #return HttpResponse('Usuário logado com sucesso')
+        messages.add_message(request, messages.SUCCESS, 'Usuário logado com sucesso')
         return redirect(reverse('index'))
-        #return render(request, 'login.html')
     
 def logout(request):
     request.session.flush()

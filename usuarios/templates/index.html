@@ -54,6 +54,12 @@
 
     {% endblock %}
 
+    {% if messages %}
+      <br>
+      {% for message in messages %}
+          <div class="alert {{message.tags}}">{{message}}</div>
+      {% endfor %}
+    {% endif %}
 
       <body>
         <form>
