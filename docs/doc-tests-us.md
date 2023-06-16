@@ -1,9 +1,11 @@
-# Documento de Testes e Validação de User Stories
+# Relatório de Testes de Módulo/Sistema
+
+# Construct
+Responsabilidade do Testador
+
 
 
 Criado a partir de: [Processo BSI - Relatório de Testes de Módulo/Sistema](https://docs.google.com/document/d/11hLKf0FcspQrDRfo3gRMXzuY1028cUeniv_Aob8DX_0/edit)
-
----
 
 ```txt
 Legenda
@@ -17,49 +19,60 @@ Especificação: Informações sobre a função testada e se ela de acordo com a
 Resultado: Resultado do teste, modificações sugeridas ou resultados do teste. No caso de erro ou problema na execução do teste descrever o erro em detalhes e adicionar print's das telas.
 ```
 
-## Sumário
+## Descrição
 
-- [1. Descrição](#1-descrição)
-  - [1.1. Histórico de revisões](#11-histórico-de-revisões)
-- [2. US01 – Manter Usuário](#2-us001--manter-usuario)
-  - [2.1. Teste 01: login do Usuário](#21-teste-01-login-usuario)
-  - [2.2. Teste 02: Incluir Usuário](#22-teste-02-incluir-usuario)
-  - [2.3. Teste 03: Excluir Usuário](#23-teste-03-excluir-usuario)
-- [3. Relatório de Bugs e Providências](#3-relatório-de-bugs-e-providências)
+Neste documento é abordado os relatórios de Testes de Módulo/Sistema sobre responsabilidade do Testador da iteração.
 
-## 1. Descrição
-
-
-
-### 1.1. Histórico de revisões
+## Histórico de revisões
 
 | Data       | Versão | Descrição                | Autor                    |
 | ---------- | ------ | ------------------------ | ------------------------ |
-| 19/05/2023 | 1.0    | Documento Inicial        | Renata Karla Araújo dos Santos  |
-| 25/05/2023 | 2.0    | Atualização do Documento | Renata Karla Araújo dos Santos |
+| 18/05/2023 | 1.0    | Documento Inicial        | Renata Karla Araújo dos Santos  |
+| 18/05/2023 | 2.0    | Atualização do Documento | Renata Karla Araújo dos Santos |
+| 15/06/2023 | 3.0    | Atualização do Documento | Renata Karla Araújo dos Santos |
+
+### US01 - Manter Funcionario 
+
+| Teste      |      Descrição      |        Especificação          | Resultado            |
+| :--------- | :-----------------: | :---------------------------: | :------------------- |
+| Teste 01: test_login_view | A1 -Logar usuario A1.1. O sistema executa o login A1.2. O sistema verifica se foi realizado A1.3. Fim do fluxo. | Especificação ok.| Ok. |
+| Teste 02: test_cadastro_funcionario_gerente | A1 - Cadastrar funcionario gerente A1.1. O sistema executa o fluxo de usuarios A1.2. O sistema executa a função verifica e retorna A1.3. Fim do fluxo.| Especificação ok.| Ok. |
+| Teste 03: test_cadastro_funcionario_vendedor | A1 - Cadastrar funcionario vendedor A1.1. O sistema executa o fluxo de usuarios A1.2. O sistema executa a função verifica e retorna A1.3. Fim do fluxo. | Especificação ok.| Ok. |
+
+### US02 - Manter Produto
+
+| Teste      |      Descrição      |        Especificação          | Resultado            |
+| :--------- | :-----------------: | :---------------------------: | :------------------- |
+| Teste 01: test_cadastrar_produto | A1 - Cadastrar produto A1.1. O sistema executa o fluxo de vendas A1.2. O sistema executa a função verifica e retorna A1.3. Fim do fluxo. | Especificação ok.| Ok. |
+
+### US03 - Manter Estoque 
 
 
-## 2. US01 – Manter Usuario
-## 2.1. Teste 01: Login do Usuario
+### US04 - Manter Cliente
 
-| Código | Descrição                                              |
-| ------ | ------------------------------------------------------ |
-| A1.0.  | Realizar login                                         |
-| A1.1.  | O ator preenche os dados;                              |
-| A1.2.  | O ator seleciona a opção login;                       |
-| A1.3.  | O sistema redireciona para página principal;                              |
-| A1.4.  | Fim do fluxo.                                          |
+| Teste      |      Descrição      |        Especificação          | Resultado            |
+| :--------- | :-----------------: | :---------------------------: | :------------------- |
+| Teste 01: test_cadastrar_cliente_get | A1 - Cadastrar cliente A1.1. O sistema executa o fluxo de usuarios A1.2. O sistema executa a função verifica e retorna A1.3. Fim do fluxo. | Especificação ok.| Ok. |
 
-| Especificação     | Resultado |
-| ----------------- | --------- |
-| Especificação OK. | OK.       |
+### US05 - Manter Venda
 
----
+| Teste      |      Descrição      |        Especificação          | Resultado            |
+| :--------- | :-----------------: | :---------------------------: | :------------------- |
+| Teste 01: test_cadastrar_categoria | A1 - Cadastrar categoria A1.1. O sistema executa o fluxo de venda A1.2. O sistema executa a função verifica e retorna A1.3. Fim do fluxo. | Especificação ok.| Ok. |
 
-### 2.2. Teste 02: Incluir Usuario
+### US06 - Manter Fornecedor
 
-
-### 2.3. Teste 03: Excluir Usuario
+| Teste      |      Descrição      |        Especificação          | Resultado            |
+| :--------- | :-----------------: | :---------------------------: | :------------------- |
+| Teste 01: test_cadastrar_fornecedor_get | A1 - Cadastrar fornecedor A1.1. O sistema executa o fluxo de usuarios A1.2. O sistema executa a função verifica e retorna A1.3. Fim do fluxo. | Especificação ok.| Ok. |
 
 
-## 3. Relatório de Bugs e Providências
+## Relatório de Bugs e Providências
+
+Responsabilidade do Gerente
+
+|      Teste        |           Providência            |        Tarefas/tipo            |
+| :---------------- | :------------------------------: | :----------------------------- |
+| Teste 01: test_funcionario_str | Corrigir a erro no arquivo models.py na definição de função de Funcionario(models.Model), detectada ao executar os testes do sistema. | Tarefa: Bug de Implementação. |
+| Teste 01: test_deletar_cliente | Corrigir a erro no arquivo usuarios.views.py na definição de função de deletar_cliente, detectada ao executar os testes do sistema. | Tarefa: Bug de Implementação. |
+
