@@ -7,7 +7,7 @@ Neste documento temos o modelo de Dados (Entidade-Relacionamento). Temos também
 ## Modelo de Dados
 
 
-Abaixo apresentamos o modelo dados (Entidade-Relacionamento) usando o **BrModelo**.
+Abaixo apresentamos o modelo de dados (Entidade-Relacionamento) usando o **BrModelo**.
 
 
 ![Modelo Entidade-Relacionamento](images/modelo-conceitual-construct.png)
