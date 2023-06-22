@@ -26,6 +26,7 @@ O objetivo deste projeto é desenvolver um sistema de gestão para lojas de mate
 |09/05/2023|	2.0.0|	Mudança nos RF e RNF|	Raquel Lima Fernandes|
 |15/05/2023|	3.0.0|	Acrescentando DER|	Raquel Lima Fernandes|
 |23/05/2023|	4.0.0|	Atualizando Documento|	Renata Karla Araújo dos Santos|
+|20/06/2023|	5.0.0|	Documento Final|	Raquel Lima Fernandes|
 
 ## 2. Descrição do Sistema
 
