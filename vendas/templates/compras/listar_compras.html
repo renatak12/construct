@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}{% endblock header %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>Lista de Compras</h2>
+        </div>
+        <div class="col-sm-4 text-end">
+            <a href="{% url 'logado' %}" class="btn btn-primary btn-sm" style="background-color: #19A7CE; border:none;">Voltar</a> 
+        </div><hr>
+    </div>
+    <div class="row mt-5">
+        <div class="col">
+            {% if compras %}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Fornecedor</th>
+                        <th class="text-end">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for compra in compras %}
+                    <tr>
+                        <td>{{ compra.data }}</td>
+                        <td>{{ compra.fornecedor.nome }}</td>
+                        <td class="text-end">
+                            <a href="{% url 'detalhar_compra' compra.id %}" class="btn btn-sm" style="color:#fff;"><i class='bx bx-low-vision' style='color:#1e1c1c; ' title"detalhar"></i></a>
+                            <a href="{% url 'excluir_compra' compra.id %}" class="btn  btn-sm" style="color:#fff;"><i class='bx bx-trash' style='color:#1e1c1c;' title"excluir"></i></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+                <div class="text-center mt-5 mb-5 jumbotron">
+                    <h5>Nenhuma <code>Compra</code> registrada ainda.</h5></br>
+                    <a href="{% url 'nova_compra' %}" class="btn btn-primary btn-sm" style="background-color: #87af3c; border:none;">Nova Compra</a>
+                </div>
+                
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

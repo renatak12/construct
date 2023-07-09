@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}{% endblock header %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>Excluir Categoria</h2>
+        </div>
+        <div class="col-sm-4 text-end">
+            <a href="{% url 'listar_categorias' %}" class="btn btn-primary btn-sm" style="background-color: #19A7CE; border:none;">Voltar</a> 
+        </div>
+    </div>
+    <hr>
+    <p>Deseja realmente excluir a categoria <b>"{{ categoria.nome }}"</b>?</p>
+    <form method="POST" action="{% url 'excluir_categoria' categoria.id %}">
+        {% csrf_token %}
+        <input type="submit" value="Excluir" class="btn btn-danger" style="background-color: #ff3636; border:none;">
+        <a href="{% url 'listar_categorias' %}" class="btn btn-primary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

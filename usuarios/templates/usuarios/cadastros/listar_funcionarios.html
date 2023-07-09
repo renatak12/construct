@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block header %}{% endblock  %}
+
+{% block content %}
+
+<div class="container card-body">
+</br>
+</br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <h2>Listar Funcionários</h2>
+            </div>
+            <div class="col-sm-4 text-end">
+                <a href="{% url 'logado' %}" class="btn btn-primary btn-sm" style="background-color: #19A7CE; border:none;">Voltar</a> 
+            </div>
+        </div>
+    </div>
+    <hr>
+</br>
+{% if funcionarios|length > 0 %}
+<table class="table table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">CPF</th>
+            <th scope="col">Remuneração</th>
+            <th scope="col">Cargo</th>
+            <th scope="col">Email</th> 
+            <th scope="col">Último Acesso</th>
+        <th scope="col" class="text-center">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for funcionario in funcionarios %}
+        <tr>
+            <th>{{funcionario.nome}}</th>
+            <td>{{ funcionario.formatar_cpf }}</td>
+            <td>{{funcionario.remuneracao}}</td>
+            <td>{{funcionario.usuario.cargo}}</td>
+            <td>{{funcionario.email}}</td>   
+            <td>{% if not funcionario.last_login %}
+                    Não possui login
+                {% else %}
+                    {{funcionario.last_login}}
+                {% endif %}
+            <td class="text-center">
+                <a href="{% url 'editar_funcionario' funcionario.id %}" class="btn btn-sm" style="color:#fff;"><i class='bx bxs-edit-alt' style='color:#1e1c1c;' title"editar"></i></a>
+                <a href="{% url 'deletar_funcionario' funcionario.id %}" class="btn btn-sm" style="color:#fff;"><i class='bx bx-trash' style='color:#1e1c1c;' title"excluir"></i></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+    {% else %}
+        <div class="text-center mt-5 mb-5 jumbotron">
+            <h5>Nenhum <code>Funcionario</code> cadastrado ainda.</h5>
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}

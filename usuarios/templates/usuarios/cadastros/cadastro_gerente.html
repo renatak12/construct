@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}{% endblock header %}
+
+{% block content %}
+<div class="container mt-5">
+    <h3 class="mb-3">Cadastro de Gerente</h3><hr>
+    <div style="width: 40rem;">  
+
+        <form method="post" action="{% url 'cadastrar_gerente' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="username">Nome</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="mb-">
+                <label for="cpf">CPF</label>
+                <input type="text" class="form-control" id="cpf" name="cpf" required>
+            </div>
+            <div class="mb-3">
+                <label for="remuneracao">Remuneração</label>
+                <input type="number" class="form-control" id="remuneracao" name="remuneracao" required>
+            </div>
+            <div class="mb-3">
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="password">Senha</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>  
+            <button type="submit" class="btn btn-primary" style="background-color: #87af3c; border:none;">Cadastrar</button>
+        </form> 
+    </div>
+</div>
+
+{% endblock %}

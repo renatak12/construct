@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock  %}
+
+{% block content %}
+
+<div class="p-5 text-center construct">
+
+    <h3 class="mb-3">Bem vindo ao <strong class="destaque">CONSTRUCT</strong></h3>
+    <p class="lead mb-3">Um sistema de gerenciamento para sua loja de materiais de construção.</p>
+    <a class="btn btn-primary" href="{% url 'login' %}" role="button" style="background:#87af3c; border: none;">Login</a>
+</div>
+
+{% endblock  %}

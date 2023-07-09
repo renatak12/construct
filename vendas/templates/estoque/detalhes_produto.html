@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}{% endblock  %}
+
+{% block content %}
+<div class="container mt-5">
+  <h3>Detalhes do Produto</h3>
+  <hr>
+  <div class="mb-3">
+    <label for="nome" class="form-label">Nome:</label>
+    <p>{{ produto.nome }}</p>
+  </div>
+  <div class="mb-3">
+    <label for="descricao" class="form-label">Descrição:</label>
+    <p>{{ produto.descricao }}</p>
+  </div>
+  <div class="mb-3">
+    <label for="categoria" class="form-label">Categoria:</label>
+    <p>{{ produto.categoria.nome }}</p>
+  </div>
+  <div class="mb-3">
+    <label for="fornecedor" class="form-label">Fornecedor:</label>
+    <p>{{ produto.fornecedor.nome }}</p>
+  </div>
+  <div class="mb-3">
+    <label for="preco_compra" class="form-label">Preço de Compra:</label>
+    <p>{{ produto.preco_compra }}</p>
+  </div>
+  <div class="mb-3">
+    <label for="preco_venda" class="form-label">Preço de Venda:</label>
+    <p>{{ produto.preco_venda }}</p>
+  </div>
+</div>
+{% endblock %}

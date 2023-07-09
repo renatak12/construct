@@ -1,0 +1,20 @@
+html {
+    font-family: 'Roboto', sans-serif;
+}
+.construct {
+    margin-top: 200px;
+}
+
+.bg-btn-construct {
+    background-color: #87af3c;
+}
+
+.destaque {
+    color: #87af3c;
+}
+
+.produto-imagem {
+    width: 100px;  /* Largura desejada */
+    height: 100px; /* Altura desejada */
+    object-fit: cover; /* Redimensionar a imagem para preencher o contêiner mantendo a proporção */
+  }

@@ -1,15 +1,19 @@
-import imp
 from django.contrib import admin
-from .models import Users
-from django.contrib.auth import admin as admin_auth_django
-from .forms import UserChangeForm, UserCreationForm
-# Register your models here.
+from django.contrib.auth.admin import UserAdmin
+from .forms import UsuarioCreationForm, UsuarioChangeForm
+from .models import Usuario
 
-@admin.register(Users)
-class UserAdmin(admin_auth_django.UserAdmin):
-    form = UserChangeForm
-    add_form = UserCreationForm
-    model = Users
-    fieldsets = admin_auth_django.UserAdmin.fieldsets + (
-        ('Cargo',{'fields': ('cargo',)}),
-    )
+
+@admin.register(Usuario)
+class UsuarioUsersAdmin(UserAdmin):
+    form = UsuarioChangeForm
+    add_form = UsuarioCreationForm
+    model = Usuario
+    list_display = [
+    "email",
+    "username",
+    "cargo",
+    "is_staff",
+    ]
+    fieldsets = UserAdmin.fieldsets + ((None, {"fields": ("cargo",)}),)
+    add_fieldsets = UserAdmin.add_fieldsets + ((None, {"fields": ("cargo",)}),)

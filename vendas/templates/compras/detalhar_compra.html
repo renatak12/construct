@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}{% endblock header %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <h2>Detalhes da Compra</h2>
+            <hr>
+            <p><strong>Data:</strong> {{ compra.data }}</p>
+            <p><strong>Fornecedor:</strong> {{ compra.fornecedor.nome }}</p>
+            <h4>Itens de Compra</h4>
+            {% if compra.itenscompra.all %}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Valor Unitário</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item_compra in compra.itenscompra.all %}
+                    <tr>
+                        <td>{{ item_compra.produto.nome }}</td>
+                        <td>{{ item_compra.quantidade }}</td>
+                        <td>{{ item_compra.produto.preco_venda }}</td>
+                        <td>{{ item_compra.subtotal }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <p><strong>Total da Compra:</strong> {{ compra.total }}</p>
+            {% else %}
+            <p>Nenhum item de compra encontrado.</p>
+            {% endif %}
+            <a href="{% url 'listar_compras' %}" class="btn btn-primary btn-sm" style="background-color: #19A7CE; border:none;">Voltar</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

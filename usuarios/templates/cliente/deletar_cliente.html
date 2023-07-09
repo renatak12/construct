@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}{% endblock header %}
+
+{% block content %}
+<div class="container mt-5">
+    <h3 class="mb-3">Excluir Cliente</h3><hr>
+    <p class="lead mt-5">Você tem certeza que deseja excluir o Cliente "<b>{{ cliente.nome }} </b>"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Confirmar</button>
+        <a href="{% url 'listar_clientes' %}" class="btn btn-secondary" style="background-color: #87af3c; border:none;">Cancelar</a>
+    </form>
+</div>
+
+{% endblock %}

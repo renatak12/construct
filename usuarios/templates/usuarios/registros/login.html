@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Login{% endblock  %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div style="width: 20rem;">
+        <h3 class="mb-3">Login</h3><hr>
+        <form method="POST" action="{% url 'login' %}" class="mt-5">
+            {% csrf_token %}
+            <div class="form-group">
+            <label for="username">Usuário:</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+            </div></br>
+    
+            <div class="form-group">
+            <label for="password">Senha:</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+            </div></br>
+    
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" style="background-color: #87af3c; border:none;">Entrar</button>
+            </div>
+        </form>
+        </div>
+    </div>
+  </div>
+
+{% endblock  %}

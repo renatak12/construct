@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}{% endblock header %}
+
+{% block content %}
+<div class="container mt-5">
+    <h3 class="mb-3">Editar Funcionário</h3><hr>
+        <p class="lead mt-5">Tem certeza de que deseja deletar o funcionário <b>"{{ funcionario.nome }}"</b>?</p>
+        <form method="post" action="{% url 'deletar_funcionario' funcionario.id %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Deletar</button>
+            <a href="{% url 'listar_funcionarios' %}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+{% endblock %}

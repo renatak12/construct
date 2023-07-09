@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-sm-8">
+        <h2>Detalhar Produto</h2>
+      </div>
+      <div class="col-sm-4 text-end">
+        <a href="{% url 'listar_produtos' %}" class="btn btn-primary btn-sm" style="background-color: #19A7CE; border:none;">Voltar</a> 
+      </div>
+    </div>
+    <hr>
+    <div class="row mt-5">
+      <div class="col-md-4 mt-5">
+        <div style="width:40rem;">
+          <div class="row g-0">
+            <div class="col-md-6" style="width:15rem;">
+              <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" class="card-img-top">
+            </div>
+            <div class="col-md-6">
+              <div class="card-body" style="width:50rem;">
+                <h5 class="card-title">{{ produto.nome }}</h5>
+                <p class="card-text">{{ produto.nome }}: {{ produto.descricao }}</p>
+                <p class="card-text"><b>Categoria:</b> {{ produto.categoria.nome }}</p>
+                <p class="card-text"><b>Fornecedor:</b> {{ produto.fornecedor.nome }}</p>
+                <p class="card-text"><b>Preço de Compra:</b> R$ {{ produto.preco_compra }}</p>
+                <p class="card-text"><b>Preço de Venda:</b> R$ {{ produto.preco_venda }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+  </div>  
+{% endblock %}

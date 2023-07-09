@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}{% endblock header %}
+
+{% block content %}
+<div class="container mt-5">
+    <h3 class="mb-3">Editar Funcionário</h3><hr>
+    <div style="width: 40rem;">  
+
+        <form method="post" action="{% url 'editar_funcionario' funcionario.id %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" value="{{ funcionario.nome }}">
+            </div>
+            <div class="mb-">
+                <label for="cpf">CPF</label>
+                <input type="text" class="form-control" id="cpf" name="cpf" value="{{ funcionario.cpf }}">
+            </div>
+            <div class="mb-3">
+                <label for="remuneracao">Remuneração</label>
+                <input type="text" class="form-control" id="remuneracao" name="remuneracao" value="{{ funcionario.remuneracao }}">
+            </div>
+            <div class="mb-3">
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" id="email" name="email" value="{{ funcionario.email }}">
+            </div> 
+            <button type="submit" class="btn btn-primary" style="background-color: #87af3c; border:none;">Salvar</button>
+        </form> 
+    </div>
+</div>
+
+{% endblock %}

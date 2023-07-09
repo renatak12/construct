@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block header %}{% endblock  %}
+
+{% block content %}
+
+<div class="container card-body">
+</br>
+</br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>Listar Fornecedores</h2>
+        </div>
+        <div class="col-sm-4 text-end">
+            <a href="{% url 'logado' %}" class="btn btn-primary btn-sm" style="background-color: #19A7CE; border:none;">Voltar</a> 
+        </div>
+    </div>
+</div>
+<hr>
+</br>
+{% if fornecedores|length > 0 %}
+<table class="table table-striped">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">CNPJ</th>
+            <th scope="col">Telefone</th> 
+            <th scope="col">E-mail</th> 
+        <th scope="col" class="text-center">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for fornecedor in fornecedores %}
+        <tr>
+            <th>{{ fornecedor.nome }}</th>
+            <td>{{fornecedor.cnpj }}</td>
+            <td>{{ fornecedor.telefone }}</td>
+            <td>{{ fornecedor.email }}</td>   
+            <td class="text-center">
+                <a href="{% url 'editar_fornecedor' fornecedor.id %}" class="btn btn-sm" style="color:#fff;"><i class='bx bxs-edit-alt' style='color:#1e1c1c;' title"editar"></i></a>
+                <a href="{% url 'deletar_fornecedor' fornecedor.id %}" class="btn btn-sm" style="color:#fff;"><i class='bx bx-trash' style='color:#1e1c1c;' title"excluir"></i></a>
+                <a href="{% url 'cadastrar_fornecedor' %}" class="btn btn-sm" style="color:#fff;"><i class='bx bx-user-plus' style='color:#1e1c1c;' title"cadastar"></i></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+    {% else %}
+    <div class="text-center mt-5 mb-5 jumbotron">
+        <h5>Nenhum <code>Fornecedor</code> cadastrado ainda.</h5></br>
+        <a href="{% url 'cadastrar_fornecedor' %}" class="btn btn-primary btn-sm" style="background-color: #87af3c; border:none;">Cadastrar</a>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}

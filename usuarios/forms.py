@@ -1,11 +1,15 @@
-from django import forms
-from django.contrib.auth import forms
-from .models import Users
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
-class UserChangeForm(forms.UserChangeForm):
-    class Meta(forms.UserChangeForm.Meta):
-        model = Users
+from .models import Usuario
 
-class UserCreationForm(forms.UserCreationForm):
-    class Meta(forms.UserCreationForm.Meta):
-        model = Users
+
+class UsuarioCreationForm(UserCreationForm):
+    class Meta(UserCreationForm):
+        model = Usuario
+        fields = UserCreationForm.Meta.fields + ("cargo",)
+        
+class UsuarioChangeForm(UserChangeForm):
+    class Meta:
+        model = Usuario
+        fields = UserChangeForm.Meta.fields
+

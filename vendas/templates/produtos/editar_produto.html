@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}{% endblock header %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>Editar Produto</h2>
+        </div>
+        <div class="col-sm-4 text-end">
+            <a href="{% url 'listar_produtos' %}" class="btn btn-primary btn-sm" style="background-color: #19A7CE; border:none;">Voltar</a> 
+        </div><hr>
+    </div>
+    <form method="POST" action="{% url 'editar_produto' produto.id %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row mb-4 mt-5">
+            <div class="col">
+                <div class="form-group">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" value="{{ produto.nome }}" id="nome" name="nome" required>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="categoria" class="form-label">Categoria</label>
+                    <select class="form-select" id="categoria" name="categoria" required>
+                        {% for categoria in categorias %}
+                        <option value="{{ categoria.id }}">{{ categoria.nome }}</option>
+                        {% endfor %}
+                    </select>     
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="fornecedor" class="form-label">Fornecedor</label>
+                    <select class="form-select" id="fornecedor" name="fornecedor" required>
+                        {% for fornecedor in fornecedores %}
+                        <option value="{{ fornecedor.id }}">{{ fornecedor.nome }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+             </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col">
+                <div class="form-group">
+                    <label for="preco_compra" class="form-label">Preço de Compra</label>
+                    <input type="number" step="0.01" class="form-control" id="preco_compra" value="{{ produto.preco_compra }}" name="preco_compra" required>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="preco_venda" class="form-label">Preço de Venda</label>
+                    <input type="number" step="0.01" class="form-control" id="preco_venda" value="{{ produto.preco_venda }}" name="preco_venda" required>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col">
+                <div class="form-group">
+                    <label for="descricao">Descrição</label>
+                    <input type="text" class="form-control" value="{{ produto.descricao }}" id="descricao" name="descricao" required>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col">
+                <div class="form-group">
+                    <label for="imagem">Imagem</label>
+                    <input type="file" class="form-control" id="imagem" name="imagem" {% if produto.imagem %}value="{{ produto.imagem.url }}"{% endif %}>
+                </div>
+            </div>
+        </div>
+        <input type="submit" value="Atualizar" class="btn btn-success" style="background-color: #87af3c; border:none;">
+    </form>
+</div>
+{% endblock %}
+
+

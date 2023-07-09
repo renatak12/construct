@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}{% endblock header %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>Cadastrar Produto</h2>
+        </div>
+        <div class="col-sm-4 text-end">
+            <a href="{% url 'listar_clientes' %}" class="btn btn-primary btn-sm" style="background-color: #19A7CE; border:none;">Voltar</a> 
+        </div><hr>
+    </div>
+    <form method="POST" action="{% url 'cadastrar_produto' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row mb-4 mt-5">
+            <div class="col">
+                <div class="form-group">
+                    <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" required>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="categoria" class="form-label">Categoria</label>
+                    <select class="form-select" id="categoria" name="categoria" required>
+                        {% for categoria in categorias %}
+                        <option value="{{ categoria.id }}">{{ categoria.nome }}</option>
+                        {% endfor %}
+                    </select>     
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="fornecedor" class="form-label">Fornecedor</label>
+                    <select class="form-select" id="fornecedor" name="fornecedor" required>
+                        {% for fornecedor in fornecedores %}
+                        <option value="{{ fornecedor.id }}">{{ fornecedor.nome }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+             </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col">
+                <div class="form-group">
+                    <label for="preco_compra" class="form-label">Preço de Compra</label>
+                    <input type="number" step="0.01" class="form-control" id="preco_compra" name="preco_compra" required>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="preco_venda" class="form-label">Preço de Venda</label>
+                    <input type="number" step="0.01" class="form-control" id="preco_venda" name="preco_venda" required>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col">
+                <div class="form-group">
+                    <label for="descricao">Descrição</label>
+                    <textarea class="form-control" id="descricao" name="descricao" rows="4" required></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col">
+                <div class="form-group">
+                    <label for="imagem">Imagem</label>
+                    <input type="file" class="form-control" id="imagem" name="imagem">
+                </div>
+            </div>
+        </div>
+        <input type="submit" value="Cadastrar" class="btn btn-success" style="background-color: #87af3c; border:none;">
+    </form>
+</div>
+{% endblock %}

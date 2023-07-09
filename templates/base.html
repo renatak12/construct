@@ -1,45 +1,56 @@
+<!DOCTYPE html>
 {% load static %}
-<!doctype html>
-<html lang="pt-br">
-  <head>
+<html lang="pb-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'usuarios/css/css.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.mim.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    {% block 'head' %}
 
-    {% endblock %}
-
-    <title>{% block 'title' %}{% endblock %}</title>
-  </head>
-  <body class="p-3 mb-2 bg-light text-dark">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
-          <img src="https://img.myloview.com.br/adesivos/icones-de-ferramentas-de-construcao-civil-icon-set-vector-700-151099881.jpg" width="70" height="70" class="d-inline-block align-top" alt=""></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-
-          </ul>
-        </div>
-        <nav class="navbar navbar-dark bg-dark">
-          <form>
-            <a class="nav-link" href=""><button class="btn btn-info" type="button">Login</button></a>
-          </form>
+    <title>{% block title %}Construct{% endblock  %}</title>
+</head>
+<body>
+    {% block header %}
+    
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+                    aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <!-- Logo -->
+                <a class="navbar-brand" href="{% url 'homepage' %}">
+                    <img src="{% static 'images/logo.png' %}" alt="Logo" width="100">
+                </a>
+                <div class="collapse navbar-collapse justify-content-center text-center" id="navbarExample01">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'homepage' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'sobre' %}">Sobre</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-        
-      </nav>
+    </header>
+    
+    {% endblock  %}
 
-    {% block 'body' %}
+    {% block content %}{% endblock  %}
 
-    {% endblock %}
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-
-  </body>
+    <script src="{% static 'js/mdb.min.js' %}"></script>
+</body>
 </html>

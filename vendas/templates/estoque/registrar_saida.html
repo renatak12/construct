@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}{% endblock  %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h3>Registrar Saída de Produto - {{ produto.nome }}</h3>
+    <form method="POST" action="{% url 'registrar_saida' produto.id %}">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" class="form-control" id="quantidade" name="quantidade" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Registrar Saída</button>
+    </form>
+  </div>
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}{% endblock header %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>Editar Cliente</h2>
+        </div>
+        <div class="col-sm-4 text-end">
+            <a href="{% url 'listar_clientes' %}" class="btn btn-primary btn-sm" style="background-color: #19A7CE; border:none;">Voltar</a> 
+        </div>
+    </div><hr>
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="row mb-4 mt-5">
+                <div class="col">
+                <div class="form-group">
+                    <label class="form-label">Nome</label>
+                    <input type="text" value="{{ form_data.nome }}" class="form-control" name="nome"/>     
+                </div>
+                </div>
+                <div class="col">
+                <div class="form-group">
+                    <label class="form-label">CPF</label>
+                    <input type="text"  value="{{ form_data.cpf }}" class="form-control" name="cpf"/>  
+                </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col">
+                <div class="form-group">
+                    <label class="form-label">Telefone</label>
+                    <input type="text"  value="{{ form_data.telefone }}" class="form-control" name="telefone"/>     
+                </div>
+                </div>
+                <div class="col">
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="text"  value="{{ form_data.email }}" class="form-control" name="email"/>  
+                </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col">
+                <div class="form-group">
+                    <label class="form-label">Rua</label>
+                    <input type="text"  value="{{ form_data.rua }}" class="form-control" name="rua"/>     
+                </div>
+                </div>
+                <div class="col">
+                <div class="form-group">
+                    <label class="form-label">Nº</label>
+                    <input type="text"  value="{{ form_data.numero }}" class="form-control" name="numero"/>  
+                </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label class="form-label">Cidade</label>
+                            <input type="text" value="{{ form_data.cidade }}" class="form-control" name="cidade"/>  
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label class="form-label" for="inputState">Estado</label>
+                        <select id="inputState" class="form-control" name="estado">
+                            <option value="" selected>Selecione...</option>
+                            {% for estado in estados %}
+                                <option value="{{ estado.0 }}" {% if form_data.estado == estado.0 %}selected="selected"{% endif %}>{{ estado.1 }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" value="Salvar" class="btn btn-success" style="background-color: #87af3c; border:none;">
+        </form>
+    </div>
+</div>
+  
+{% endblock  %}

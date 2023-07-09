@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}{% endblock  %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>Listar Categorias</h2>
+        </div>
+        <div class="col-sm-4 text-end">
+            <a href="{% url 'logado' %}" class="btn btn-primary btn-sm" style="background-color: #19A7CE; border:none;">Voltar</a> 
+        </div>
+    </div><hr>
+</br>
+    {% if categorias|length > 0 %}
+    <table class="table table-striped">
+        <thead class="thead-light">
+            <tr>
+                <th>Nome</th>
+                <th scope="col" class="text-end">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for categoria in categorias %}
+            <tr>
+                <td>{{ categoria.nome }}</td>
+                <td class="text-end">
+                    <a href="{% url 'editar_categoria' categoria.id %}" class="btn btn-sm" style="color:#fff;"><i class='bx bxs-edit-alt' style='color:#1e1c1c;' title"editar"></i></a>
+                    <a href="{% url 'excluir_categoria' categoria.id %}" class="btn btn-sm" style="color:#fff;"><i class='bx bx-trash' style='color:#1e1c1c;' title"excluir"></i></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <div class="text-center mt-5 mb-5 jumbotron">
+            <h5>Nenhuma <code>Categoria</code> cadastrada ainda.</h5></br>
+            <a href="{% url 'cadastrar_categoria' %}" class="btn btn-primary btn-sm" style="background-color: #87af3c; border:none;">Cadastrar</a>
+        </div> 
+    {% endif %}
+    <div class=" text-end">
+        <a href="{% url 'cadastrar_categoria' %}" class="btn btn-primary" style="background-color: #87af3c; border:none;">Cadastrar</a>
+    </div>
+{% endblock %}

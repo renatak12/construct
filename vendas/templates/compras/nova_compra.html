@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}{% endblock header %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>Nova Compra</h2>
+        </div>
+        <div class="col-sm-4 text-end">
+            <a href="{% url 'logado' %}" class="btn btn-primary btn-sm" style="background-color: #19A7CE; border:none;">Voltar</a> 
+        </div><hr>
+    </div>
+    <form method="POST" action="{% url 'nova_compra' %}">
+        {% csrf_token %}
+        <div class="row mb-4 mt-5">
+            <div class="col">
+                <div class="form-group">
+                    <label for="fornecedor" class="form-label">Fornecedor</label>
+                    <select class="form-select" id="fornecedor" name="fornecedor" required>
+                        <option value="">Selecione um fornecedor</option>
+                        {% for fornecedor in fornecedores %}
+                        <option value="{{ fornecedor.id }}">{{ fornecedor.nome }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="data" class="form-label">Data</label>
+                    <input type="date" class="form-control" id="data" name="data" required>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col">
+                <h4>Itens de Compra</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Valor Unitário</th>
+                            <th>Quantidade</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for produto in produtos %}
+                        <tr>
+                            <td>{{ produto.nome }}</td>
+                            <td>{{ produto.preco_venda }}</td>
+                            <td><input type="number" class="form-control" name="quantidade_{{ produto.id }}" min="0" step="1" value="0" required></td>
+                            <td><input type="text" class="form-control" name="subtotal_{{ produto.id }}" value="0" readonly></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <input type="submit" value="Registrar Compra" class="btn btn-success" style="background-color: #87af3c; border:none;">
+    </form>
+</div>
+<script>
+    // Atualizar subtotal ao modificar quantidade
+    {% for produto in produtos %}
+    document.querySelector('[name="quantidade_{{ produto.id }}"]').addEventListener('input', function() {
+        var quantidade = parseInt(this.value);
+        var precoVenda = parseFloat('{{ produto.preco_venda }}');
+        var subtotal = quantidade * precoVenda;
+        document.querySelector('[name="subtotal_{{ produto.id }}"]').value = subtotal.toFixed(2);
+    });
+    {% endfor %}
+</script>
+{% endblock %}
