@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+<header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="container d-flex justify-content-between">
+        <div class="align-items-center">
+            <a href="{% url 'core:home' %}" class="logo d-flex align-items-center">
+                <img src="{% static 'assets/img/logo.png' %}" alt="logo sistema">
+                <span class="d-none d-lg-block">SigConstruct</span>
+            </a>    
+        </div>
+    </div>
+
+    <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">           
+            <li class="nav-item pe-3">
+                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="{% url 'core:login' %}">
+                    <span> Login</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+</header>
+{% endblock  %}
+
+{% block main %}
+<div class="container">
+
+    <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+            <div class="card mb-3 mt-5">
+              <div class="card-body">
+
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+                <div class="pt-4 pb-2">
+                  <h5 class="card-title text-center pb-0 fs-4">Criar Conta</h5>
+                </div>
+
+                <form method="post" action="{% url 'core:signup' %}" class="row g-3 needs-validation" novalidate>
+                    {% csrf_token %}
+
+                  <div class="col-12">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" name="nome" class="form-control" id="yourName" required>
+                    <div class="invalid-feedback">Por favor, Digite seu nome!</div>
+                  </div>
+
+                  <div class="col-12">
+                      <label for="email" class="form-label">Email</label>
+                      <div class="input-group has-validation">
+                        <input type="text" name="email" class="form-control" id="email" required>
+                        <div class="invalid-feedback">Informe um email válido!</div>
+                      </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="username" class="form-label">Usuário</label>
+                    <input type="username" name="username" class="form-control" id="username" required>
+                    <div class="invalid-feedback">Por favor, escolha um nome de usuário.</div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="yourPassword" class="form-label">Senha</label>
+                    <input type="password" name="password" class="form-control" id="yourPassword" required>
+                    <div class="invalid-feedback">Digite uma senha!</div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
+                      <label class="form-check-label" for="acceptTerms">Concordo e aceito os <a href="#">termos e condições</a></label>
+                      <div class="invalid-feedback">Você deve concordar antes de enviar.</div>
+                    </div>
+                    <div class="invalid-feedback d-none">Você deve concordar antes de enviar.</div>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-primary w-100" type="submit">Criar Conta</button>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+{% endblock  %}
+
+<script>
+    // Obtém o elemento do formulário
+    var form = document.querySelector('form');
+
+    // Obtém o elemento do checkbox de aceitação dos termos
+    var acceptTerms = document.getElementById('acceptTerms');
+
+    // Adiciona um ouvinte de evento para o envio do formulário
+    form.addEventListener('submit', function(event) {
+        if (!acceptTerms.checked) {
+            // Impede o envio do formulário se o checkbox não estiver marcado
+            event.preventDefault();
+            // Exibe a mensagem de erro
+            var errorMessage = document.querySelector('.invalid-feedback');
+            errorMessage.style.display = 'block';
+        }
+    });
+</script>
