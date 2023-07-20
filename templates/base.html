@@ -1,56 +1,75 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="pb-BR">
+<html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/font-awesome.mim.css' %}">
-    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
-    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
+  <title>{% block title %}SigConstruct{% endblock  %}</title>
 
-    <title>{% block title %}Construct{% endblock  %}</title>
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/quill/quill.snow.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/quill/quill.bubble.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/simple-datatables/style.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
 </head>
+
 <body>
+
     {% block header %}
-    
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
-                    aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <!-- Logo -->
-                <a class="navbar-brand" href="{% url 'homepage' %}">
-                    <img src="{% static 'images/logo.png' %}" alt="Logo" width="100">
-                </a>
-                <div class="collapse navbar-collapse justify-content-center text-center" id="navbarExample01">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{% url 'homepage' %}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'sobre' %}">Sobre</a>
-                        </li>
-                    </ul>
-                </div>
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="container d-flex justify-content-between">
+            <div class="align-items-center">
+                <a class="logo d-flex align-items-center">
+                    <img src="{% static 'assets/img/logo.png' %}" alt="logo sistema">
+                    <span class="d-none d-lg-block">SigConstruct</span>
+                </a>    
             </div>
-        </nav>
+          
+            <nav class="d-flex header-nav ms-auto">
+                <ul class="d-flex align-items-center">           
+                    <li class="nav-item pe-3">
+                        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="{% url 'pages:about' %}">
+                            <span> Sobre</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
     </header>
+    {% endblock  %}
     
+    {% block content %}
     {% endblock  %}
 
-    {% block content %}{% endblock  %}
 
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/apexcharts/apexcharts.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/chart.js/chart.umd.js' %}"></script>
+  <script src="{% static 'assets/vendor/echarts/echarts.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/quill/quill.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/simple-datatables/simple-datatables.js' %}"></script>
+  <script src="{% static 'assets/vendor/tinymce/tinymce.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
 
-    <script src="{% static 'js/mdb.min.js' %}"></script>
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
 </body>
+
 </html>

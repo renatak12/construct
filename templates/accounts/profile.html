@@ -1,0 +1,465 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+<header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+    <a class="logo d-flex align-items-center">
+        <img src="{% static 'assets/img/logo.png' %}" alt="">
+        <span class="d-none d-lg-block">SigConstruct</span>
+    </a>
+    <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+
+            <li class="nav-item d-block d-lg-none">
+                <a class="nav-link nav-icon search-bar-toggle " href="#">
+                    <i class="bi bi-search"></i>
+                </a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                    <i class="bi bi-bell"></i>
+                    <span class="badge bg-primary badge-number">4</span>
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                    <li class="dropdown-header">
+                        Você tem 4 novas notificações
+                        <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">Visualisar Todas</span></a>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li class="notification-item">
+                        <i class="bi bi-exclamation-circle text-warning"></i>
+                        <div>
+                            <h4>Vendas</h4>
+                            <p>Você realizou uma venda e ganhou 20% de comissão</p>
+                            <p>30 min. jun</p>
+                        </div>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li class="notification-item">
+                        <i class="bi bi-x-circle text-danger"></i>
+                        <div>
+                            <h4>Estoque</h4>
+                            <p>O produto tintas está chegando ao limite mínimo do estoque</p>
+                            <p>1 hr. jun</p>
+                        </div>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li class="dropdown-footer">
+                        <a href="#">Exibir todas as notificações</a>
+                    </li>
+                </ul>
+
+            </li><!-- End Notification Nav -->
+
+        <li class="nav-item dropdown">
+
+        <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge bg-success badge-number">3</span>
+        </a><!-- End Messages Icon -->
+
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+            <li class="dropdown-header">
+                Você tem 3 novas mensagens
+                <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">Visualizar Todas</span></a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+
+            <li class="message-item">
+                <a href="#">
+                    <img src="{% static 'assets/img/messages-1.jpg' %}" alt="" class="rounded-circle">
+                    <div>
+                    <h4>Maria Hudson</h4>
+                    <p>Você poderia realizar a compra de mais Tintas, o estoque precisa ser renovado</p>
+                    <p>4 hrs. jun</p>
+                    </div>
+                </a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+
+            <li class="message-item">
+                <a href="#">
+                    <img src="{% static 'assets/img/messages-2.jpg' %}" alt="" class="rounded-circle">
+                    <div>
+                    <h4>Anna Nelson</h4>
+                    <p>A Reunião de Gerência foi cancelada</p>
+                    <p>6 hrs. jun</p>
+                    </div>
+                </a>
+            </li>
+            <li> <hr class="dropdown-divider"></li>
+            <li class="dropdown-footer">
+                <a href="#">Exibir totas as mensagens</a>
+            </li>
+
+        </ul>
+
+        </li><!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+
+            <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                {% if user.imagem %}
+                <img src="{{ user.imagem.url }}" alt="Imagem do usuário" class="rounded-circle">
+                {% else %}
+                <img src="/media/avatars/default-avatar.jpg" alt="Avatar padrão">
+                {% endif %}
+
+            </a><!-- End Profile Iamge Icon -->
+
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+                <h6>{{user.nome}}</h6>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+
+            <li>
+                <a class="dropdown-item d-flex align-items-center" href="{% url 'accounts:profile' %}">
+                    <i class="bi bi-person"></i>
+                    <span>Meu Perfil</span>
+                </a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+                <a class="dropdown-item d-flex align-items-center" href="{% url 'accounts:logout' %}">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span>Sair</span>
+                </a>
+            </li>
+        </ul>
+        </li>
+    </ul>
+</nav>
+</header>
+
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{% url 'accounts:logado' %}">
+              <i class="bi bi-grid"></i>
+              <span>Dashboard</span>
+            </a>
+          </li><!-- End Dashboard Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#fornecedores-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-menu-button-wide"></i><span>Fornecedores</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="fornecedores-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="">
+                        <i class="bi bi-circle"></i><span>Cadastrar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="bi bi-circle"></i><span>Listar</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Fornecedores Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#clientes-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-people"></i><span>Clientes</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="clientes-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="">
+                        <i class="bi bi-circle"></i><span>Cadastrar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="bi bi-circle"></i><span>Listar</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Clientes Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#produtos-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-boxes"></i><span>Produtos</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="produtos-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="">
+                        <i class="bi bi-circle"></i><span>Categorias</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="bi bi-circle"></i><span>Cadastrar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="bi bi-circle"></i><span>Listar</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Produtos Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#estoque-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-box2"></i><span>Estoque</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="estoque-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="">
+                        <i class="bi bi-circle"></i><span>Comprar Produto</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="bi bi-circle"></i><span>Adicionar ao Estoque</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="bi bi-circle"></i><span>Listar</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Estoque Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#vendas-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-cart3"></i><span>Vendas</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="vendas-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="">
+                        <i class="bi bi-circle"></i><span>Realizar Venda</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="vendas-remix.html">
+                        <i class="bi bi-circle"></i><span>Listar Vendas</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Vendas Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#relatorios-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-clipboard2-data"></i><span>Relatórios</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="relatorios-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="relatorios-bootstrap.html">
+                        <i class="bi bi-circle"></i><span>Fornecedores</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="relatorios-remix.html">
+                        <i class="bi bi-circle"></i><span>Clientes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="relatorios-remix.html">
+                        <i class="bi bi-circle"></i><span>Produtos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="relatorios-remix.html">
+                        <i class="bi bi-circle"></i><span>Estoque</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="nav-heading">Pages</li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="pages-contact.html">
+              <i class="bi bi-envelope"></i>
+              <span>Contatos</span>
+            </a>
+        </li><!-- End Contact Page Nav -->
+    </ul>
+</aside>
+{% block main %}
+<main id="main" class="main">
+    <div class="pagetitle">
+      <h1>Perfil</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">Usuário</li>
+          <li class="breadcrumb-item active">Perfil</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section profile">
+        <div class="row">
+            <div class="col-xl-4">
+                <div class="card">
+                    <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+
+                        {% if user.imagem %}
+                        <img src="{{ user.imagem.url }}" alt="Imagem do usuário" class="rounded-circle">
+                        {% else %}
+                        <img src="/media/avatars/default-avatar.jpg" alt="Avatar padrão">
+                        {% endif %}
+                        <h2>{{user.nome}}</h2>
+                    </div>
+                </div>
+            </div>
+        <div class="col-xl-8">
+
+            <div class="card">
+                <div class="card-body pt-3">
+                    <!-- Bordered Tabs -->
+                    <ul class="nav nav-tabs nav-tabs-bordered">
+                        <li class="nav-item">
+                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Visão Geral</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Editar Perfil</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Alterar Senha</button>
+                        </li>
+                    </ul>
+                <div class="tab-content pt-2">
+                    <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                        <h5 class="card-title">Detalhes do Perfil</h5>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 label ">Nome</div>
+                            <div class="col-lg-9 col-md-8">{{user.nome}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 label">CPF</div>
+                            <div class="col-lg-9 col-md-8">{{user.cpf}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 label">Telefone</div>
+                            <div class="col-lg-9 col-md-8">{{user.telefone}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 label">Email</div>
+                            <div class="col-lg-9 col-md-8">{{user.email}}</div>
+                        </div>
+                    </div>
+                <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+                  <!-- Profile Edit Form -->
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="row mb-3">
+                            <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Imagem do Perfil</label>
+                            <div class="col-md-8 col-lg-9">
+                                <img id="previewImage" src="{% if user.imagem %}{{ user.imagem.url }}{% else %}/media/avatars/default-avatar.jpg{% endif %}" alt="Imagem do usuário">
+                                <div class="pt-2">
+                                    <input type="file" name="nova_imagem" id="id_nova_imagem" style="display: none;" onchange="previewImage(event)">
+                                    <label for="id_nova_imagem" class="btn btn-primary btn-sm" title="Upload new profile image">
+                                        <i class="bi bi-upload"></i>
+                                    </label>
+                                    <a href="{% url 'accounts:remove_image' %}" class="btn btn-danger btn-sm" title="Remove my profile image">
+                                        <i class="bi bi-trash"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Nome</label>
+                            <div class="col-md-8 col-lg-9">
+                                <input name="nome" type="text" class="form-control" id="fullName" value="{{ user.nome }}">
+                            </div>
+                        </div>                  
+                        <div class="row mb-3">
+                            <label for="cpf" class="col-md-4 col-lg-3 col-form-label">CPF</label>
+                            <div class="col-md-8 col-lg-9">
+                                <input name="cpf" type="text" class="form-control" id="cpf" value="{{ user.cpf }}">
+                            </div>
+                        </div> 
+                        <div class="row mb-3">
+                            <label for="telefone" class="col-md-4 col-lg-3 col-form-label">Telefone</label>
+                            <div class="col-md-8 col-lg-9">
+                                <input name="telefone" type="text" class="form-control" id="telefone" value="{{ user.telefone }}">
+                            </div>
+                        </div>                    
+                        <div class="row mb-3">
+                            <label for="email" class="col-md-4 col-lg-3 col-form-label">Email</label>
+                            <div class="col-md-8 col-lg-9">
+                                <input name="email" type="email" class="form-control" id="email" value="{{ user.email }}">
+                            </div>
+                        </div>                    
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                        </div>
+                    </form><!-- End Profile Edit Form -->
+                </div>
+
+                <div class="tab-pane fade pt-3" id="profile-change-password">
+                  <!-- Change Password Form -->
+                  <form method="post">
+                    {% csrf_token %}
+                    <div class="row mb-3">
+                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Senha Atual</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="password" type="password" class="form-control" id="currentPassword">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">Nova Senha</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="newpassword" type="password" class="form-control" id="newPassword">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Repetir Senha</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="renewpassword" type="password" class="form-control" id="renewPassword">
+                      </div>
+                    </div>
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-primary">Alterar Senha</button>
+                    </div>
+                  </form><!-- End Change Password Form -->
+                </div>
+              </div><!-- End Bordered Tabs -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock  %}
+<footer id="footer" class="footer">
+    <div class="copyright">
+        &copy; Copyright <strong><span>SigConstruct</span></strong>.
+    </div>
+    <div class="credits">
+        <p>BootstrapMade</p>
+    </div>
+  </footer><!-- End Footer -->
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+{% endblock  %}
+<script>
+    function previewImage(event) {
+      const preview = document.getElementById('previewImage');
+      const file = event.target.files[0];
+      const reader = new FileReader();
+    
+      reader.onloadend = function() {
+        preview.src = reader.result;
+      }
+    
+      if (file) {
+        reader.readAsDataURL(file);
+      } else {
+        preview.src = "{% if user.imagem %}{{ user.imagem.url }}{% else %}/media/avatars/default-avatar.jpg{% endif %}";
+      }
+    }
+</script>

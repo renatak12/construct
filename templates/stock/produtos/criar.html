@@ -1,0 +1,383 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block header %}
+<header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+    <a class="logo d-flex align-items-center">
+        <img src="{% static 'assets/img/logo.png' %}" alt="">
+        <span class="d-none d-lg-block">SigConstruct</span>
+    </a>
+    <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+
+            <li class="nav-item d-block d-lg-none">
+                <a class="nav-link nav-icon search-bar-toggle " href="#">
+                    <i class="bi bi-search"></i>
+                </a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                    <i class="bi bi-bell"></i>
+                    <span class="badge bg-primary badge-number">4</span>
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                    <li class="dropdown-header">
+                        Você tem 4 novas notificações
+                        <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">Visualisar Todas</span></a>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li class="notification-item">
+                        <i class="bi bi-exclamation-circle text-warning"></i>
+                        <div>
+                            <h4>Vendas</h4>
+                            <p>Você realizou uma venda e ganhou 20% de comissão</p>
+                            <p>30 min. jun</p>
+                        </div>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li class="notification-item">
+                        <i class="bi bi-x-circle text-danger"></i>
+                        <div>
+                            <h4>Estoque</h4>
+                            <p>O produto tintas está chegando ao limite mínimo do estoque</p>
+                            <p>1 hr. jun</p>
+                        </div>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li class="dropdown-footer">
+                        <a href="#">Exibir todas as notificações</a>
+                    </li>
+                </ul>
+
+            </li><!-- End Notification Nav -->
+
+        <li class="nav-item dropdown">
+
+        <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge bg-success badge-number">3</span>
+        </a><!-- End Messages Icon -->
+
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+            <li class="dropdown-header">
+                Você tem 3 novas mensagens
+                <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">Visualizar Todas</span></a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+
+            <li class="message-item">
+                <a href="#">
+                    <img src="{% static 'assets/img/messages-1.jpg' %}" alt="" class="rounded-circle">
+                    <div>
+                    <h4>Maria Hudson</h4>
+                    <p>Você poderia realizar a compra de mais Tintas, o estoque precisa ser renovado</p>
+                    <p>4 hrs. jun</p>
+                    </div>
+                </a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+
+            <li class="message-item">
+                <a href="#">
+                    <img src="{% static 'assets/img/messages-2.jpg' %}" alt="" class="rounded-circle">
+                    <div>
+                    <h4>Anna Nelson</h4>
+                    <p>A Reunião de Gerência foi cancelada</p>
+                    <p>6 hrs. jun</p>
+                    </div>
+                </a>
+            </li>
+            <li> <hr class="dropdown-divider"></li>
+            <li class="dropdown-footer">
+                <a href="#">Exibir totas as mensagens</a>
+            </li>
+
+        </ul>
+
+        </li><!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+
+            <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                {% if user.imagem %}
+                <img src="{{ user.imagem.url }}" alt="Imagem do usuário" class="rounded-circle">
+                {% else %}
+                <img src="/media/avatars/default-avatar.jpg" alt="Avatar padrão">
+                {% endif %}
+
+            </a><!-- End Profile Iamge Icon -->
+
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+                <h6>{{user.nome}}</h6>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+
+            <li>
+                <a class="dropdown-item d-flex align-items-center" href="{% url 'accounts:profile' %}">
+                    <i class="bi bi-person"></i>
+                    <span>Meu Perfil</span>
+                </a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+                <a class="dropdown-item d-flex align-items-center" href="{% url 'accounts:logout' %}">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span>Sair</span>
+                </a>
+            </li>
+        </ul>
+        </li>
+    </ul>
+</nav>
+</header>
+
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{% url 'accounts:logado' %}">
+              <i class="bi bi-grid"></i>
+              <span>Dashboard</span>
+            </a>
+          </li><!-- End Dashboard Nav -->
+          <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#fornecedores-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-menu-button-wide"></i><span>Fornecedores</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="fornecedores-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="{% url 'accounts:criar_fornecedor' %}">
+                        <i class="bi bi-circle"></i><span>Cadastrar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'accounts:listar_fornecedor' %}">
+                        <i class="bi bi-circle"></i><span>Listar</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Fornecedores Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#clientes-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-people"></i><span>Clientes</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="clientes-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="{% url 'accounts:criar_cliente' %}">
+                        <i class="bi bi-circle"></i><span>Cadastrar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'accounts:listar_clientes' %}">
+                        <i class="bi bi-circle"></i><span>Listar</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Clientes Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link" data-bs-target="#produtos-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-boxes"></i><span>Produtos</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="produtos-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="{% url 'stock:listar_categorias' %}">
+                        <i class="bi bi-circle"></i><span>Categorias</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'stock:criar_produto' %}"  class="active">
+                        <i class="bi bi-circle"></i><span>Cadastrar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="bi bi-circle"></i><span>Listar</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Produtos Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#estoque-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-box2"></i><span>Estoque</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="estoque-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="">
+                        <i class="bi bi-circle"></i><span>Comprar Produto</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="bi bi-circle"></i><span>Adicionar ao Estoque</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="bi bi-circle"></i><span>Listar</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Estoque Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#vendas-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-cart3"></i><span>Vendas</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="vendas-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="">
+                        <i class="bi bi-circle"></i><span>Realizar Venda</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="vendas-remix.html">
+                        <i class="bi bi-circle"></i><span>Listar Vendas</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Vendas Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#relatorios-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-clipboard2-data"></i><span>Relatórios</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="relatorios-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="relatorios-bootstrap.html">
+                        <i class="bi bi-circle"></i><span>Fornecedores</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="relatorios-remix.html">
+                        <i class="bi bi-circle"></i><span>Clientes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="relatorios-remix.html">
+                        <i class="bi bi-circle"></i><span>Produtos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="relatorios-remix.html">
+                        <i class="bi bi-circle"></i><span>Estoque</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="nav-heading">Pages</li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="pages-contact.html">
+              <i class="bi bi-envelope"></i>
+              <span>Contatos</span>
+            </a>
+        </li><!-- End Contact Page Nav -->
+    </ul>
+</aside>
+<main id="main" class="main">
+    <div class="pagetitle filter" style="display: flex; justify-content: space-between;">
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <h1 style="margin: 0;">Cadastrar Produto</h1>
+        <a class="icon btn btn-secondary btn-sm" href="{% url 'stock:listar_categorias' %}" style="margin-left: auto;">Voltar</a>
+    </div>
+    <section class="section dashboard">
+        <div class="row">
+            <div class="col-12">
+                <div class="card recent-sales overflow-auto">
+                    <div class="card-body mt-4">
+                        <form method="POST" action="{% url 'stock:criar_produto' %}">
+                            {% csrf_token %}
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="nome" class="col-md-4 col-lg-3 col-form-label">Nome</label>
+                                        <input name="nome" type="text" class="form-control" id="nome" required/>     
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="categoria" class="col-md-4 col-lg-3 col-form-label">Categoria</label>
+                                        <select name="categoria" class="form-control" id="categoria" required>
+                                            {% for categoria in categorias %}
+                                                <option value="{{ categoria.id }}">{{ categoria.nome }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="fornecedor" class="col-md-4 col-lg-3 col-form-label">Fornecedor</label>
+                                        <select name="fornecedor" class="form-control" id="fornecedor" required>
+                                            {% for fornecedor in fornecedores %}
+                                                <option value="{{ fornecedor.id }}">{{ fornecedor.nome }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="col mb-4">
+                                <div class="form-group">
+                                    <label for="descricao" class="col-md-4 col-lg-3 col-form-label">Descrição</label>
+                                    <textarea name="descricao" class="form-control" id="descricao" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="preco" class="col-md-4 col-lg-3 col-form-label">Preço</label>
+                                        <input name="preco" type="number" step="0.01" class="form-control" id="preco" required/>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="quantidade" class="col-md-4 col-lg-3 col-form-label">Quantidade</label>
+                                        <input name="quantidade" type="number" class="form-control" id="quantidade" required/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="imagem" class="col-md-4 col-lg-3 col-form-label">Imagem</label>
+                                        <input name="imagem" type="file" class="form-control" id="imagem" accept="image/*" required/>
+                                    </div>
+                                </div>
+                            </div>                           
+                            
+                            <input type="submit" value="Salvar" class="btn btn-primary btn-sm" style="border:none;">
+                        </form></br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer id="footer" class="footer">
+    <div class="copyright">
+        &copy; Copyright <strong><span>SigConstruct</span></strong>.
+    </div>
+  </footer><!-- End Footer -->
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+{% endblock  %}
