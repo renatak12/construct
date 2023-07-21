@@ -13,4 +13,13 @@ urlpatterns = [
     path('listar/produtos', views.ListarProdutos.as_view(), name='listar_produtos'),
     path('editar/<str:produto_id>/produto', views.EditarProduto.as_view(), name='editar_produto'),
     path('excluir/<str:produto_id>/produto', views.ExcluirProduto.as_view(), name='excluir_produto'),
+    
+    path('adicionar/estoque/<str:produto_id>', views.AdicionarEstoque.as_view(), name='adicionar_estoque'),
+    path('listar/estoque', views.ListarEstoque.as_view(), name='listar_estoque'),
+    
+    path('realizar/venda', views.RealizarVenda.as_view(), name='realizar_venda'),
+    path('listar/venda', views.ListarVendas.as_view(), name='listar_vendas'),
+    path('excluir/<str:venda_id>/venda', views.ExcluirVenda.as_view(), name='excluir_venda'),
+    path('venda/<int:venda_id>/', views.DetalharVenda.as_view(), name='detalhar_venda'),
+    
 ]

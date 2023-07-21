@@ -203,7 +203,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="stock:listar_produtos">
+                    <a href="{% url 'stock:listar_vendas' %}">
                         <i class="bi bi-circle"></i><span>Listar</span>
                     </a>
                 </li>
@@ -216,17 +216,7 @@
             </a>
             <ul id="estoque-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="">
-                        <i class="bi bi-circle"></i><span>Comprar Produto</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <i class="bi bi-circle"></i><span>Adicionar ao Estoque</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
+                    <a href="{% url 'stock:listar_estoque' %}">
                         <i class="bi bi-circle"></i><span>Listar</span>
                     </a>
                 </li>
@@ -239,7 +229,7 @@
             </a>
             <ul id="vendas-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="">
+                    <a href="{% url 'stock:realizar_venda' %}">
                         <i class="bi bi-circle"></i><span>Realizar Venda</span>
                     </a>
                 </li>
@@ -291,13 +281,6 @@
 </aside>
 <main id="main" class="main">
     <div class="pagetitle filter" style="display: flex; justify-content: space-between;">
-        {% if messages %}
-        <div class="messages">
-            {% for message in messages %}
-            <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
-            {% endfor %}
-        </div>
-        {% endif %}
         <h1 style="margin: 0;">Cadastrar Categoria</h1>
         <a class="icon btn btn-secondary btn-sm" href="{% url 'stock:listar_categorias' %}" style="margin-left: auto;">Voltar</a>
     </div>

@@ -216,17 +216,7 @@
             </a>
             <ul id="estoque-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="">
-                        <i class="bi bi-circle"></i><span>Comprar Produto</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <i class="bi bi-circle"></i><span>Adicionar ao Estoque</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
+                    <a href="{% url 'stock:listar_estoque' %}">
                         <i class="bi bi-circle"></i><span>Listar</span>
                     </a>
                 </li>
@@ -239,12 +229,12 @@
             </a>
             <ul id="vendas-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="">
+                    <a href="{% url 'stock:realizar_venda' %}">
                         <i class="bi bi-circle"></i><span>Realizar Venda</span>
                     </a>
                 </li>
                 <li>
-                    <a href="vendas-remix.html">
+                    <a href="{% url 'stock:listar_vendas' %}">
                         <i class="bi bi-circle"></i><span>Listar Vendas</span>
                     </a>
                 </li>
@@ -311,11 +301,10 @@
                             <thead>
                               <tr>
                                 <th scope="col">Imagem</th>
-                                <th scope="col">Tipo</th>
                                 <th scope="col">Produto</th>
                                 <th scope="col">Descrição</th>
+                                <th scope="col">Fornecedor</th>
                                 <th scope="col">Preço</th>
-                                <th scope="col">Qtde.</th>
                                 <th class="text-center" scope="col">Ações</th>
                               </tr>
                             </thead>
@@ -329,12 +318,12 @@
                                         <p>Sem imagem</p>
                                     {% endif %}
                                 </td>
-                                <td scope="row">{{ produto.categoria.nome }}</td>
                                 <td scope="row">{{ produto.nome }}</td>
                                 <td scope="row">{{ produto.descricao }}</td>
+                                <td scope="row">{{ produto.fornecedor.nome }}</td>
                                 <td scope="row">{{ produto.preco }}</td>
-                                <td scope="row">{{ produto.quantidade_estoque }}</td>
                                 <td class="text-center">
+                                    <a href="{% url 'stock:adicionar_estoque' produto.id %}" class="btn btn-success btn-sm" title="Adicionar"><i class="bi bi-box2"></i></a>
                                     <a href="{% url 'stock:editar_produto' produto.id %}" class="btn btn-primary btn-sm" title="Editar"><i class="bi bi-pencil"></i></a>
                                     <a href="{% url 'stock:excluir_produto' produto.id %}" class="btn btn-danger btn-sm" title="Remover"><i class="bi bi-trash"></i></a>
                                 </td>

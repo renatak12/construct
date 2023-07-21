@@ -198,12 +198,12 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{% url 'stock:criar_produto' %}">
                         <i class="bi bi-circle"></i><span>Cadastrar</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{% url 'stock:listar_produtos' %}">
                         <i class="bi bi-circle"></i><span>Listar</span>
                     </a>
                 </li>
@@ -216,17 +216,7 @@
             </a>
             <ul id="estoque-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="">
-                        <i class="bi bi-circle"></i><span>Comprar Produto</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <i class="bi bi-circle"></i><span>Adicionar ao Estoque</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
+                    <a href="{% url 'stock:listar_estoque' %}">
                         <i class="bi bi-circle"></i><span>Listar</span>
                     </a>
                 </li>
@@ -239,12 +229,12 @@
             </a>
             <ul id="vendas-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="">
+                    <a href="{% url 'stock:listar_estoque' %}">
                         <i class="bi bi-circle"></i><span>Realizar Venda</span>
                     </a>
                 </li>
                 <li>
-                    <a href="vendas-remix.html">
+                    <a href="{% url 'stock:listar_vendas' %}">
                         <i class="bi bi-circle"></i><span>Listar Vendas</span>
                     </a>
                 </li>
