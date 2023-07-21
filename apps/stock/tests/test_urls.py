@@ -1,4 +1,4 @@
-from django.test import SimpleTestCase
+from django.test import TestCase, SimpleTestCase
 from django.urls import reverse, resolve
 from stock.views import (
     CriarCategoria, ListarCategorias, EditarCategoria, ExcluirCategoria,
@@ -37,3 +37,4 @@ class TestUrls(SimpleTestCase):
     def test_excluir_produto_url_resolves(self):
         url = reverse('stock:excluir_produto', args=['1'])  # Substitua '1' pelo ID do produto
         self.assertEqual(resolve(url).func.view_class, ExcluirProduto)
+
