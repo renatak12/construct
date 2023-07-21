@@ -288,4 +288,3 @@ class DetalharVenda(View):
         venda = get_object_or_404(Venda, id=venda_id)
         return render(request, self.template_name, {'venda': venda})
     
-    

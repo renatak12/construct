@@ -1,5 +1,6 @@
-from django.test import TestCase, RequestFactory
+from django.test import TestCase, RequestFactory , Client
 from django.urls import reverse
+from django.http import HttpRequest
 from django.contrib.messages import get_messages
 from django.contrib.auth.models import User
 from stock.views import CriarCategoria
@@ -7,6 +8,14 @@ from stock.models import Categoria , Produto , Fornecedor
 from accounts.models import Usuario
 from django.contrib.messages.middleware import MessageMiddleware
 from django.core.files.uploadedfile import SimpleUploadedFile
+from stock.models import Produto, Cliente, Venda , Categoria
+from decimal import Decimal
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
+from django.contrib.messages import SUCCESS
+from django.test.client import Client
+from django.utils.http import urlencode
+
 
 class CriarCategoriaTest(TestCase):
     def setUp(self):
@@ -230,3 +239,172 @@ class ExcluirProdutoTest(TestCase):
         self.assertRedirects(response, reverse('stock:listar_produtos'))
 
         self.assertFalse(Produto.objects.filter(pk=produto.id).exists())
+
+#============================================================
+# VIEWS ESTOQUE
+
+class AdicionarEstoqueTest(TestCase):
+    def setUp(self):
+        self.user = Usuario.objects.create_user(username='testuser', password='testpassword')
+        self.client = Client()
+        self.client.login(username='testuser', password='testpassword')
+
+    def test_adicionar_estoque(self):
+        categoria = Categoria.objects.create(nome='Test Category')
+
+        produto = Produto.objects.create(
+            nome='Test Product',
+            descricao='Test Description',
+            preco=10.00,
+            quantidade_estoque=100,
+            categoria=categoria,  
+        )
+
+        url = reverse('stock:adicionar_estoque', args=[produto.id])
+
+        quantidade_adicionada = 50
+        response = self.client.post(url, {'quantidade': quantidade_adicionada})
+
+        self.assertRedirects(response, reverse('stock:listar_estoque'))
+
+        produto.refresh_from_db()
+
+        self.assertEqual(produto.quantidade_estoque, 50)
+
+class ListarEstoqueTest(TestCase):
+    def setUp(self):
+        # Create a test user and log in
+        self.user = Usuario.objects.create_user(username='testuser', password='testpassword')
+        self.client = Client()
+        self.client.login(username='testuser', password='testpassword')
+
+    def test_listar_estoque(self):
+        # Create a test category
+        categoria = Categoria.objects.create(nome='Category 1')
+
+        # Create some test products
+        produto1 = Produto.objects.create(nome='Product 1', descricao='Description 1', preco=10.00, quantidade_estoque=50, categoria=categoria)
+        produto2 = Produto.objects.create(nome='Product 2', descricao='Description 2', preco=20.00, quantidade_estoque=30, categoria=categoria)
+
+        # Define the URL for the ListarEstoque view
+        url = reverse('stock:listar_estoque')
+
+        # Simulate a GET request to the view
+        response = self.client.get(url)
+
+        # Check if the view returns a 200 OK response
+        self.assertEqual(response.status_code, 200)
+
+        # Check if the rendered template contains the products' names
+        self.assertContains(response, produto1.nome)
+        self.assertContains(response, produto2.nome)
+
+        # Check if the rendered template contains the products' descriptions
+        self.assertTrue(response, produto1.descricao)
+        self.assertTrue(response, produto2.descricao)
+
+        # Check if the rendered template contains the products' prices
+        self.assertContains(response, str(produto1.preco))
+        self.assertContains(response, str(produto2.preco))
+
+        # Check if the rendered template contains the products' stock quantities
+        self.assertContains(response, str(produto1.quantidade_estoque))
+        self.assertContains(response, str(produto2.quantidade_estoque))
+
+#=====================================================
+# VIEWS VENDA
+
+class RealizarVendaTest(TestCase):
+    def setUp(self):
+        # Create a test user and log in
+        self.user = Usuario.objects.create_user(username='testuser', password='testpassword')
+        self.client = Client()
+        self.client.login(username='testuser', password='testpassword')
+
+    def test_realizar_venda_success(self):
+        # Create test Cliente instance
+        cliente = Cliente.objects.create(nome='Test Cliente', cpf='12345678900')
+
+        # Create test Categoria instance
+        categoria = Categoria.objects.create(nome='Test Categoria')
+
+        # Create test Produto instance using the created Categoria
+        produto = Produto.objects.create(
+            categoria=categoria,
+            nome='Test Produto',
+            descricao='Test Description',
+            preco=100.00,
+            quantidade_estoque=10
+        )
+
+
+    def test_realizar_venda_insufficient_stock(self):
+        # Create test Cliente instance
+        cliente = Cliente.objects.create(nome='Test Cliente', cpf='12345678900')
+
+        # Create test Categoria instance
+        categoria = Categoria.objects.create(nome='Test Categoria')
+
+        # Create test Produto instance with quantidade_estoque=0 and the created Categoria
+        produto = Produto.objects.create(
+            categoria=categoria,
+            nome='Test Produto',
+            descricao='Test Description',
+            preco=100.00,
+            quantidade_estoque=0
+        )
+
+class ExcluirVendaTest(TestCase):
+    def setUp(self):
+        # Create a test user
+        self.user = Usuario.objects.create_user(username='testuser', password='testpassword')
+        self.client = Client()
+        self.client.login(username='testuser', password='testpassword')
+
+    def test_excluir_venda(self):
+        # Create a category
+        categoria = Categoria.objects.create(nome='Test Category')
+
+        # Create a product with a category
+        produto = Produto.objects.create(
+            nome='Test Product',
+            descricao='Test Description',
+            preco=100.00,
+            quantidade_estoque=10,
+            categoria=categoria,
+        )
+
+        # Create a client
+        cliente = Cliente.objects.create(nome='Test Client')
+
+        # Create a sale with valid values for all required fields
+        venda = Venda.objects.create(
+            cliente=cliente,
+            produto=produto,
+            quantidade=5,
+            preco=100.00,
+            valor_total=500.00,
+            valor_total_compra=500.00,
+            valor_parcela=500.00,
+            forma_pagamento='dinheiro',
+            desconto=0.00,  # Provide a valid desconto value here
+        )
+
+        # Check the sale exists before deletion
+        self.assertEqual(Venda.objects.count(), 1)
+
+        # Perform the delete view with login
+        self.client.login(username='testuser', password='testpass')
+        url = reverse('stock:excluir_venda', args=[venda.id])
+        response = self.client.post(url)
+
+        # Check the response status code and redirection
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse('stock:listar_vendas'))
+
+        # Check the sale is deleted
+        self.assertEqual(Venda.objects.count(), 0)
+
+        # Check the quantity of the product is restored to the stock
+        produto.refresh_from_db()
+        self.assertEqual(produto.quantidade_estoque, 15)
