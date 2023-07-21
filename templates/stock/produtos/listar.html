@@ -193,7 +193,7 @@
             </a>
             <ul id="produtos-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="{% url 'stock:listar_categorias' %}" class="active">
+                    <a href="{% url 'stock:criar_categoria' %}">
                         <i class="bi bi-circle"></i><span>Categorias</span>
                     </a>
                 </li>
@@ -203,7 +203,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="stock:listar_produtos">
+                    <a href="stock:listar_produtos" class="active">
                         <i class="bi bi-circle"></i><span>Listar</span>
                     </a>
                 </li>
@@ -298,26 +298,51 @@
             {% endfor %}
         </div>
         {% endif %}
-        <h1 style="margin: 0;">Cadastrar Categoria</h1>
-        <a class="icon btn btn-secondary btn-sm" href="{% url 'stock:listar_categorias' %}" style="margin-left: auto;">Voltar</a>
+        <h1 style="margin: 0;">Produtos Cadastrados</h1>
+        <a class="icon btn btn-secondary btn-sm" href="{% url 'accounts:logado' %}" style="margin-left: auto;">Voltar</a>
     </div>
     <section class="section dashboard">
         <div class="row">
             <div class="col-12">
                 <div class="card recent-sales overflow-auto">
                     <div class="card-body">
-                        <form method="POST" action="{% url 'stock:criar_categoria' %}">
-                            {% csrf_token %}
-                            <div class="row mb-4 mt-4">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="nome" class="col-md-4 col-lg-3 col-form-label">Nome</label>
-                                        <input name="nome" type="text" class="form-control" id="nome" required/>     
-                                    </div>
-                                </div>
-                            </div>                            
-                            <input type="submit" value="Salvar" class="btn btn-primary btn-sm" style="border:none;">
-                        </form></br>
+                        {% if produtos|length > 0 %}
+                        <table class="table table-borderless mt-4">
+                            <thead>
+                              <tr>
+                                <th scope="col">Imagem</th>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Produto</th>
+                                <th scope="col">Descrição</th>
+                                <th scope="col">Preço</th>
+                                <th scope="col">Qtde.</th>
+                                <th class="text-center" scope="col">Ações</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                {% for produto in produtos %}
+                              <tr>
+                                <td >
+                                    {% if produto.imagem %}
+                                    <img src="{{ produto.imagem.url }}" style="width: 80px; border-radius: 3%;">
+                                    {% else %}
+                                        <p>Sem imagem</p>
+                                    {% endif %}
+                                </td>
+                                <td scope="row">{{ produto.categoria.nome }}</td>
+                                <td scope="row">{{ produto.nome }}</td>
+                                <td scope="row">{{ produto.descricao }}</td>
+                                <td scope="row">{{ produto.preco }}</td>
+                                <td scope="row">{{ produto.quantidade_estoque }}</td>
+                                <td class="text-center">
+                                    <a href="{% url 'stock:editar_produto' produto.id %}" class="btn btn-primary btn-sm" title="Editar"><i class="bi bi-pencil"></i></a>
+                                    <a href="{% url 'stock:excluir_produto' produto.id %}" class="btn btn-danger btn-sm" title="Remover"><i class="bi bi-trash"></i></a>
+                                </td>
+                              </tr>
+                              {% endfor %}
+                            </tbody>
+                        </table>
+                        {% endif %}
                     </div>
                 </div>
             </div>

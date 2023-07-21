@@ -89,3 +89,53 @@ class CriarProduto(View):
 
         return redirect('stock:criar_produto')
 
+class ListarProdutos(View):
+    template_name = 'stock/produtos/listar.html'
+
+    def get(self, request):
+        produtos = Produto.objects.all()
+        return render(request, self.template_name, {'produtos': produtos})
+
+
+class EditarProduto(View):
+    template_name = 'stock/produtos/editar.html'
+
+    def get(self, request, produto_id):
+        produto = get_object_or_404(Produto, id=produto_id)
+        categorias = Categoria.objects.all()
+        fornecedores = Fornecedor.objects.all()
+        return render(request, self.template_name, {'produto': produto, 'categorias': categorias, 'fornecedores': fornecedores})
+
+    def post(self, request, produto_id):
+        produto = get_object_or_404(Produto, id=produto_id)
+        categoria_id = request.POST.get('categoria')
+        fornecedor_id = request.POST.get('fornecedor')
+
+        # Atualiza os dados do produto com os valores recebidos do formulário
+        produto.nome = request.POST.get('nome')
+        produto.descricao = request.POST.get('descricao')
+        produto.preco = request.POST.get('preco')
+        produto.quantidade_estoque = request.POST.get('quantidade_estoque')
+        produto.categoria_id = categoria_id
+        produto.fornecedor_id = fornecedor_id
+
+        imagem = request.FILES.get('imagem')
+        if imagem:
+            produto.imagem = imagem
+
+        produto.save()
+
+        return redirect('stock:listar_produtos')
+
+
+class ExcluirProduto(View):
+    template_name = 'stock/produtos/excluir.html'
+
+    def get(self, request, produto_id):
+        produto = get_object_or_404(Produto, id=produto_id)
+        return render(request, self.template_name, {'produto': produto})
+
+    def post(self, request, produto_id):
+        produto = get_object_or_404(Produto, id=produto_id)
+        produto.delete()
+        return redirect('stock:listar_produtos')

@@ -198,12 +198,12 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{% url 'stock:criar_produto' %}">
+                    <a href="">
                         <i class="bi bi-circle"></i><span>Cadastrar</span>
                     </a>
                 </li>
                 <li>
-                    <a href="stock:listar_produtos">
+                    <a href="">
                         <i class="bi bi-circle"></i><span>Listar</span>
                     </a>
                 </li>
@@ -291,33 +291,19 @@
 </aside>
 <main id="main" class="main">
     <div class="pagetitle filter" style="display: flex; justify-content: space-between;">
-        {% if messages %}
-        <div class="messages">
-            {% for message in messages %}
-            <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
-            {% endfor %}
-        </div>
-        {% endif %}
-        <h1 style="margin: 0;">Cadastrar Categoria</h1>
-        <a class="icon btn btn-secondary btn-sm" href="{% url 'stock:listar_categorias' %}" style="margin-left: auto;">Voltar</a>
+        <h1 style="margin: 0;">Excluir Produto</h1>   
     </div>
     <section class="section dashboard">
         <div class="row">
             <div class="col-12">
                 <div class="card recent-sales overflow-auto">
                     <div class="card-body">
-                        <form method="POST" action="{% url 'stock:criar_categoria' %}">
+                        <p class="mt-4">Você tem certeza que deseja excluir Produto "<b>{{ produto.nome }}</b>"?</p>
+                        <form method="post">
                             {% csrf_token %}
-                            <div class="row mb-4 mt-4">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="nome" class="col-md-4 col-lg-3 col-form-label">Nome</label>
-                                        <input name="nome" type="text" class="form-control" id="nome" required/>     
-                                    </div>
-                                </div>
-                            </div>                            
-                            <input type="submit" value="Salvar" class="btn btn-primary btn-sm" style="border:none;">
-                        </form></br>
+                            <button type="submit" class="btn btn-success btn-sm">Confirmar</button>
+                            <a class="btn btn-secondary btn-sm" href="{% url 'stock:listar_produtos' %}" style="margin-left: auto;">Voltar</a>
+                        </form>
                     </div>
                 </div>
             </div>

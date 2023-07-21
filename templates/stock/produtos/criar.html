@@ -203,7 +203,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{% url 'stock:listar_produtos' %}">
                         <i class="bi bi-circle"></i><span>Listar</span>
                     </a>
                 </li>
@@ -299,14 +299,14 @@
         </div>
         {% endif %}
         <h1 style="margin: 0;">Cadastrar Produto</h1>
-        <a class="icon btn btn-secondary btn-sm" href="{% url 'stock:listar_categorias' %}" style="margin-left: auto;">Voltar</a>
+        <a class="icon btn btn-secondary btn-sm" href="{% url 'accounts:logado' %}" style="margin-left: auto;">Voltar</a>
     </div>
     <section class="section dashboard">
         <div class="row">
             <div class="col-12">
                 <div class="card recent-sales overflow-auto">
                     <div class="card-body mt-4">
-                        <form method="POST" action="{% url 'stock:criar_produto' %}">
+                        <form method="POST" action="{% url 'stock:criar_produto' %}" enctype="multipart/form-data">
                             {% csrf_token %}
                             <div class="row mb-4">
                                 <div class="col">
@@ -319,6 +319,7 @@
                                     <div class="form-group">
                                         <label for="categoria" class="col-md-4 col-lg-3 col-form-label">Categoria</label>
                                         <select name="categoria" class="form-control" id="categoria" required>
+                                            <option>----------</option>
                                             {% for categoria in categorias %}
                                                 <option value="{{ categoria.id }}">{{ categoria.nome }}</option>
                                             {% endfor %}
@@ -329,6 +330,7 @@
                                     <div class="form-group">
                                         <label for="fornecedor" class="col-md-4 col-lg-3 col-form-label">Fornecedor</label>
                                         <select name="fornecedor" class="form-control" id="fornecedor" required>
+                                            <option>----------</option>
                                             {% for fornecedor in fornecedores %}
                                                 <option value="{{ fornecedor.id }}">{{ fornecedor.nome }}</option>
                                             {% endfor %}
@@ -352,7 +354,7 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label for="quantidade" class="col-md-4 col-lg-3 col-form-label">Quantidade</label>
-                                        <input name="quantidade" type="number" class="form-control" id="quantidade" required/>
+                                        <input name="quantidade_estoque" type="number" class="form-control" id="quantidade_estoque" required/>
                                     </div>
                                 </div>
                             </div>
@@ -360,7 +362,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="imagem" class="col-md-4 col-lg-3 col-form-label">Imagem</label>
-                                        <input name="imagem" type="file" class="form-control" id="imagem" accept="image/*" required/>
+                                        <input name="imagem" type="file" class="form-control" id="imagem" required/>
                                     </div>
                                 </div>
                             </div>                           
