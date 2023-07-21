@@ -154,7 +154,7 @@ class CriarFornecedor(View):
         email = request.POST['email']
 
         # Cria um novo objeto Fornecedor e salvá-lo no banco de dados
-        fornecedor = Fornecedor.objects.create(nome=nome, cnpj=cnpj, telefone=telefone, email=email)
+        Fornecedor.objects.create(nome=nome, cnpj=cnpj, telefone=telefone, email=email)
         messages.success(request, 'Fornecedor cadastrado com sucesso!')
         
         # Redireciona o usuário para outra página, como a lista de fornecedores
@@ -250,7 +250,7 @@ class CriarCliente(View):
         )
 
         # Criar o objeto Cliente associado ao endereço criado acima
-        cliente = Cliente.objects.create(
+        Cliente.objects.create(
             nome=nome,
             telefone=telefone,
             cpf=cpf,

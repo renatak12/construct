@@ -193,17 +193,17 @@
             </a>
             <ul id="produtos-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="">
+                    <a href="{% url 'stock:listar_categorias' %}">
                         <i class="bi bi-circle"></i><span>Categorias</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{% url 'stock:criar_produto' %}">
                         <i class="bi bi-circle"></i><span>Cadastrar</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{% url 'stock:listar_produtos' %}">
                         <i class="bi bi-circle"></i><span>Listar</span>
                     </a>
                 </li>
@@ -216,17 +216,7 @@
             </a>
             <ul id="estoque-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="">
-                        <i class="bi bi-circle"></i><span>Comprar Produto</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <i class="bi bi-circle"></i><span>Adicionar ao Estoque</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
+                    <a href="{% url 'stock:listar_estoque' %}">
                         <i class="bi bi-circle"></i><span>Listar</span>
                     </a>
                 </li>
@@ -239,12 +229,12 @@
             </a>
             <ul id="vendas-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="">
+                    <a href="{% url 'stock:realizar_venda' %}">
                         <i class="bi bi-circle"></i><span>Realizar Venda</span>
                     </a>
                 </li>
                 <li>
-                    <a href="vendas-remix.html">
+                    <a href="{% url 'stock:listar_vendas' %}">
                         <i class="bi bi-circle"></i><span>Listar Vendas</span>
                     </a>
                 </li>
@@ -291,13 +281,6 @@
 </aside>
 <main id="main" class="main">
     <div class="pagetitle filter" style="display: flex; justify-content: space-between;">
-        {% if messages %}
-        <div class="messages">
-            {% for message in messages %}
-            <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
-            {% endfor %}
-        </div>
-        {% endif %}
         <h1 style="margin: 0;">Cadastrar Cliente</h1>
         <a class="icon btn btn-secondary btn-sm" href="{% url 'accounts:logado' %}" style="margin-left: auto;">Voltar</a>
     </div>

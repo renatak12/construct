@@ -216,17 +216,7 @@
             </a>
             <ul id="estoque-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="">
-                        <i class="bi bi-circle"></i><span>Comprar Produto</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <i class="bi bi-circle"></i><span>Adicionar ao Estoque</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
+                    <a href="{% url 'stock:listar_estoque' %}">
                         <i class="bi bi-circle"></i><span>Listar</span>
                     </a>
                 </li>
@@ -239,12 +229,12 @@
             </a>
             <ul id="vendas-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="">
+                    <a href="{% url 'stock:realizar_venda' %}">
                         <i class="bi bi-circle"></i><span>Realizar Venda</span>
                     </a>
                 </li>
                 <li>
-                    <a href="vendas-remix.html">
+                    <a href="{% url 'stock:listar_vendas' %}">
                         <i class="bi bi-circle"></i><span>Listar Vendas</span>
                     </a>
                 </li>
@@ -291,13 +281,6 @@
 </aside>
 <main id="main" class="main">
     <div class="pagetitle filter" style="display: flex; justify-content: space-between;">
-        {% if messages %}
-        <div class="messages">
-            {% for message in messages %}
-            <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
-            {% endfor %}
-        </div>
-        {% endif %}
         <h1 style="margin: 0;">Cadastrar Produto</h1>
         <a class="icon btn btn-secondary btn-sm" href="{% url 'accounts:logado' %}" style="margin-left: auto;">Voltar</a>
     </div>
@@ -311,13 +294,13 @@
                             <div class="row mb-4">
                                 <div class="col">
                                     <div class="form-group">
-                                        <label for="nome" class="col-md-4 col-lg-3 col-form-label">Nome</label>
+                                        <label for="nome" class="form-label">Nome</label>
                                         <input name="nome" type="text" class="form-control" id="nome" required/>     
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
-                                        <label for="categoria" class="col-md-4 col-lg-3 col-form-label">Categoria</label>
+                                        <label for="categoria" class="form-label">Categoria</label>
                                         <select name="categoria" class="form-control" id="categoria" required>
                                             <option>----------</option>
                                             {% for categoria in categorias %}

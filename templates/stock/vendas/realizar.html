@@ -1,3 +1,5 @@
+
+
 {% extends 'base.html' %}
 {% load static %}
 
@@ -188,12 +190,12 @@
         </li><!-- End Clientes Nav -->
 
         <li class="nav-item">
-            <a class="nav-link" data-bs-target="#produtos-nav" data-bs-toggle="collapse" href="#">
+            <a class="nav-link collapsed" data-bs-target="#produtos-nav" data-bs-toggle="collapse" href="#">
                 <i class="bi bi-boxes"></i><span>Produtos</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="produtos-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+            <ul id="produtos-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="{% url 'stock:listar_categorias' %}" class="active">
+                    <a href="{% url 'stock:listar_categorias' %}">
                         <i class="bi bi-circle"></i><span>Categorias</span>
                     </a>
                 </li>
@@ -224,12 +226,12 @@
         </li><!-- End Estoque Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#vendas-nav" data-bs-toggle="collapse" href="#">
+            <a class="nav-link" data-bs-target="#vendas-nav" data-bs-toggle="collapse" href="#">
                 <i class="bi bi-cart3"></i><span>Vendas</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="vendas-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <ul id="vendas-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="{% url 'stock:listar_estoque' %}">
+                    <a href="{% url 'stock:realizar_venda' %}" class="active">
                         <i class="bi bi-circle"></i><span>Realizar Venda</span>
                     </a>
                 </li>
@@ -281,87 +283,205 @@
 </aside>
 <main id="main" class="main">
     <div class="pagetitle filter" style="display: flex; justify-content: space-between;">
-        <h1 style="margin: 0;">Editar Dados</h1>
-        <a class="icon btn btn-secondary btn-sm" href="{% url 'stock:listar_produtos' %}" style="margin-left: auto;">Voltar</a>
+        <h1 style="margin: 0;">Realizar Venda</h1>
+        <a class="icon btn btn-secondary btn-sm" href="{% url 'accounts:logado' %}" style="margin-left: auto;">Voltar</a>
     </div>
     <section class="section dashboard">
         <div class="row">
             <div class="col-12">
                 <div class="card recent-sales overflow-auto">
                     <div class="card-body">
-
-                        <form method="POST" enctype="multipart/form-data">
-                            {% csrf_token %}
-                            <div class="row mt-4 mb-4">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="nome" class="form-label">Nome</label>
-                                        <input name="nome" value="{{ produto.nome }}" type="text" class="form-control" id="nome" required/>    
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="categoria" class="form-label">Categoria</label>
-                                        <select name="categoria" class="form-control" id="categoria" required>
-                                            {% for categoria in categorias %}
-                                                <option value="{{ categoria.id }}" {% if categoria.id == produto.categoria.id %}selected{% endif %}>{{ categoria.nome }}</option>
+                        <form method="post" action="{% url 'stock:realizar_venda' %}">
+                            {% csrf_token %}                    
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <div class="form-group mb-2">
+                                        <label for="cliente" class="form-label">Cliente</label>
+                                        <select name="cliente" id="cliente" class="form-control" required>
+                                            <option value="" disabled selected>----------</option>
+                                            {% for cliente in clientes %}
+                                            <option value="{{ cliente.id }}">{{ cliente.nome }}</option>
                                             {% endfor %}
                                         </select>
                                     </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="fornecedor" class="form-label">Fornecedor</label>
-                                        <select name="fornecedor" class="form-control" id="fornecedor" required>
-                                            {% for fornecedor in fornecedores %}
-                                                <option value="{{ fornecedor.id }}" {% if fornecedor.id == produto.fornecedor.id %}selected{% endif %}>{{ fornecedor.nome }}</option>
+                        
+                                    <div class="form-group mb-2">
+                                        <label for="produto" class="form-label">Produto</label>
+                                        <select name="produto" id="produto" class="form-control" required onchange="atualizarPrecoUnitario()">
+                                            <option value="" disabled selected>----------</option>
+                                            {% for produto in produtos %}
+                                            <option value="{{ produto.id }}" data-preco="{{ produto.preco }}">{{ produto.nome }}</option>
                                             {% endfor %}
                                         </select>
+                                        
                                     </div>
-                                </div>
-                            </div> 
-                            <div class="col mb-4">
-                                <div class="form-group">
-                                    <label for="descricao" class="form-label">Descrição</label>
-                                    <textarea name="descricao" class="form-control" id="descricao" rows="3">{{ produto.descricao }}</textarea>
-                                </div>
-                            </div>
-                            <div class="row mb-4">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="preco" class="form-label">Preço</label>
-                                        <input name="preco" value="{{ produto.preco }}" type="number" step="0.01" class="form-control" id="preco" required/>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group">
+                        
+                                    <div class="form-group mb-2">
                                         <label for="quantidade" class="form-label">Quantidade</label>
-                                        <input name="quantidade_estoque" value="{{ produto.quantidade_estoque }}" type="number" class="form-control" id="quantidade_estoque" required/>
+                                        <input name="quantidade" type="number" class="form-control" id="quantidade" required oninput="calcularTotal()"/>
+                                    </div>
+                                    <div class="form-group mb-2">
+                                        <label for="preco-unitario" class="form-label">Preço Unitário</label>
+                                        <input name="preco-unitario" type="number" class="form-control" id="preco-unitario" disabled/>
+                                    </div>
+                                    <div class="form-group mb-2">
+                                        <label for="total" class="form-label">Total</label>
+                                        <input name="total" type="number" class="form-control" id="total" disabled/>
+                                    </div>
+                                </div>
+                        
+                                <div class="col-md-6">
+                                    <div>
+                                        <div class="card-body">
+                                            <h5>Formas de Pagamento</h5>
+                                            <hr>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="forma_pagamento" id="cartao_credito" value="cartao_credito" onclick="mostrarParcelamento()" required>
+                                                <label class="form-check-label" for="cartao_credito">Cartão de Crédito</label>
+                                            </div>
+                        
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="forma_pagamento" data-desconto="0" id="debito" value="debito" required>
+                                                <label class="form-check-label" for="debito">Débito</label>
+                                            </div>
+                        
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="forma_pagamento" data-desconto="0" id="dinheiro" value="dinheiro" required>
+                                                <label class="form-check-label" for="dinheiro">Dinheiro</label>
+                                            </div>
+                        
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="forma_pagamento" data-desconto="0" id="pix" value="pix" required>
+                                                <label class="form-check-label" for="pix">PIX</label>
+                                            </div>
+                        
+                                            <div id="parcelamento-section" class="form-group mt-3" style="display: none;">
+                                                <label for="parcelamento" class="form-label">Parcelamento</label>
+                                                <select name="parcelamento" id="parcelamento" class="form-control" onchange="calcularTotalComParcelas()">
+                                                    <option value="1">À vista</option>
+                                                    <option value="2">2x sem juros</option>
+                                                    <option value="3">3x sem juros</option>
+                                                    <option value="4">4x sem juros</option>
+                                                    <option value="5">5x sem juros</option>
+                                                    <option value="6">6x sem juros</option>
+                                                    <option value="7">7x com juros de 3%</option>
+                                                    <option value="8">8x com juros de 3%</option>
+                                                    <option value="9">9x com juros de 3%</option>
+                                                    <option value="10">10x com juros de 3%</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mb-4">
-                                <div class="col-12">
-                                    <label for="imagem" class="form-label">Imagem</label>
-                                    <div class="col-sm-6">
-                                        <input type="file" class="form-control" id="imagem" name="imagem" {% if produto.imagem %}value="{{ produto.imagem.url }}"{% endif %}>
+                        
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <button type="submit" class="btn btn-primary btn-sm">Realizar Venda</button>
+                                    <a class="btn btn-secondary btn-sm" href="{% url 'accounts:logado' %}">Cancelar</a>
+                                </div>
+                                <div class="col-md-6 text-md-end">
+                                    <h5 class="mt-md-0 mt-3">Resumo da Compra</h5>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p><b>Descontos:</b></p>
+                                            <p><b>Valor da Parcela:</b></p>
+                                            <p><b>Valor Total da Compra:</b></p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p id="subtotal">R$ 0,00</p>
+                                            <p id="valor-parcela">R$ 0,00</p>
+                                            <p id="valor-total-compra">R$ 0,00</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>                           
-                            
-                            <input type="submit" value="Salvar" class="btn btn-primary btn-sm" style="border:none;">
-                        </form></br>
+                            </div>
+                        </form>
+                        
                     </div>
                 </div>
+                
             </div>
         </div>
     </section>
 </main>
-
 <footer id="footer" class="footer">
     <div class="copyright">
         &copy; Copyright <strong><span>SigConstruct</span></strong>.
     </div>
   </footer><!-- End Footer -->
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <script>
+    
+    function atualizarPrecoUnitario() {
+        const produtoSelect = document.getElementById("produto");
+        const selectedOption = produtoSelect.options[produtoSelect.selectedIndex];
+        const precoUnitario = parseFloat(selectedOption.getAttribute("data-preco"));
+
+        document.getElementById("preco-unitario").value = precoUnitario.toFixed(2);
+
+        calcularTotal();
+    }
+
+    function calcularTotal() {
+        const quantidade = parseInt(document.getElementById("quantidade").value, 10);
+        const precoUnitario = parseFloat(document.getElementById("preco-unitario").value);
+        const total = quantidade * precoUnitario;
+
+        document.getElementById("total").value = total.toFixed(2);
+  
+    }
+
+    function calcularTotalComParcelas() {
+        const quantidade = parseInt(document.getElementById("quantidade").value, 10);
+        const precoUnitario = parseFloat(document.getElementById("preco-unitario").value);
+        const parcelas = parseInt(document.getElementById("parcelamento").value, 10);
+
+        let total = quantidade * precoUnitario;
+
+        const formaPagamentoRadios = document.getElementsByName("forma_pagamento");
+        for (const radio of formaPagamentoRadios) {
+            if (radio.checked && ["dinheiro", "pix", "debito"].includes(radio.value)) {
+                total *= 0.9;
+                break;
+            }
+        }
+
+        if (parcelas > 6) {
+            const juros = 0.03;
+            total = total * (1 + juros);
+        }
+
+        document.getElementById("total").value = total.toFixed(2);
+        document.getElementById("valor-parcela").innerText = `R$ ${(total / parcelas).toFixed(2)}`;
+        document.getElementById("valor-total-compra").innerText = `R$ ${total.toFixed(2)}`;
+    }
+
+    function mostrarParcelamento() {
+        const formaPagamentoRadios = document.getElementsByName("forma_pagamento");
+        for (const radio of formaPagamentoRadios) {
+            if (radio.checked && radio.value === "cartao_credito") {
+                document.getElementById("parcelamento-section").style.display = "block";
+                break;
+            } else {
+                document.getElementById("parcelamento-section").style.display = "none";
+            }
+        }
+        calcularTotal();
+        calcularTotalComParcelas();
+    }
+    const formaPagamentoRadios = document.getElementsByName("forma_pagamento");
+    for (const radio of formaPagamentoRadios) {
+        radio.addEventListener("change", mostrarParcelamento);
+    }
+
+    const parcelamentoSelect = document.getElementById("parcelamento");
+    parcelamentoSelect.addEventListener("change", calcularTotalComParcelas);
+
+    window.addEventListener("DOMContentLoaded", () => {
+        mostrarParcelamento();
+    });
+</script>
+
 {% endblock  %}
